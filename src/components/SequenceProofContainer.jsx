@@ -9,7 +9,7 @@ const SequenceProofContainer = ({images}) => {
         <>
             <div className={styles.empty}></div>
             <Controller>
-                <Scene duration="200%" triggerHook="onLeave" pin indicators>
+                <Scene duration="500%" triggerHook="onLeave" pin>
                     {(progress) => (
                         <div style={{ height: "100vh", position: "relative" }}>
                             <Sequence progress={progress} images={images} />
