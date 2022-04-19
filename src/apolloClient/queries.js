@@ -15,7 +15,7 @@ query GET_PAGES {
 
 export const GET_TEST_SEQUENCE = gql(`
 query GET_TEST_SEQUENCE {
-  sequences(where: {id: "cl25umocbz89b0cugog514kjy"}) {
+  sequences(where: {id: "cl25xh3we2e920dt8bgvi37oq"}) {
     id
     image {
       id
