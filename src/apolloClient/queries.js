@@ -1,14 +1,12 @@
 import {gql} from "@apollo/client";
 
-export const GET_PAGES = gql(`
-query GET_PAGES {
-  pages {
+export const GET_ARTICLES = gql(`
+query GET_ARTICLES {
+  articles {
     id
-    slug
-    video {
-        id
-        url
-    }
+    createdAt
+    title
+    description
   }
 }`
 );
