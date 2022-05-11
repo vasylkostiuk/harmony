@@ -18,11 +18,37 @@
         z-index: 1;
         width: 100%;
     }
+    .link {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .title {
+        font-weight: 800;
+        font-size: 28px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin: 7px 0;
+    }
+    .description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+    }
 }
 
 @media screen and (min-width: 321px) {
     .ctaContainer {
         width: 50%;
+    }
+    .link {
+        font-size: 22px;
+    }
+    .title {
+        font-size: 54px;
+        margin: 15px 0;
+    }
+    .description {
+        font-size: 18px;
     }
 }
 
@@ -35,11 +61,9 @@
 @media screen and (min-width: 1025px) {
     .ctaContainer {
         width: 326px;
-        margin-top: 20%;
+        margin-top: 17.5%;
     }
 }
-
-
 
 .linkContainer {
     display: flex;
