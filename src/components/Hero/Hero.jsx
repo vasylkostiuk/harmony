@@ -10,9 +10,12 @@ const Hero = () => {
                 </div>
                 <div className='container'>
                     <div className={styles.ctaContainer}>
-                        <div className={styles.linkContainer}>
-                            <a href="#" className={styles.link}>More</a>
-                        </div>
+                        <a href="#" className={styles.linkContainer}>
+                            <p className={styles.link}>More</p>
+                            <svg className={styles.svg} width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7.24L1 14" stroke="black" strokeWidth="2"/>
+                            </svg>
+                        </a>
                         <h1 className={styles.title}>Geodomes</h1>
                         <p className={styles.description}>
                             Harmony Domes will create the ideal space for you to live in harmony
@@ -23,9 +26,12 @@ const Hero = () => {
             <div className={styles.responsive}>
                 <div className='container'>
                     <div className={styles.ctaContainer}>
-                        <div className={styles.linkContainer}>
-                            <a href="#" className={styles.link}>More</a>
-                        </div>
+                        <a href="#" className={styles.linkContainer}>
+                            <p className={styles.link}>More</p>
+                            <svg className={styles.svg} width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7.24L1 14" stroke="black" strokeWidth="2"/>
+                            </svg>
+                        </a>
                         <h1 className={styles.title}>Geodomes</h1>
                         <p className={styles.description}>
                             Harmony Domes will create the ideal space for you to live in harmony
