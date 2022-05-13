@@ -18,6 +18,20 @@ const HeroSlider = () => {
             effect={"fade"}
             navigation
             pagination={pagination}
+            breakpoints={{
+                1: {
+                    direction: "horizontal",
+                },
+                321: {
+                    direction: "horizontal",
+                },
+                769: {
+                    direction: "horizontal",
+                },
+                1025: {
+                    direction: "vertical"
+                },
+            }}
             modules={[Pagination,EffectFade]}
             className="swiper"
         >
