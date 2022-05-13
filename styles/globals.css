@@ -70,3 +70,15 @@ a {
 .swiper-pagination {
   left: 16%;
 }
+
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  border: 2px solid #000;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
