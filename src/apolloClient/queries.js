@@ -22,3 +22,27 @@ query GET_TEST_SEQUENCE {
   }
 }
 `);
+
+export const GET_MAIN_PAGE = gql(`
+    query MainPage {
+      mainPages {
+        herovideo {
+          id
+          url
+        }
+        hero {
+          id
+          description
+          image {
+            width
+            height
+            url
+            id
+          }
+          link
+          linkText
+          name
+        }
+      }
+    }
+`);
