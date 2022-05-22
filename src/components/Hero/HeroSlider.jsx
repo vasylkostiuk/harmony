@@ -5,9 +5,7 @@ import 'swiper/css/pagination';
 import "swiper/css/effect-fade";
 import Hero from "./Hero";
 
-const arr = [1,2,3];
-
-const HeroSlider = () => {
+const HeroSlider = ({heroBlocks, video}) => {
     const pagination = {
         clickable: true,
     };
@@ -35,9 +33,9 @@ const HeroSlider = () => {
             modules={[Pagination,EffectFade]}
             className="swiper"
         >
-            {arr.map(el => {
-                return <SwiperSlide key={el}>
-                    <Hero/>
+            {heroBlocks.map(el => {
+                return <SwiperSlide key={el.id}>
+                    <Hero {...el}/>
                 </SwiperSlide>
             })}
         </Swiper>
