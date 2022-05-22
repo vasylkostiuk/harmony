@@ -1,0 +1,25 @@
+@media (min-width: 1px) {
+    .container {
+        margin-top: 25px;
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 27px;
+    }
+    .item:last-of-type {
+        margin-bottom: 0;
+    }
+    .text {
+        margin-left: 26px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        margin-top: 45px;
+    }
+    .text {
+        margin-left: 16px;
+    }
+}
