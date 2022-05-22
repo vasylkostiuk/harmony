@@ -1,6 +1,16 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    grid-row-gap: 20px;
+@media (min-width: 1px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+    }
 }
+
+@media (min-width: 321px) {
+    .container {
+        grid-column-gap: 20px;
+    }
+}
+

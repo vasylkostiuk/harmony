@@ -1,0 +1,38 @@
+@media (min-width: 1px) {
+    .item {
+        padding: 18px 10px;
+        border: 1px solid #E4E4E7;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .color {
+        width: 24px;
+        height: 24px;
+        margin-right: 17px;
+    }
+
+    .name {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000;
+    }
+}
+
+@media (min-width: 321px) {
+    .item {
+        padding: 28px;
+    }
+
+    .color {
+        width: 35px;
+        height: 35px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+}
