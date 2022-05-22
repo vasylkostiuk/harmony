@@ -25,11 +25,7 @@ query GET_TEST_SEQUENCE {
 
 export const GET_MAIN_PAGE = gql(`
     query MainPage {
-      mainPages {
-        herovideo {
-          id
-          url
-        }
+      mainPage(where: {id: "cl39uuqjwt8940ck3mfoqe5am"}) {
         hero {
           id
           description
@@ -42,6 +38,10 @@ export const GET_MAIN_PAGE = gql(`
           link
           linkText
           name
+        }
+        herovideo {
+          id
+          url
         }
       }
     }
