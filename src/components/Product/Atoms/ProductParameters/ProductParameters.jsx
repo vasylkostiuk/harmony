@@ -8,23 +8,23 @@ const ProductParameters = ({area, diameter, maxHeight, weight}) => {
                     <mask id="path-1-inside-1_417_3291" fill="white">
                         <rect x="5" y="5" width="26" height="26" rx="1"/>
                     </mask>
-                    <rect x="5" y="5" width="26" height="26" rx="1" stroke="black" stroke-width="3" mask="url(#path-1-inside-1_417_3291)"/>
-                    <path d="M10.3563 10.7882L25.5622 25.994M10.3563 10.7882L10.3155 14.0303M10.3563 10.7882L13.5985 10.7473M25.5622 25.994L22.3201 26.0349M25.5622 25.994L25.6031 22.7519" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="5" y="5" width="26" height="26" rx="1" stroke="black" strokeWidth="3" mask="url(#path-1-inside-1_417_3291)"/>
+                    <path d="M10.3563 10.7882L25.5622 25.994M10.3563 10.7882L10.3155 14.0303M10.3563 10.7882L13.5985 10.7473M25.5622 25.994L22.3201 26.0349M25.5622 25.994L25.6031 22.7519" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <p className={styles.text}> Area: {area} m2</p>
             </div>
             <div className={styles.item}>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="18" cy="18" r="10.25" stroke="black" stroke-width="1.5"/>
-                    <path d="M29.3359 6L6.00141 29.3345" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="18" cy="18" r="10.25" stroke="black" strokeWidth="1.5"/>
+                    <path d="M29.3359 6L6.00141 29.3345" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <p className={styles.text}> Diameter: {diameter} m</p>
             </div>
             <div className={styles.item}>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.5 11V27M18.5 11L16 12.6842M18.5 11L21 12.6842M18.5 27L16 25.3158M18.5 27L21 25.3158" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="5.75" y1="5.25" x2="31.25" y2="5.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="5.75" y1="32.25" x2="31.25" y2="32.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.5 11V27M18.5 11L16 12.6842M18.5 11L21 12.6842M18.5 27L16 25.3158M18.5 27L21 25.3158" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="5.75" y1="5.25" x2="31.25" y2="5.25" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="5.75" y1="32.25" x2="31.25" y2="32.25" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <p className={styles.text}> Maximum Height: {maxHeight} m</p>
             </div>
