@@ -22,7 +22,9 @@ const Product = (product) => {
                   productDescription={info?.description}
                   badgeText={badge}
                   productParameters={parameters}
-                  imgSrc={image.url}
+                  imgSrc={image?.url}
+                  width={image?.width}
+                  height={image?.height}
                   colors={currentProduct?.colors}
                   extraFeatures={currentProduct?.extraFeatures}
               />
@@ -35,14 +37,16 @@ const Product = (product) => {
                          productDescription={info?.description}
                          badgeText={badge}
                          productParameters={parameters}
-                         imgSrc={image.url}
+                         imgSrc={image?.url}
+                         width={image?.width}
+                         height={image?.height}
                          colors={currentProduct?.colors}
                          extraFeatures={currentProduct?.extraFeatures}
                      />
                  </div>
                  <div>
-                     <ProductImage imgSrc={image.url}/>
-                     <ProductCta currentPrice={price.currentPrice} previousPrice={price.previousPrice} />
+                     <ProductImage imgSrc={image?.url} width={image?.width} height={image?.height}/>
+                     <ProductCta currentPrice={price?.currentPrice} previousPrice={price?.previousPrice} />
                  </div>
              </Sticky>
           </div>

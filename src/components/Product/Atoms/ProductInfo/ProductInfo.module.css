@@ -17,6 +17,9 @@
         line-height: 130%;
         color: #52525B;
     }
+    .image {
+        margin-top: 60px;
+    }
 }
 
 @media (min-width: 321px) {

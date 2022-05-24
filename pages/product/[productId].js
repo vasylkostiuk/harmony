@@ -3,7 +3,9 @@ import {GetProduct} from "../../src/preRender/SSR";
 
 const ProductId = (product) => {
     return (
-       <Product product={product}/>
+        <div className='container'>
+            <Product product={product}/>
+        </div>
     );
 }
 

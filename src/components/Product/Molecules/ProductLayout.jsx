@@ -3,8 +3,20 @@ import ProductInfo from "../Atoms/ProductInfo/ProductInfo";
 import TwoColumns from "../../../layouts/TwoColumns/TwoColumns";
 import ColorItem from "../Atoms/ColorItem/ColorItem";
 import ExtraFeature from "../Atoms/ExtraFeature/ExtraFeature";
+import BottomWidget from "../../../layouts/BottomWidget/BottomWidget";
+import ProductCta from "../Atoms/ProductCta/ProductCta";
 
-const ProductLayout = ({productTitle, productDescription, badgeText, productParameters, imgSrc, colors, extraFeatures}) => {
+const ProductLayout = ({
+                           productTitle,
+                           productDescription,
+                           badgeText,
+                           productParameters,
+                           imgSrc,
+                           colors,
+                           extraFeatures,
+                           width,
+                           height
+}) => {
     const colorsArr = colors?.map((color) => {
         return <ColorItem color={color?.color?.hex} colorName={color?.title} key={color?.id}/>
     });
@@ -21,6 +33,8 @@ const ProductLayout = ({productTitle, productDescription, badgeText, productPara
                 badgeText={badgeText}
                 parameters={productParameters}
                 imgSrc={imgSrc}
+                imgWidth={width}
+                imgHeight={height}
             />
             {
                 colors?.length &&
@@ -40,6 +54,9 @@ const ProductLayout = ({productTitle, productDescription, badgeText, productPara
                     </TwoColumns>
                 </>
             }
+            <BottomWidget>
+                <ProductCta/>
+            </BottomWidget>
         </>
     );
 }
