@@ -1,0 +1,11 @@
+.layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 500px;
+}
