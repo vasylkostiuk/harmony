@@ -1,0 +1,17 @@
+@media screen and (min-width: 1px) {
+    .extra__title {
+        padding: 60px 0 25px 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .extra__title {
+        padding: 60px 0 30px 0;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .extra__title:first-of-type {
+        border-top: 1px solid #E4E4E7;
+    }
+}

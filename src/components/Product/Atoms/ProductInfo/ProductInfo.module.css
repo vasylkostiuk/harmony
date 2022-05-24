@@ -47,4 +47,7 @@
     .description {
         margin-top: 65px;
     }
+    .image {
+        display: none;
+    }
 }

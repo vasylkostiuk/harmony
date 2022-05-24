@@ -1,17 +1,26 @@
 import styles from './ProductInfo.module.css';
 import Badge from "../Badge/Badge";
 import ProductParameters from "../ProductParameters/ProductParameters";
+import ProductImage from "../ProductImage/ProductImage";
 
-const ProductInfo = ({title, badgeText, description}) => {
+const ProductInfo = ({title, badgeText, description, parameters, imgSrc}) => {
     return (
-        <div>
+        <>
             <div className={styles.heading}>
                 <h1 className={styles.title}>{title}</h1>
                 <Badge text={badgeText}/>
             </div>
             <p className={styles.description}>{description}</p>
-            <ProductParameters area={'1'} diameter={'1'} maxHeight={'1'} weight={'1'}/>
-        </div>
+            <div className={styles.image}>
+                <ProductImage imgSrc={imgSrc}/>
+            </div>
+            <ProductParameters
+                area={parameters?.area}
+                diameter={parameters?.diameter}
+                maxHeight={parameters?.maxHeight}
+                weight={parameters?.weight}
+            />
+        </>
     );
 }
 

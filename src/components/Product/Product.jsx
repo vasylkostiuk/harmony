@@ -1,25 +1,48 @@
 import styles from './Product.module.css';
 import Sticky from "../../layouts/Sticky/Sticky";
-import ProductInfo from "./Atoms/ProductInfo/ProductInfo";
-import ProductParameters from "./Atoms/ProductParameters/ProductParameters";
 import ProductImage from "./Atoms/ProductImage/ProductImage";
 import ProductCta from "./Atoms/ProductCta/ProductCta";
+import ProductLayout from "./Molecules/ProductLayout";
 
 const Product = (product) => {
+  const currentProduct = product.product.product;
+  const {
+      badge,
+      image,
+      info,
+      parameters,
+      price
+  } = currentProduct;
+
   return (
       <>
           <div className={styles.mobile}>
-              <ProductInfo/>
-              {/*<ProductImage/>*/}
+              <ProductLayout
+                  productTitle={info?.title}
+                  productDescription={info?.description}
+                  badgeText={badge}
+                  productParameters={parameters}
+                  imgSrc={image.url}
+                  colors={currentProduct?.colors}
+                  extraFeatures={currentProduct?.extraFeatures}
+              />
           </div>
           <div className={styles.desktop}>
              <Sticky>
                  <div>
-                     <ProductInfo/>
+                     <ProductLayout
+                         productTitle={info?.title}
+                         productDescription={info?.description}
+                         badgeText={badge}
+                         productParameters={parameters}
+                         imgSrc={image.url}
+                         colors={currentProduct?.colors}
+                         extraFeatures={currentProduct?.extraFeatures}
+                     />
                  </div>
                  <div>
-                     {/*<ProductImage/>*/}
-                     <ProductCta/>
+                     <ProductImage imgSrc={image.url}/>
+                     <ProductCta currentPrice={price.currentPrice} previousPrice={price.previousPrice} />
                  </div>
              </Sticky>
           </div>
