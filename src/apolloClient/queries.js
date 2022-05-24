@@ -46,3 +46,63 @@ export const GET_MAIN_PAGE = gql(`
       }
     }
 `);
+
+export const GET_PRODUCT = gql(`
+    query Product ($id: ID!) {
+      product(where: {id: $id}) {
+        id
+        badge
+        category
+        id
+        image {
+          id
+          width
+          height
+          url
+        }
+        info {
+          id
+          title
+          description
+        }
+        price {
+          id
+          currentPrice
+          previousPrice
+        }
+        parameters {
+          id
+          area
+          diameter
+          maximumHeight
+          weight
+        }
+        colors {
+          id
+          price
+          color {
+            hex
+          }
+          image {
+            id
+            width
+            height
+            url
+          }
+          title
+        }
+        extraFeatures {
+          id
+          title
+          price
+          svgImage {
+            id
+            width
+            height
+            size
+            url
+          }
+        }
+      }
+    }
+`);

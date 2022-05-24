@@ -1,7 +1,6 @@
 import styles from './Sticky.module.css';
 
 const Sticky = ({children}) => {
-    console.log(children);
     return (
         <div className={styles.layout}>
             <div>{children[0]}</div>
