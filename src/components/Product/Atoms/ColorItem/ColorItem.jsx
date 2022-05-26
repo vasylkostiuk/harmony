@@ -12,7 +12,9 @@ const ColorItem = ({colorName, color, colorImgUrl, colorImgWidth, colorImgHeight
                 height: colorImgHeight
             })}
         >
-            <div className={styles.color} style={configureColor(color)}></div>
+            <div className={styles.color__container}>
+                <div className={styles.color} style={configureColor(color)}></div>
+            </div>
             <p className={styles.name}>{colorName}</p>
         </div>
     );
