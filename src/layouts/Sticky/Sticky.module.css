@@ -4,16 +4,30 @@
     justify-content: space-between;
 }
 
-.static {
-    width: 80%;
-    justify-self: start;
+
+
+@media screen and (min-width: 767px) {
+    .static {
+        width: 100%;
+        justify-self: start;
+    }
+    .sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        height: 500px;
+        width: calc(100% - 10px);
+        justify-self: end;
+    }
 }
 
-.sticky {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    height: 500px;
-    width: 90%;
-    justify-self: end;
+
+@media screen and (min-width: 1025px) {
+    .static {
+        width: 100%;
+    }
+    .sticky {
+        width: 80%;
+    }
 }
+

@@ -4,7 +4,7 @@
         border: 1px solid #E4E4E7;
         display: grid;
         align-items: center;
-        grid-template-columns: 25% 75%;
+        grid-template-columns: 24px calc(100% - 24px);
         cursor: pointer;
     }
 
@@ -28,13 +28,14 @@
         line-height: 140%;
         letter-spacing: 0.02em;
         color: #000;
-        padding-left: 17px;
+        padding-left: 12px;
     }
 }
 
-@media (min-width: 321px) {
+@media (min-width: 769px) {
     .item {
-        padding: 28px;
+        padding: 28px 14px 28px 28px;
+        grid-template-columns: 35px calc(100% - 35px);
     }
 
     .color__container {
@@ -44,5 +45,6 @@
 
     .name {
         font-size: 16px;
+        padding-left: 17px;
     }
 }

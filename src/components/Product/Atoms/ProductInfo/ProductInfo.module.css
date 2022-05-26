@@ -15,6 +15,7 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 130%;
+        margin-top: 60px;
         color: #52525B;
     }
     .image {
@@ -22,7 +23,7 @@
     }
 }
 
-@media (min-width: 321px) {
+@media (min-width: 767px) {
     .title {
         font-size: 48px;
         margin-right: 0;
@@ -34,11 +35,14 @@
     }
     .description {
         font-size: 16px;
-        margin-top: 60px;
+        width: 80%;
+    }
+    .image {
+        display: none;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .title {
         margin-bottom: 0;
         margin-right: 50px;
@@ -49,8 +53,6 @@
     }
     .description {
         margin-top: 65px;
-    }
-    .image {
-        display: none;
+        width: 100%;
     }
 }
