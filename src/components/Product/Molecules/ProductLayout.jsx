@@ -18,7 +18,14 @@ const ProductLayout = ({
                            height
 }) => {
     const colorsArr = colors?.map((color) => {
-        return <ColorItem color={color?.color?.hex} colorName={color?.title} key={color?.id}/>
+        return <ColorItem
+            color={color?.color?.hex}
+            colorName={color?.title}
+            colorImgUrl={color?.image?.url}
+            colorImgWidth={color?.image?.width}
+            colorImgHeight={color?.image?.height}
+            key={color?.id}
+        />
     });
 
     const extraFeaturesArr = extraFeatures?.map((feature) => {

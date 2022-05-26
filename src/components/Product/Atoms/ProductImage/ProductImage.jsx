@@ -1,10 +1,20 @@
 import Image from "next/image";
 import styles from './ProductImage.module.css';
+import {useReactiveVar} from "@apollo/client";
+import {currentProductVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 
-const ProductImage = ({imgSrc, width, height}) => {
+const ProductImage = () => {
+    const {url, width, height} = useReactiveVar(currentProductVar);
     return (
         <>
-            <Image src={imgSrc} width={width} height={height} alt={'Harmony Domes'}/>
+            <Image
+                src={url}
+                width={width}
+                height={height}
+                alt={'Harmony Domes'}
+                blurDataURL={url}
+                placeholder="blur"
+            />
             <p className={styles.text}>*Harmony Domes will create the ideal space for you to live in harmony</p>
         </>
     );

@@ -3,7 +3,7 @@ import Badge from "../Badge/Badge";
 import ProductParameters from "../ProductParameters/ProductParameters";
 import ProductImage from "../ProductImage/ProductImage";
 
-const ProductInfo = ({title, badgeText, description, parameters, imgSrc, imgHeight, imgWidth}) => {
+const ProductInfo = ({title, badgeText, description, parameters}) => {
     return (
         <>
             <div className={styles.heading}>
@@ -11,7 +11,7 @@ const ProductInfo = ({title, badgeText, description, parameters, imgSrc, imgHeig
                 <Badge text={badgeText}/>
             </div>
             <div className={styles.image}>
-                <ProductImage imgSrc={imgSrc} width={imgWidth} height={imgHeight}/>
+                <ProductImage/>
             </div>
             <p className={styles.description}>{description}</p>
             <ProductParameters

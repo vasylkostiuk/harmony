@@ -3,6 +3,7 @@ import Sticky from "../../layouts/Sticky/Sticky";
 import ProductImage from "./Atoms/ProductImage/ProductImage";
 import ProductCta from "./Atoms/ProductCta/ProductCta";
 import ProductLayout from "./Molecules/ProductLayout";
+import {currentProductVar} from "../../apolloClient/reactiveVariables/currentProduct";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -13,6 +14,13 @@ const Product = (product) => {
       parameters,
       price
   } = currentProduct;
+
+    currentProductVar({
+        url: image?.url,
+        width: image?.width,
+        height: image?.height
+    });
+
 
   return (
       <>
@@ -45,8 +53,8 @@ const Product = (product) => {
                      />
                  </div>
                  <div>
-                     <ProductImage imgSrc={image?.url} width={image?.width} height={image?.height}/>
-                     <ProductCta currentPrice={price?.currentPrice} previousPrice={price?.previousPrice} />
+                     <ProductImage/>
+                     <ProductCta currentPrice={price?.currentPrice} previousPrice={price?.previousPrice}/>
                  </div>
              </Sticky>
           </div>
