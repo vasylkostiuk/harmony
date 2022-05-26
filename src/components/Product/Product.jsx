@@ -18,7 +18,9 @@ const Product = (product) => {
     currentProductVar({
         url: image?.url,
         width: image?.width,
-        height: image?.height
+        height: image?.height,
+        initialPrice: price?.currentPrice,
+        price: price?.currentPrice,
     });
 
 
@@ -35,6 +37,7 @@ const Product = (product) => {
                   height={image?.height}
                   colors={currentProduct?.colors}
                   extraFeatures={currentProduct?.extraFeatures}
+                  previousPrice={price?.previousPrice}
               />
           </div>
           <div className={styles.desktop}>
@@ -50,11 +53,12 @@ const Product = (product) => {
                          height={image?.height}
                          colors={currentProduct?.colors}
                          extraFeatures={currentProduct?.extraFeatures}
+                         previousPrice={price?.previousPrice}
                      />
                  </div>
                  <div>
                      <ProductImage/>
-                     <ProductCta currentPrice={price?.currentPrice} previousPrice={price?.previousPrice}/>
+                     <ProductCta previousPrice={price?.previousPrice}/>
                  </div>
              </Sticky>
           </div>

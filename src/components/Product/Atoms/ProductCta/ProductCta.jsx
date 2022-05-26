@@ -1,11 +1,17 @@
 import styles from './ProductCta.module.css';
+import {useReactiveVar} from "@apollo/client";
+import {currentProductVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 
-const ProductCta = ({currentPrice, previousPrice}) => {
+const ProductCta = ({previousPrice}) => {
+    const {price} = useReactiveVar(currentProductVar);
     return (
         <div className={styles.container}>
             <div className={styles.price__container}>
-                <p className={styles.price__current}>$ {currentPrice}</p>
-                <p className={styles.price__previous}>$ {previousPrice}</p>
+                <p className={styles.price__current}>$ {price}</p>
+                {
+                    previousPrice &&
+                    <p className={styles.price__previous}>$ {previousPrice}</p>
+                }
             </div>
             <div className={styles.cta__container}>
                 <button className={styles.cta__button}>

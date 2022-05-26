@@ -15,7 +15,8 @@ const ProductLayout = ({
                            colors,
                            extraFeatures,
                            width,
-                           height
+                           height,
+                           previousPrice
 }) => {
     const colorsArr = colors?.map((color) => {
         return <ColorItem
@@ -24,6 +25,7 @@ const ProductLayout = ({
             colorImgUrl={color?.image?.url}
             colorImgWidth={color?.image?.width}
             colorImgHeight={color?.image?.height}
+            colorPrice={color?.price}
             key={color?.id}
         />
     });
@@ -62,7 +64,7 @@ const ProductLayout = ({
                 </>
             }
             <BottomWidget>
-                <ProductCta/>
+                <ProductCta previousPrice={previousPrice}/>
             </BottomWidget>
         </>
     );
