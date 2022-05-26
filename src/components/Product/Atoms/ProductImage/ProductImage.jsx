@@ -12,8 +12,7 @@ const ProductImage = () => {
                 width={width}
                 height={height}
                 alt={'Harmony Domes'}
-                blurDataURL={url}
-                placeholder="blur"
+                loading='lazy'
             />
             <p className={styles.text}>*Harmony Domes will create the ideal space for you to live in harmony</p>
         </>
