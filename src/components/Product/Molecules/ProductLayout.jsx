@@ -31,7 +31,12 @@ const ProductLayout = ({
     });
 
     const extraFeaturesArr = extraFeatures?.map((feature) => {
-        return <ExtraFeature img={feature?.svgImage?.url} name={feature?.title} key={feature?.id}/>
+        return <ExtraFeature
+            img={feature?.svgImage?.url}
+            name={feature?.title}
+            featurePrice={feature?.price}
+            key={feature?.id}
+        />
     });
 
     return (

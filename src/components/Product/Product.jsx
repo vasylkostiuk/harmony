@@ -16,6 +16,7 @@ const Product = (product) => {
   } = currentProduct;
 
     currentProductVar({
+        ...currentProductVar(),
         url: image?.url,
         width: image?.width,
         height: image?.height,

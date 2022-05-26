@@ -5,6 +5,7 @@ import {currentProductVar} from "../../../../apolloClient/reactiveVariables/curr
 
 const ProductImage = () => {
     const {url, width, height} = useReactiveVar(currentProductVar);
+
     return (
         <>
             <Image

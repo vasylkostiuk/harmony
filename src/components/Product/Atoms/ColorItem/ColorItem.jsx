@@ -11,7 +11,7 @@ const ColorItem = ({colorName, color, colorImgUrl, colorImgWidth, colorImgHeight
                 url: colorImgUrl,
                 width: colorImgWidth,
                 height: colorImgHeight,
-                price: currentProductVar().initialPrice + colorPrice,
+                price: currentProductVar().initialPrice + colorPrice
             })}
         >
             <div className={styles.color__container}>
