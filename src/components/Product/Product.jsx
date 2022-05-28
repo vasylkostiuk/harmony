@@ -12,7 +12,8 @@ const Product = (product) => {
       image,
       info,
       parameters,
-      price
+      price,
+      colors
   } = currentProduct;
 
     currentProductVar({
@@ -22,6 +23,7 @@ const Product = (product) => {
         height: image?.height,
         initialPrice: price?.currentPrice,
         price: price?.currentPrice,
+        currentColor: colors?.length ? colors[0]?.title : undefined
     });
 
 

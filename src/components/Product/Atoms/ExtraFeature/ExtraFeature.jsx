@@ -15,7 +15,7 @@ const ExtraFeature = ({name, img, featurePrice}) => {
 
     return (
         <div
-            className={styles.item}
+            className={captured ? styles.item__captured : styles.item}
             onClick={() => chooseFeature()}
         >
             <div className={styles.color__container}>

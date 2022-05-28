@@ -1,11 +1,19 @@
 @media (min-width: 1px) {
-    .item {
+    .item, .item__captured {
         padding: 18px 10px;
-        border: 1px solid #E4E4E7;
         display: grid;
         align-items: center;
         grid-template-columns: 24px calc(100% - 24px);
         cursor: pointer;
+        transition: border .3s ease;
+    }
+
+    .item {
+        border: 2px solid #E4E4E7;
+    }
+
+    .item__captured {
+        border: 2px solid #000;
     }
 
     .color__container {
@@ -33,7 +41,7 @@
 }
 
 @media (min-width: 769px) {
-    .item {
+    .item, .item__captured {
         padding: 28px 14px 28px 28px;
         grid-template-columns: 35px calc(100% - 35px);
     }

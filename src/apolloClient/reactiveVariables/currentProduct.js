@@ -6,7 +6,8 @@ const initialCurrentProduct = {
     height: 0,
     initialPrice: 0,
     price: 0,
-    calculatePrice: 0
+    calculatePrice: 0,
+    currentColor: ''
 }
 
 export const currentProductVar = makeVar({
