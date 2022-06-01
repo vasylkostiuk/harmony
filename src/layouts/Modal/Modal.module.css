@@ -7,4 +7,9 @@
     background-color: #fff;
     display: grid;
     place-items: center;
+    z-index: 10;
+}
+
+.inner {
+    margin: auto;
 }

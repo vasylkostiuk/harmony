@@ -103,6 +103,15 @@ export const GET_PRODUCT = gql(`
             url
           }
         }
+        imageGallery {
+          id
+          galleryImage(first: 500) {
+            id
+            width
+            height
+            url
+          }
+        }
       }
     }
 `);

@@ -4,6 +4,7 @@ import ProductImage from "./Atoms/ProductImage/ProductImage";
 import ProductCta from "./Atoms/ProductCta/ProductCta";
 import ProductLayout from "./Molecules/ProductLayout";
 import {currentProductVar} from "../../apolloClient/reactiveVariables/currentProduct";
+import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -13,7 +14,8 @@ const Product = (product) => {
       info,
       parameters,
       price,
-      colors
+      colors,
+      imageGallery
   } = currentProduct;
 
     currentProductVar({
@@ -64,6 +66,11 @@ const Product = (product) => {
                      <ProductCta previousPrice={price?.previousPrice}/>
                  </div>
              </Sticky>
+              <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
+              {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
+              {/*<Modal innerWidth={'900px'} innerHeight={'700px'}>*/}
+              {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
+              {/*</Modal>*/}
           </div>
       </>
   );
