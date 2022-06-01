@@ -6,7 +6,14 @@ const Hero = ({image, name, description, link, linkText}) => {
         <>
             <div className={styles.hero}>
                 <div className={styles.imageContainer}>
-                    <Image src={image?.url} layout='fill' alt="Harmony Domes"/>
+                    <Image
+                        src={image?.url}
+                        layout='fill'
+                        alt="Harmony Domes"
+                        placeholder='blur'
+                        loading='eager'
+                        blurDataURL={image?.url}
+                    />
                 </div>
                 <div className='container'>
                     <div className={styles.ctaContainer}>
@@ -38,7 +45,14 @@ const Hero = ({image, name, description, link, linkText}) => {
                         </p>
                     </div>
                     <div className={styles.imageContainer}>
-                        <Image src={image?.url} width={1920} height={1080} alt="Harmony Domes"/>
+                        <Image
+                            src={image?.url}
+                            width={1920}
+                            height={1080}
+                            alt="Harmony Domes"
+                            placeholder='blur'
+                            blurDataURL={image?.url}
+                        />
                     </div>
                 </div>
             </div>

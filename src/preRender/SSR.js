@@ -12,6 +12,6 @@ export const GetProduct = async function () {
     return {
         props: {
            product: data?.product
-        },
+        }
     }
 }

@@ -34,7 +34,14 @@ const ExtendedSlider = ({images}) => {
             >
                 {images.map((image, idx) => {
                     return <SwiperSlide key={idx}>
-                        <Image src={image} width={235} height={200} alt='Harmony Domes'/>
+                        <Image
+                            src={image}
+                            width={235}
+                            height={200}
+                            placeholder='blur'
+                            blurDataURL={image}
+                            alt='Harmony Domes'
+                        />
                     </SwiperSlide>
                 })}
             </Swiper>
