@@ -12,6 +12,7 @@ const Hero = ({image, name, description, link, linkText}) => {
                         alt="Harmony Domes"
                         placeholder='blur'
                         loading='eager'
+                        priority={true}
                         blurDataURL={image?.url}
                     />
                 </div>
@@ -51,6 +52,8 @@ const Hero = ({image, name, description, link, linkText}) => {
                             height={1080}
                             alt="Harmony Domes"
                             placeholder='blur'
+                            loading='eager'
+                            priority={true}
                             blurDataURL={image?.url}
                         />
                     </div>
