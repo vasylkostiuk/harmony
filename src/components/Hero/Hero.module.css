@@ -27,6 +27,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
+        margin-bottom: 44px;
     }
     .hero {
         display: none;
@@ -47,9 +48,6 @@
 }
 
 @media screen and (min-width: 321px) {
-    .ctaContainer {
-        width: 50%;
-    }
     .link {
         font-size: 22px;
     }
@@ -60,22 +58,21 @@
     .description {
         font-size: 18px;
     }
-
-    .imageContainer {
-        height: 406px;
-    }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 767px) {
     .ctaContainer {
         width: 394px;
     }
     .imageContainer {
         height: 371px;
     }
+    .description {
+        margin-bottom: 0;
+    }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1023px) {
     .ctaContainer {
         width: 326px;
         margin-top: 15%;
