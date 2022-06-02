@@ -1,4 +1,4 @@
-import {GET_MAIN_PAGE} from "../apolloClient/queries";
+import {GET_MAIN_PAGE, GET_PRODUCT, GET_PRODUCTS} from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
 export const GetStaticMainPage = async function () {
@@ -14,4 +14,47 @@ export const GetStaticMainPage = async function () {
         },
         revalidate: 60
     }
+}
+
+export const GetStaticProducts = async function () {
+    const {data} = await client.query({
+        query: GET_PRODUCTS
+    });
+
+    return {
+        props: {
+            products: data?.products
+        },
+        revalidate: 60
+    }
+}
+
+export const GetStaticProduct = async function (context) {
+    const {params} = context;
+    console.log(params)
+    const {data} = await client.query({
+        query: GET_PRODUCT,
+        variables: {
+            id: params.productId
+        }
+    });
+
+    return {
+        props: {
+            product: data?.product
+        },
+        revalidate: 60
+    }
+}
+
+export const GetStaticProductsPath = async function () {
+    const {data} = await client.query({
+        query: GET_PRODUCTS
+    });
+
+    const paths = data?.products.map((p) => ({
+        params: { productId: p.id },
+    }));
+
+    return { paths, fallback: 'blocking' }
 }

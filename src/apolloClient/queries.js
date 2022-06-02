@@ -47,9 +47,9 @@ export const GET_MAIN_PAGE = gql(`
     }
 `);
 
-export const GET_PRODUCT = gql(`
-    query Product ($id: ID!) {
-      product(where: {id: $id}) {
+export const GET_PRODUCTS = gql(`
+    query Products {
+      products {
         id
         badge
         category
@@ -114,4 +114,73 @@ export const GET_PRODUCT = gql(`
         }
       }
     }
+`);
+
+export const GET_PRODUCT = gql(`
+    query Product {
+      product(where: {id: "cl3h1h4gwb96709k1k80tl5x0"}) {
+        id
+        badge
+        category
+        id
+        image {
+          id
+          width
+          height
+          url
+        }
+        info {
+          id
+          title
+          description
+        }
+        price {
+          id
+          currentPrice
+          previousPrice
+        }
+        parameters {
+          id
+          area
+          diameter
+          maximumHeight
+          weight
+        }
+        colors {
+          id
+          price
+          color {
+            hex
+          }
+          image {
+            id
+            width
+            height
+            url
+          }
+          title
+        }
+        extraFeatures {
+          id
+          title
+          price
+          svgImage {
+            id
+            width
+            height
+            size
+            url
+          }
+        }
+      imageGallery {
+          id
+          galleryImage(first: 500) {
+            id
+            width
+            height
+            url
+          }
+      }
+    }
+  }
 `);

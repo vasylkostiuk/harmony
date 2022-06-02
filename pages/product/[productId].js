@@ -1,5 +1,5 @@
 import Product from "../../src/components/Product/Product";
-import {GetProduct} from "../../src/preRender/SSR";
+import {GetStaticProduct, GetStaticProductsPath} from "../../src/preRender/ISR";
 
 const ProductId = (product) => {
     return (
@@ -9,6 +9,8 @@ const ProductId = (product) => {
     );
 }
 
-export const getServerSideProps = GetProduct;
+export const getStaticPaths = GetStaticProductsPath;
+
+export const getStaticProps = GetStaticProduct;
 
 export default ProductId;
