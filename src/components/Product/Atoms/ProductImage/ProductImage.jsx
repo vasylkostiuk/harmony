@@ -12,8 +12,6 @@ const ProductImage = () => {
                 src={url}
                 width={width}
                 height={height}
-                placeholder='blur'
-                blurDataURL={url}
                 loading='lazy'
                 alt={'Harmony Domes'}
             />

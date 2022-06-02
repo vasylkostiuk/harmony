@@ -5,6 +5,7 @@ import ProductCta from "./Atoms/ProductCta/ProductCta";
 import ProductLayout from "./Molecules/ProductLayout";
 import {currentProductVar} from "../../apolloClient/reactiveVariables/currentProduct";
 import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
+import FakeRenderer from "../FakeRenderer/FakeRenderer";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -71,6 +72,11 @@ const Product = (product) => {
               {/*<Modal innerWidth={'900px'} innerHeight={'700px'}>*/}
               {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
               {/*</Modal>*/}
+              {
+                  colors.map(color => {
+                      return <FakeRenderer url={color?.image?.url} key={color?.id}/>
+                  })
+              }
           </div>
       </>
   );
