@@ -54,7 +54,7 @@ export const GET_PRODUCTS = gql(`
         badge
         category
         id
-        image {
+        presentationImage {
           id
           width
           height
@@ -69,48 +69,6 @@ export const GET_PRODUCTS = gql(`
           id
           currentPrice
           previousPrice
-        }
-        parameters {
-          id
-          area
-          diameter
-          maximumHeight
-          weight
-        }
-        colors {
-          id
-          price
-          color {
-            hex
-          }
-          image {
-            id
-            width
-            height
-            url
-          }
-          title
-        }
-        extraFeatures {
-          id
-          title
-          price
-          svgImage {
-            id
-            width
-            height
-            size
-            url
-          }
-        }
-        imageGallery {
-          id
-          galleryImage(first: 500) {
-            id
-            width
-            height
-            url
-          }
         }
       }
     }
