@@ -4,6 +4,7 @@ import Image from "next/image";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import customLoader from "../../preRender/customLoader";
 
 const ExtendedSlider = ({images}) => {
     return (
@@ -41,6 +42,7 @@ const ExtendedSlider = ({images}) => {
                             placeholder='blur'
                             blurDataURL={image}
                             alt='Harmony Domes'
+                            loader={customLoader}
                         />
                     </SwiperSlide>
                 })}

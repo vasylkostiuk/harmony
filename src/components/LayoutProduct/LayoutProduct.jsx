@@ -2,6 +2,7 @@ import LayoutBadge from "./Atoms/LayoutBadge/LayoutBadge";
 import styles from "./LayoutProduct.module.css";
 import Image from "next/image";
 import Link from 'next/link';
+import customLoader from "../../preRender/customLoader";
 
 const LayoutProduct = ({image, badge, title, description, previousPrice, currentPrice, productId}) => {
     return (
@@ -12,6 +13,9 @@ const LayoutProduct = ({image, badge, title, description, previousPrice, current
                     width={image?.width}
                     height={image?.height}
                     alt="Harmony Domes"
+                    loader={customLoader}
+                    placeholder='blur'
+                    blurDataURL={image?.url}
                 />
                 <LayoutBadge text={badge}/>
             </div>

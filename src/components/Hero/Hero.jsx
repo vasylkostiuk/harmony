@@ -1,11 +1,8 @@
 import styles from './Hero.module.css';
 import Image from "next/image";
+import customLoader from "../../preRender/customLoader";
 
 const Hero = ({image, name, description, link, linkText}) => {
-
-    const customLoader = ({src}) => {
-        return src
-    }
 
     return (
         <>
@@ -15,8 +12,10 @@ const Hero = ({image, name, description, link, linkText}) => {
                         src={image?.url}
                         layout='fill'
                         alt="Harmony Domes"
-                        loader={customLoader}
                         loading='eager'
+                        loader={customLoader}
+                        placeholder='blur'
+                        blurDataURL={image?.url}
                         priority={true}
                     />
                 </div>

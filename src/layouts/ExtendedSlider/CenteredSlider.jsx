@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "swiper/css/thumbs";
+import customLoader from "../../preRender/customLoader";
 
 const ExtendedSlider = ({images}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -21,7 +22,14 @@ const ExtendedSlider = ({images}) => {
             >
                 {images.map((image, idx) => {
                     return <SwiperSlide key={idx}>
-                        <Image src={image} layout='fill' alt='Harmony Domes'/>
+                        <Image
+                            src={image}
+                            layout='fill'
+                            alt='Harmony Domes'
+                            loader={customLoader}
+                            placeholder='blur'
+                            blurDataURL={image}
+                        />
                     </SwiperSlide>
                 })}
             </Swiper>
@@ -45,7 +53,15 @@ const ExtendedSlider = ({images}) => {
             >
                 {images.map((image, idx) => {
                     return <SwiperSlide key={idx}>
-                        <Image src={image} width={235} height={200} alt='Harmony Domes'/>
+                        <Image
+                            src={image}
+                            width={235}
+                            height={200}
+                            alt='Harmony Domes'
+                            loader={customLoader}
+                            placeholder='blur'
+                            blurDataURL={image}
+                        />
                     </SwiperSlide>
                 })}
             </Swiper>
