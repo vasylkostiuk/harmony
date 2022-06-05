@@ -1,0 +1,24 @@
+@media screen and (min-width: 1px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .first {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .first {
+        margin-bottom: 0;
+    }
+    .second {
+        align-self: flex-end;
+    }
+}

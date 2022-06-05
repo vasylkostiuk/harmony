@@ -2,6 +2,11 @@ import styles from './Hero.module.css';
 import Image from "next/image";
 
 const Hero = ({image, name, description, link, linkText}) => {
+
+    const customLoader = ({src}) => {
+        return src
+    }
+
     return (
         <>
             <div className={styles.hero}>
@@ -10,10 +15,9 @@ const Hero = ({image, name, description, link, linkText}) => {
                         src={image?.url}
                         layout='fill'
                         alt="Harmony Domes"
-                        placeholder='blur'
+                        loader={customLoader}
                         loading='eager'
                         priority={true}
-                        blurDataURL={image?.url}
                     />
                 </div>
                 <div className='container'>
@@ -51,9 +55,10 @@ const Hero = ({image, name, description, link, linkText}) => {
                             width={1920}
                             height={1080}
                             alt="Harmony Domes"
-                            placeholder='blur'
                             loading='eager'
                             priority={true}
+                            loader={customLoader}
+                            placeholder='blur'
                             blurDataURL={image?.url}
                         />
                     </div>

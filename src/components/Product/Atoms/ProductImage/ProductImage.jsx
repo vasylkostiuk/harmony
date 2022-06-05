@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from './ProductImage.module.css';
 import {useReactiveVar} from "@apollo/client";
-import {currentProductVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
+import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 
 const ProductImage = () => {
-    const {url, width, height} = useReactiveVar(currentProductVar);
+    const {url, width, height} = useReactiveVar(currentProductsVar);
 
     return (
         <>

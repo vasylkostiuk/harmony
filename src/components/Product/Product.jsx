@@ -3,7 +3,7 @@ import Sticky from "../../layouts/Sticky/Sticky";
 import ProductImage from "./Atoms/ProductImage/ProductImage";
 import ProductCta from "./Atoms/ProductCta/ProductCta";
 import ProductLayout from "./Molecules/ProductLayout";
-import {currentProductVar} from "../../apolloClient/reactiveVariables/currentProduct";
+import {currentProductsVar} from "../../apolloClient/reactiveVariables/currentProduct";
 import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 import FakeRenderer from "../FakeRenderer/FakeRenderer";
 
@@ -19,8 +19,8 @@ const Product = (product) => {
       imageGallery
   } = currentProduct;
 
-    currentProductVar({
-        ...currentProductVar(),
+    currentProductsVar({
+        ...currentProductsVar(),
         url: image?.url,
         width: image?.width,
         height: image?.height,

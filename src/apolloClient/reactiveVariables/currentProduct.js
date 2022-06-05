@@ -10,6 +10,6 @@ const initialCurrentProduct = {
     currentColor: ''
 }
 
-export const currentProductVar = makeVar({
+export const currentProductsVar = makeVar({
     ...initialCurrentProduct
 });

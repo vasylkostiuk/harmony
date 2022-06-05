@@ -1,9 +1,9 @@
 import styles from './ProductCta.module.css';
 import {useReactiveVar} from "@apollo/client";
-import {currentProductVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
+import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 
 const ProductCta = ({previousPrice}) => {
-    const {calculatePrice, price} = useReactiveVar(currentProductVar);
+    const {calculatePrice, price} = useReactiveVar(currentProductsVar);
     return (
         <div className={styles.container}>
             <div className={styles.price__container}>

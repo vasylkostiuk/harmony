@@ -1,14 +1,14 @@
 import styles from "../ColorItem/ColorItem.module.css";
-import {currentProductVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
+import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 import {useState} from "react";
 
 const ExtraFeature = ({name, img, featurePrice}) => {
     const [captured, setCaptured] = useState(false);
 
     const chooseFeature = () => {
-        currentProductVar({
-            ...currentProductVar(),
-            calculatePrice: captured ? (currentProductVar().calculatePrice - featurePrice) : (currentProductVar().calculatePrice + featurePrice),
+        currentProductsVar({
+            ...currentProductsVar(),
+            calculatePrice: captured ? (currentProductsVar().calculatePrice - featurePrice) : (currentProductsVar().calculatePrice + featurePrice),
         });
         setCaptured(!captured);
     }
