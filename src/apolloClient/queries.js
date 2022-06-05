@@ -75,8 +75,8 @@ export const GET_PRODUCTS = gql(`
 `);
 
 export const GET_PRODUCT = gql(`
-    query Product {
-      product(where: {id: "cl3h1h4gwb96709k1k80tl5x0"}) {
+    query Product ($id: ID!) {
+      product(where: {id: $id}) {
         id
         badge
         category

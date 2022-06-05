@@ -1,17 +1,12 @@
 import {GetStaticProducts} from "../../src/preRender/ISR";
-import LayoutProduct from "../../src/components/LayoutProduct/LayoutProduct";
-import ProductsGrid from "../../src/layouts/ProductsGrid/ProductsGrid";
+import LayoutProductContainer from "../../src/components/LayoutProduct/LayoutProductContainer";
+import {productsVar} from "../../src/apolloClient/reactiveVariables/products";
 
 const Products = ({products}) => {
+    productsVar([...products]);
     return (
         <div className="container">
-            <ProductsGrid>
-                {
-                    products.map(product => {
-                        return <LayoutProduct key={product?.id} image={product?.presentationImage} />
-                    })
-                }
-            </ProductsGrid>
+           <LayoutProductContainer/>
         </div>
     );
 }

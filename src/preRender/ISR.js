@@ -31,7 +31,7 @@ export const GetStaticProducts = async function () {
 
 export const GetStaticProduct = async function (context) {
     const {params} = context;
-    console.log(params)
+
     const {data} = await client.query({
         query: GET_PRODUCT,
         variables: {
