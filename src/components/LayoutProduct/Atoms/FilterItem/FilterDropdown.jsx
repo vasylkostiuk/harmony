@@ -6,7 +6,7 @@ const FilterDropdown = ({name, isCurrent = false}) => {
 
     return <li
         className={`${styles.item} ${current}`}
-        onClick={() => currentFilterVar({...currentFilterVar(), currentFilter: name})}
+        onClick={() => currentFilterVar({showDropdown: !currentFilterVar().showDropdown, currentFilter: name})}
     >
         {name}
     </li>
