@@ -1,3 +1,4 @@
+import styles from './LayoutProductContainer.module.css';
 import {currentProductsVar} from "../../apolloClient/reactiveVariables/products";
 import {useReactiveVar} from "@apollo/client";
 import LayoutProduct from "./LayoutProduct";
@@ -9,6 +10,7 @@ const LayoutProductContainer = () => {
 
     return (
         <>
+            <h1 className={styles.title}>Store</h1>
             <FiltersContainer/>
             <ProductsGrid>
                 {

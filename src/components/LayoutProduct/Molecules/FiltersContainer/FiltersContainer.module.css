@@ -6,6 +6,9 @@
     .first {
         margin-bottom: 30px;
     }
+    .second {
+        justify-self: flex-start;
+    }
 }
 
 @media screen and (min-width: 767px) {
@@ -14,11 +17,12 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 50px;
     }
     .first {
         margin-bottom: 0;
     }
     .second {
-        align-self: flex-end;
+        justify-self: flex-end;
     }
 }

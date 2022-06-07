@@ -2,10 +2,13 @@ import styles from './FiltersContainer.module.css';
 import CategoriesLayout from "../../../../layouts/CategoriesLayout/CategoriesLayout";
 import CategoryItem from "../../Atoms/CategoryItem/CategoryItem";
 import {useReactiveVar} from "@apollo/client";
-import {currentProductsVar, productsVar} from "../../../../apolloClient/reactiveVariables/products";
+import {currentProductsVar, productsVar, currentCategoryVar} from "../../../../apolloClient/reactiveVariables/products";
+import FilterDropdownContainer from "../FiltersDropdownContainer/FilterDropdownContainer";
 
 const FiltersContainer = () => {
     const products = useReactiveVar(productsVar);
+    const currentCategory = useReactiveVar(currentCategoryVar);
+
 
     function extractCategories(products) {
         const allCategories = ['All products', ...products.map(product => product?.category)];
@@ -23,7 +26,7 @@ const FiltersContainer = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.second}>
+            <div className={styles.first}>
                 <CategoriesLayout>
                     {
                         categories && categories?.length &&
@@ -31,13 +34,16 @@ const FiltersContainer = () => {
                            return <CategoryItem
                                key={category}
                                name={category}
+                               isCurrent={category === currentCategory}
                                cb={() => correctFiltering(idx, category)}
                            />
                         })
                     }
                 </CategoriesLayout>
             </div>
-            <div className={styles.first}>abc</div>
+            <div className={styles.second}>
+                <FilterDropdownContainer/>
+            </div>
         </div>
     );
 }

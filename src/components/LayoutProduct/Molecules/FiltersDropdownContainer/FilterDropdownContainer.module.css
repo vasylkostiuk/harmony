@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+}
+
+.dropdown__container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 170px;
+    padding: 0;
+    cursor: pointer;
+}

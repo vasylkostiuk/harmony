@@ -1,10 +1,18 @@
 import styles from './CategoryItem.module.css';
+import {currentCategoryVar} from "../../../../apolloClient/reactiveVariables/products";
 
 const CategoryItem = ({name, cb, isCurrent}) => {
     const current = isCurrent ? styles.current : '';
 
     return (
-        <p className={`${styles.category} ${current}`} onClick={cb}>{name}</p>
+        <p onClick={cb}>
+            <span
+                className={`${styles.category} ${current}`}
+                onClick={() => currentCategoryVar(name)}
+            >
+                {name}
+            </span>
+        </p>
     );
 }
 

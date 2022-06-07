@@ -1,0 +1,16 @@
+.item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #18181B;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    background-color: #fff;
+    z-index: 1;
+    list-style: none;
+}
+
+.current {
+    background-color: #000;
+    color: #fff;
+}

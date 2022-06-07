@@ -54,6 +54,7 @@ export const GET_PRODUCTS = gql(`
         badge
         category
         id
+        visionCount
         presentationImage {
           id
           width
@@ -81,6 +82,7 @@ export const GET_PRODUCT = gql(`
         badge
         category
         id
+        visionCount
         image {
           id
           width

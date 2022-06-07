@@ -1,5 +1,6 @@
 @media (min-width: 1px) {
     .category {
+        display: block;
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
@@ -9,6 +10,7 @@
         padding: 5px 12px;
         margin-right: 10px;
         cursor: pointer;
+        transition: all .3s ease;
     }
     .current {
         color: #fff;
