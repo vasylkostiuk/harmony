@@ -1,5 +1,5 @@
 import styles from './LayoutProductContainer.module.css';
-import {currentProductsVar} from "../../apolloClient/reactiveVariables/products";
+import {currentProductsVar, filteredProductsVar} from "../../apolloClient/reactiveVariables/products";
 import {useReactiveVar} from "@apollo/client";
 import LayoutProduct from "./LayoutProduct";
 import ProductsGrid from "../../layouts/ProductsGrid/ProductsGrid";
@@ -7,6 +7,9 @@ import FiltersContainer from "./Molecules/FiltersContainer/FiltersContainer";
 
 const LayoutProductContainer = () => {
     const currentProducts = useReactiveVar(currentProductsVar);
+    const filteredProducts = useReactiveVar(filteredProductsVar);
+
+    const products = filteredProducts?.length ? filteredProducts : currentProducts;
 
     return (
         <>
@@ -14,7 +17,7 @@ const LayoutProductContainer = () => {
             <FiltersContainer/>
             <ProductsGrid>
                 {
-                    currentProducts.map(product => {
+                    products.map(product => {
                         return <LayoutProduct
                             key={product?.id}
                             image={product?.presentationImage}
