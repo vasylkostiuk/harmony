@@ -1,14 +1,23 @@
-.container {
-    position: relative;
+@media screen and (min-width: 1px) {
+    .container {
+        position: relative;
+    }
+
+    .dropdown__container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 170px;
+        padding: 0;
+        cursor: pointer;
+    }
 }
 
-.dropdown__container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    width: 170px;
-    padding: 0;
-    cursor: pointer;
+@media screen and (min-width: 767px) {
+    .dropdown__container {
+        right: 0;
+    }
 }
+
