@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["media.graphassets.com"],
-    loader: "custom"
+    domains: ["media.graphassets.com"]
   }
 }
 

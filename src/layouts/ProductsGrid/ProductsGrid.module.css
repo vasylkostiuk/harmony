@@ -35,5 +35,6 @@
 @media (min-width: 1023px) {
     .grid {
         grid-row-gap: 60px;
+        grid-column-gap: 20px;
     }
 }

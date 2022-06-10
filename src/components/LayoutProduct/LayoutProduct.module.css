@@ -2,13 +2,13 @@
     position: relative;
 }
 
-.info__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 @media screen and (min-width: 1px) {
+    .info__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .title__container {
         display: flex;
         align-items: center;
@@ -87,5 +87,11 @@
 @media screen and (min-width: 1023px) {
     .price__current {
         margin-left: 15px;
+    }
+    .info__container {
+        margin-top: 13px;
+    }
+    .description {
+        width: 60%;
     }
 }

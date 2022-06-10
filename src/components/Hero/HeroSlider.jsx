@@ -10,25 +10,10 @@ const HeroSlider = ({heroBlocks, video}) => {
         <div className='hero'>
             <Swiper
                 slidesPerView={1}
-                direction={"vertical"}
                 effect={"fade"}
                 navigation
                 pagination={{
                     clickable: true
-                }}
-                breakpoints={{
-                    1: {
-                        direction: "horizontal",
-                    },
-                    321: {
-                        direction: "horizontal",
-                    },
-                    769: {
-                        direction: "horizontal",
-                    },
-                    1025: {
-                        direction: "vertical"
-                    },
                 }}
                 modules={[Pagination,EffectFade]}
                 className="swiper"

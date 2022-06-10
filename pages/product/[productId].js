@@ -11,7 +11,6 @@ const ProductId = (product) => {
             count:  product.product?.visionCount + 1
         }
     });
-    console.log(product.product?.visionCount);
 
     useEffect(() => {
         increaseCount();

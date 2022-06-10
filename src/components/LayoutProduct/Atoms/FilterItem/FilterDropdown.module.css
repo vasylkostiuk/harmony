@@ -10,7 +10,8 @@
     list-style: none;
 }
 
-.current {
+.current,
+.item:hover {
     background-color: #000;
     color: #fff;
 }

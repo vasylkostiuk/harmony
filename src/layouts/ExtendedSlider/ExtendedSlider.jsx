@@ -37,7 +37,7 @@ const ExtendedSlider = ({images}) => {
                     return <SwiperSlide key={idx}>
                         <Image
                             src={image}
-                            width={235}
+                            width={301}
                             height={200}
                             placeholder='blur'
                             blurDataURL={image}

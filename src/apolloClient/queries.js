@@ -55,6 +55,7 @@ export const GET_PRODUCTS = gql(`
         category
         id
         visionCount
+        shortDescription
         presentationImage {
           id
           width
@@ -64,7 +65,6 @@ export const GET_PRODUCTS = gql(`
         info {
           id
           title
-          description
         }
         price {
           id

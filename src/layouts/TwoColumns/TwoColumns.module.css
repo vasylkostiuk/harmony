@@ -8,9 +8,15 @@
     }
 }
 
-@media (min-width: 321px) {
+@media (min-width: 767px) {
     .container {
         grid-column-gap: 20px;
+    }
+}
+
+@media (min-width: 1023px) {
+    .container {
+        grid-template-columns: repeat(2, 194px);
     }
 }
 

@@ -13,7 +13,7 @@ const ProductInfo = ({title, badgeText, description, parameters}) => {
             <div className={styles.image}>
                 <ProductImage/>
             </div>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}></p>
             <ProductParameters
                 area={parameters?.area}
                 diameter={parameters?.diameter}

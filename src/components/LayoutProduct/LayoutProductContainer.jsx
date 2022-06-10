@@ -23,7 +23,7 @@ const LayoutProductContainer = () => {
                             image={product?.presentationImage}
                             badge={product?.badge}
                             title={product?.info?.title}
-                            description={product?.info?.description}
+                            description={product?.shortDescription}
                             previousPrice={product?.price?.previousPrice}
                             currentPrice={product?.price?.currentPrice}
                             productId={product?.id}
