@@ -10,6 +10,14 @@
     z-index: 10;
 }
 
-.inner {
-    margin: auto;
-}
+/*@media screen and (min-width: 1px) {*/
+/*    .inner {*/
+/*        margin: 173px 0 0 0;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 767px) {*/
+/*    .inner {*/
+/*        margin: 135px 35px;*/
+/*    }*/
+/*}*/

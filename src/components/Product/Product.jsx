@@ -69,7 +69,7 @@ const Product = (product) => {
              </Sticky>
               <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
               {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
-              {/*<Modal innerWidth={'900px'} innerHeight={'700px'}>*/}
+              {/*<Modal>*/}
               {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
               {/*</Modal>*/}
               {

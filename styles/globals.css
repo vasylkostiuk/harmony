@@ -107,7 +107,6 @@ h1,h2,h3,h4,h5,h6,p {
   }
   .centered .swiper {
     width: 100%;
-    height: 220px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -122,6 +121,19 @@ h1,h2,h3,h4,h5,h6,p {
     height: 100%;
     display: block;
     padding: 90px 0 140px 0;
+  }
+
+  .centered {
+    height: 60vh;
+  }
+
+  .centered .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .centered div:first-child {
+    height: 50vh;
   }
 
   .extended .swiper-slide {
@@ -171,8 +183,9 @@ h1,h2,h3,h4,h5,h6,p {
     background-color: #000 !important;
   }
 
-  .centered .swiper {
-    height: 480px;
+  .centered .swiper img {
+    width: 100%;
+    height: 100%;
   }
 
   .centered .mySwiper {
@@ -217,9 +230,6 @@ h1,h2,h3,h4,h5,h6,p {
 
   .extended .swiper-pagination {
     bottom: 130px !important;
-  }
-  .centered .swiper {
-    height: 570px;
   }
 }
 
