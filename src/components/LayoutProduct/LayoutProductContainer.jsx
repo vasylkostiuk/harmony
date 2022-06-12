@@ -1,13 +1,20 @@
 import styles from './LayoutProductContainer.module.css';
-import {currentProductsVar, filteredProductsVar} from "../../apolloClient/reactiveVariables/products";
+import {
+    currentProductsVar,
+    filteredProductsVar,
+    paginationStepVar
+} from "../../apolloClient/reactiveVariables/products";
 import {useReactiveVar} from "@apollo/client";
 import LayoutProduct from "./LayoutProduct";
 import ProductsGrid from "../../layouts/ProductsGrid/ProductsGrid";
 import FiltersContainer from "./Molecules/FiltersContainer/FiltersContainer";
+import LoadMoreBtn from "./Atoms/LoadMoreBtn/LoadMoreBtn";
+import {paginateProducts, paginationCalculate} from "../../services/pagination";
 
 const LayoutProductContainer = () => {
     const currentProducts = useReactiveVar(currentProductsVar);
     const filteredProducts = useReactiveVar(filteredProductsVar);
+    const paginationStep = useReactiveVar(paginationStepVar);
 
     const products = filteredProducts?.length ? filteredProducts : currentProducts;
 
@@ -17,7 +24,7 @@ const LayoutProductContainer = () => {
             <FiltersContainer/>
             <ProductsGrid>
                 {
-                    products.map(product => {
+                    paginateProducts(products, paginationStep).map(product => {
                         return <LayoutProduct
                             key={product?.id}
                             image={product?.presentationImage}
@@ -31,6 +38,11 @@ const LayoutProductContainer = () => {
                     })
                 }
             </ProductsGrid>
+            {
+                !paginationCalculate(products?.length, paginationStep) &&
+                <LoadMoreBtn paginationStep={paginationStep}/>
+            }
+
         </>
     );
 }

@@ -1,0 +1,37 @@
+@media screen and (min-width: 1px){
+    .button {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        border: 1px solid #18181B;
+        letter-spacing: 0.02em;
+        color: #000000;
+        padding: 12px 64px;
+        margin: 60px auto 75px auto;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .container {
+        display: grid;
+        place-items: center;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .button {
+        margin: 50px auto 95px auto;
+    }
+}
+
+@media screen and (min-width: 1023px){
+    .button {
+        margin: 40px auto 105px auto;
+    }
+}
+
+@media screen and (min-width: 1281px){
+    .button {
+        margin: 70px auto 135px auto;
+    }
+}

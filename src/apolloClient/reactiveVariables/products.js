@@ -13,4 +13,6 @@ export const currentFilterVar = makeVar(
         showDropdown: false,
         currentFilter: 'New products'
     }
-)
+);
+
+export const paginationStepVar = makeVar(1);
