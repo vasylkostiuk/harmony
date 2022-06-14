@@ -1,0 +1,32 @@
+@media screen and (min-width: 1px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .title__container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .title {
+        font-size: 18px;
+    }
+    .title__container {
+        margin-bottom: 13px;
+    }
+}
+

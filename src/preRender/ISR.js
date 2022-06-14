@@ -18,7 +18,10 @@ export const GetStaticMainPage = async function () {
 
 export const GetStaticProducts = async function () {
     const {data} = await client.query({
-        query: GET_PRODUCTS
+        query: GET_PRODUCTS,
+        variables: {
+            quantity: 500
+        }
     });
 
     return {
@@ -49,7 +52,10 @@ export const GetStaticProduct = async function (context) {
 
 export const GetStaticProductsPath = async function () {
     const {data} = await client.query({
-        query: GET_PRODUCTS
+        query: GET_PRODUCTS,
+        variables: {
+            quantity: 500
+        }
     });
 
     const paths = data?.products.map((p) => ({

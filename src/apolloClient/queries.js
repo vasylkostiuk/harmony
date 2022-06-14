@@ -48,8 +48,8 @@ export const GET_MAIN_PAGE = gql(`
 `);
 
 export const GET_PRODUCTS = gql(`
-    query Products {
-      products {
+    query Products ($quantity: Int) {
+      products (orderBy: publishedAt_DESC, first: $quantity) {
         id
         badge
         category

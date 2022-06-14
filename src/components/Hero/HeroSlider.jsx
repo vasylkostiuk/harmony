@@ -11,6 +11,7 @@ const HeroSlider = ({heroBlocks, video}) => {
             <Swiper
                 slidesPerView={1}
                 effect={"fade"}
+                speed={750}
                 navigation
                 pagination={{
                     clickable: true

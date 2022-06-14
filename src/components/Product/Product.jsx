@@ -6,6 +6,7 @@ import ProductLayout from "./Molecules/ProductLayout";
 import {currentProductsVar} from "../../apolloClient/reactiveVariables/currentProduct";
 import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 import FakeRenderer from "../FakeRenderer/FakeRenderer";
+import OtherProducts from "../OtherProducts/OtherProducts";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -45,6 +46,7 @@ const Product = (product) => {
                   extraFeatures={currentProduct?.extraFeatures}
                   previousPrice={price?.previousPrice}
               />
+              <OtherProducts/>
           </div>
           <div className={styles.desktop}>
              <Sticky>
@@ -68,6 +70,7 @@ const Product = (product) => {
                  </div>
              </Sticky>
               <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
+              <OtherProducts/>
               {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
               {/*<Modal>*/}
               {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
