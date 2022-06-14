@@ -20,6 +20,7 @@
         font-size: 28px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
+        text-align: left;
         margin: 7px 0;
         white-space: nowrap;
     }
@@ -28,6 +29,7 @@
         font-size: 16px;
         line-height: 130%;
         margin-bottom: 44px;
+        text-align: left;
     }
     .hero {
         display: none;
@@ -47,7 +49,7 @@
     }
 }
 
-@media screen and (min-width: 321px) {
+@media screen and (min-width: 767px) {
     .link {
         font-size: 22px;
     }
@@ -58,9 +60,6 @@
     .description {
         font-size: 18px;
     }
-}
-
-@media screen and (min-width: 767px) {
     .ctaContainer {
         width: 394px;
     }
@@ -68,14 +67,17 @@
         height: 371px;
     }
     .description {
-        margin-bottom: 0;
+        margin-bottom: 50px;
     }
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1281px) {
     .ctaContainer {
         width: 326px;
-        margin-top: 15%;
+        padding-top: 15%;
+    }
+    .description {
+        margin-bottom: 0;
     }
     .linkContainer {
         justify-content: flex-end;
@@ -99,6 +101,6 @@
 
 @media screen and (min-width: 1921px) {
     .ctaContainer {
-        margin-top: 25%;
+        padding-top: 25%;
     }
 }

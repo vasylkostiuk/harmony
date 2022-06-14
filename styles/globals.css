@@ -24,14 +24,26 @@ h1,h2,h3,h4,h5,h6,p {
     padding: 0 20px;
     margin: 0 auto;
   }
-
-  .hero .swiper-pagination-bullet {
-    width: 6px !important;
-    height: 6px !important;
+  .hero .carousel-slider {
+    padding-bottom: 35px !important;
+  }
+  .hero .control-dots {
+    bottom: -15px !important;
+  }
+  .hero .dot {
+    width: 10px !important;
+    height: 10px !important;
     border: 2px solid #000;
     background: transparent !important;
     opacity: 1 !important;
-    margin-right: 16px !important;
+    margin-right: 13px !important;
+    box-shadow: none !important;
+  }
+  .hero .dot:last-of-type {
+    margin-right: 0 !important;
+  }
+  .hero .dot.selected{
+    background-color: #000 !important;
   }
 }
 
@@ -47,9 +59,12 @@ h1,h2,h3,h4,h5,h6,p {
     padding: 0 35px;
     margin: 0 auto;
   }
-  .hero .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
+  .hero .carousel-slider {
+    padding-bottom: 70px !important;
+  }
+  .hero .dot {
+    width: 14px !important;
+    height: 14px !important;
     margin-right: 32px !important;
   }
 }
@@ -59,10 +74,9 @@ h1,h2,h3,h4,h5,h6,p {
     padding: 0 16%;
     margin: 0 auto;
   }
-
-  .hero .swiper {
-    width: 100vw;
-    height: 100vh;
+  .hero .dot {
+    width: 16px !important;
+    height: 16px !important;
   }
 }
 
@@ -72,33 +86,13 @@ h1,h2,h3,h4,h5,h6,p {
     margin: 0 auto;
     width: 1264px;
   }
-}
 
-.hero .swiper-slide {
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.hero .swiper-pagination {
-  bottom: 50px !important;
-}
-
-.hero .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #000 !important;
+  .hero .control-dots {
+    bottom: 50px !important;
+  }
+  .hero .carousel-slider {
+    padding-bottom: 0 !important;
+  }
 }
 
 @media screen and (min-width: 1px) {
@@ -308,11 +302,4 @@ h1,h2,h3,h4,h5,h6,p {
 
 .centered .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
-}
-
-.hero .swiper-slide {
-  opacity: 0 !important;
-}
-.hero .swiper-slide-active {
-  opacity: 1 !important;
 }

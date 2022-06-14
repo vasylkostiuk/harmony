@@ -1,30 +1,23 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {Pagination, EffectFade} from "swiper";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import "swiper/css/effect-fade";
 import Hero from "./Hero";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {Carousel} from "react-responsive-carousel";
 
 const HeroSlider = ({heroBlocks, video}) => {
     return (
-        <div className='hero'>
-            <Swiper
-                slidesPerView={1}
-                effect={"fade"}
-                speed={750}
-                navigation
-                pagination={{
-                    clickable: true
-                }}
-                modules={[Pagination,EffectFade]}
-                className="swiper"
+        <div className="hero">
+            <Carousel
+                showThumbs={false}
+                showStatus={false}
+                autoPlay={true}
+                infiniteLoop={true}
+                interval={3000}
+                transitionTime={750}
+                showArrows={false}
             >
                 {heroBlocks.map(el => {
-                    return <SwiperSlide key={el.id}>
-                        <Hero {...el}/>
-                    </SwiperSlide>
+                    return <Hero {...el} key={el?.id}/>
                 })}
-            </Swiper>
+            </Carousel>
         </div>
     );
 }
