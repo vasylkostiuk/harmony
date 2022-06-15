@@ -7,6 +7,7 @@ import {currentProductsVar} from "../../apolloClient/reactiveVariables/currentPr
 import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 import FakeRenderer from "../FakeRenderer/FakeRenderer";
 import OtherProducts from "../OtherProducts/OtherProducts";
+import InProductTitle from "../OtherProducts/atoms/InProductTitle/InProductTitle";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -46,7 +47,9 @@ const Product = (product) => {
                   extraFeatures={currentProduct?.extraFeatures}
                   previousPrice={price?.previousPrice}
               />
-              <OtherProducts/>
+              <OtherProducts>
+                  <InProductTitle/>
+              </OtherProducts>
           </div>
           <div className={styles.desktop}>
              <Sticky>
@@ -70,7 +73,9 @@ const Product = (product) => {
                  </div>
              </Sticky>
               <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
-              <OtherProducts/>
+              <OtherProducts>
+                  <InProductTitle/>
+              </OtherProducts>
               {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
               {/*<Modal>*/}
               {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}

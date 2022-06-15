@@ -1,16 +1,23 @@
-import styles from './OtherProducts.module.css';
 import {useQuery} from "@apollo/client";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import {GET_PRODUCTS} from "../../apolloClient/queries";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper";
 import SliderProduct from "./SliderProduct/SliderProduct";
 
-const OtherProducts = () => {
-    const {data} = useQuery(GET_PRODUCTS, {variables: {quantity: 5}});
+const OtherProducts = ({children}) => {
+    const {data, loading} = useQuery(GET_PRODUCTS, {
+        variables: {
+            quantity: 5
+        },
+        fetchPolicy: "no-cache"
+    });
 
     return (
         <div className='products'>
-            <h3 className={styles.title}>Other products</h3>
+            {children}
             <Swiper
                 slidesPerView={3}
                 direction={"horizontal"}
@@ -36,7 +43,7 @@ const OtherProducts = () => {
                 className='swiper'
             >
                 {
-                    data?.products && data?.products?.length && data?.products?.map(product => {
+                    !loading && data?.products && data?.products?.length && data?.products?.map(product => {
                         return <SwiperSlide key={product?.id}>
                             <SliderProduct
                                 title={product?.info?.title}
