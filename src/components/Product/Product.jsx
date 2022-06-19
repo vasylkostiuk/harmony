@@ -8,6 +8,7 @@ import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 import FakeRenderer from "../FakeRenderer/FakeRenderer";
 import OtherProducts from "../OtherProducts/OtherProducts";
 import InProductTitle from "../OtherProducts/atoms/InProductTitle/InProductTitle";
+import {useEffect, useState} from "react";
 
 const Product = (product) => {
   const currentProduct = product.product.product;
@@ -18,76 +19,91 @@ const Product = (product) => {
       parameters,
       price,
       colors,
-      imageGallery
+      imageGallery,
+      category,
+      internalColor
   } = currentProduct;
 
-    currentProductsVar({
-        ...currentProductsVar(),
-        url: image?.url,
-        width: image?.width,
-        height: image?.height,
-        initialPrice: price?.currentPrice,
-        price: price?.currentPrice,
-        currentColor: colors?.length ? colors[0]?.title : undefined
-    });
+  const [deligated, setDeligated] = useState(false);
 
 
-  return (
-      <>
-          <div className={styles.mobile}>
-              <ProductLayout
-                  productTitle={info?.title}
-                  productDescription={info?.description}
-                  badgeText={badge}
-                  productParameters={parameters}
-                  imgSrc={image?.url}
-                  width={image?.width}
-                  height={image?.height}
-                  colors={currentProduct?.colors}
-                  extraFeatures={currentProduct?.extraFeatures}
-                  previousPrice={price?.previousPrice}
-              />
-              <OtherProducts>
-                  <InProductTitle/>
-              </OtherProducts>
-          </div>
-          <div className={styles.desktop}>
-             <Sticky>
-                 <div>
-                     <ProductLayout
-                         productTitle={info?.title}
-                         productDescription={info?.description}
-                         badgeText={badge}
-                         productParameters={parameters}
-                         imgSrc={image?.url}
-                         width={image?.width}
-                         height={image?.height}
-                         colors={currentProduct?.colors}
-                         extraFeatures={currentProduct?.extraFeatures}
-                         previousPrice={price?.previousPrice}
-                     />
-                 </div>
-                 <div>
-                     <ProductImage/>
-                     <ProductCta previousPrice={price?.previousPrice}/>
-                 </div>
-             </Sticky>
-              <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
-              <OtherProducts>
-                  <InProductTitle/>
-              </OtherProducts>
-              {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
-              {/*<Modal>*/}
-              {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
-              {/*</Modal>*/}
-              {
-                  colors.map(color => {
-                      return <FakeRenderer url={color?.image?.url} key={color?.id}/>
-                  })
-              }
-          </div>
-      </>
-  );
+    useEffect(() => {
+        currentProductsVar({
+            ...currentProductsVar(),
+            url: image?.url,
+            width: image?.width,
+            height: image?.height,
+            initialPrice: price?.currentPrice,
+            price: price?.currentPrice,
+            currentColor: colors?.length ? colors[0]?.title : undefined
+        });
+        setDeligated(true);
+    }, [currentProduct?.id]);
+
+    const result = <>
+        <div className={styles.mobile}>
+            <ProductLayout
+                productTitle={info?.title}
+                productDescription={info?.description}
+                badgeText={badge}
+                productParameters={parameters}
+                imgSrc={image?.url}
+                width={image?.width}
+                height={image?.height}
+                colors={currentProduct?.colors}
+                extraFeatures={currentProduct?.extraFeatures}
+                previousPrice={price?.previousPrice}
+                category={category}
+                internalColors={internalColor}
+            />
+            <OtherProducts>
+                <InProductTitle/>
+            </OtherProducts>
+        </div>
+        <div className={styles.desktop}>
+            <Sticky>
+                <div>
+                    <ProductLayout
+                        productTitle={info?.title}
+                        productDescription={info?.description}
+                        badgeText={badge}
+                        productParameters={parameters}
+                        imgSrc={image?.url}
+                        width={image?.width}
+                        height={image?.height}
+                        colors={currentProduct?.colors}
+                        extraFeatures={currentProduct?.extraFeatures}
+                        previousPrice={price?.previousPrice}
+                        category={category}
+                        internalColors={internalColor}
+                    />
+                </div>
+                <div>
+                    <ProductImage/>
+                    <ProductCta previousPrice={price?.previousPrice}/>
+                </div>
+            </Sticky>
+            <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
+            <OtherProducts>
+                <InProductTitle/>
+            </OtherProducts>
+            {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
+            {/*<Modal>*/}
+            {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
+            {/*</Modal>*/}
+            {
+                colors.map(color => {
+                    return <FakeRenderer url={color?.image?.url} key={color?.id}/>
+                })
+            }
+        </div>
+    </>
+
+    return (
+        <>
+            {deligated ? result : <></>}
+        </>
+    );
 }
 
 export default Product;

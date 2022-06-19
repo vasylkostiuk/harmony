@@ -3,11 +3,11 @@ import {useReactiveVar} from "@apollo/client";
 import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 
 const ProductCta = ({previousPrice}) => {
-    const {calculatePrice, price} = useReactiveVar(currentProductsVar);
+    const {calculatePrice, price, internalColorPrice} = useReactiveVar(currentProductsVar);
     return (
         <div className={styles.container}>
             <div className={styles.price__container}>
-                <p className={styles.price__current}>$ {calculatePrice + price}</p>
+                <p className={styles.price__current}>$ {calculatePrice + price + internalColorPrice}</p>
                 {
                     previousPrice &&
                     <p className={styles.price__previous}>$ {previousPrice}</p>

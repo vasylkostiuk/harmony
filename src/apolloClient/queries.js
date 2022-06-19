@@ -124,6 +124,7 @@ export const GET_PRODUCT = gql(`
           id
           title
           price
+          isEnableInsideColor
           svgImage {
             id
             width
@@ -132,15 +133,23 @@ export const GET_PRODUCT = gql(`
             url
           }
         }
-      imageGallery {
+        internalColor {
           id
-          galleryImage(first: 500) {
-            id
-            width
-            height
-            url
+          title
+          color {
+            hex
           }
-      }
+          price
+        }
+        imageGallery {
+              id
+              galleryImage(first: 500) {
+                id
+                width
+                height
+                url
+              }
+        }
     }
   }
 `);

@@ -7,7 +7,10 @@ const initialCurrentProduct = {
     initialPrice: 0,
     price: 0,
     calculatePrice: 0,
-    currentColor: ''
+    internalColorPrice: 0,
+    currentColor: '',
+    currentInternalColor: '',
+    enableInsideColorArr: []
 }
 
 export const currentProductsVar = makeVar({

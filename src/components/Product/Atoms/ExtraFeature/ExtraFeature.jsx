@@ -1,14 +1,16 @@
 import styles from "../ColorItem/ColorItem.module.css";
 import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
 import {useState} from "react";
+import React from "react";
 
-const ExtraFeature = ({name, img, featurePrice}) => {
+const ExtraFeature = ({name, img, featurePrice, isEnableInsideColor, featureId}) => {
     const [captured, setCaptured] = useState(false);
 
     const chooseFeature = () => {
         currentProductsVar({
             ...currentProductsVar(),
             calculatePrice: captured ? (currentProductsVar().calculatePrice - featurePrice) : (currentProductsVar().calculatePrice + featurePrice),
+            enableInsideColorArr: !captured ? [...currentProductsVar().enableInsideColorArr, {id: featureId, enableColors: isEnableInsideColor}] : [...currentProductsVar().enableInsideColorArr.filter(item => item?.id !== featureId)]
         });
         setCaptured(!captured);
     }
@@ -26,4 +28,4 @@ const ExtraFeature = ({name, img, featurePrice}) => {
     );
 }
 
-export default ExtraFeature;
+export default React.memo(ExtraFeature);

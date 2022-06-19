@@ -5,6 +5,7 @@ import ColorItem from "../Atoms/ColorItem/ColorItem";
 import ExtraFeature from "../Atoms/ExtraFeature/ExtraFeature";
 import BottomWidget from "../../../layouts/BottomWidget/BottomWidget";
 import ProductCta from "../Atoms/ProductCta/ProductCta";
+import InsideColor from "../Atoms/InsideColor/InsideColor";
 
 const ProductLayout = ({
                            productTitle,
@@ -16,7 +17,9 @@ const ProductLayout = ({
                            extraFeatures,
                            width,
                            height,
-                           previousPrice
+                           previousPrice,
+                           category,
+                           internalColors
 }) => {
     const colorsArr = colors?.map((color) => {
         return <ColorItem
@@ -35,7 +38,18 @@ const ProductLayout = ({
             img={feature?.svgImage?.url}
             name={feature?.title}
             featurePrice={feature?.price}
+            isEnableInsideColor={feature?.isEnableInsideColor}
+            featureId={feature?.id}
             key={feature?.id}
+        />
+    });
+
+    const insideColorsArr = internalColors?.map(color => {
+        return <InsideColor
+            key={color?.id}
+            color={color?.color?.hex}
+            colorName={color?.title}
+            price={color?.price}
         />
     });
 
@@ -65,6 +79,15 @@ const ProductLayout = ({
                     <h3 className={styles.extra__title}>Extra features:</h3>
                     <TwoColumns>
                         {extraFeaturesArr}
+                    </TwoColumns>
+                </>
+            }
+            {
+                insideColorsArr?.length && category === "Geodome" &&
+                <>
+                    <h3 className={styles.extra__title}>Internal color:</h3>
+                    <TwoColumns>
+                        {insideColorsArr}
                     </TwoColumns>
                 </>
             }
