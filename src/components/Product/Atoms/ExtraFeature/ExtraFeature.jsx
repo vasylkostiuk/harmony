@@ -10,7 +10,8 @@ const ExtraFeature = ({name, img, featurePrice, isEnableInsideColor, featureId})
         currentProductsVar({
             ...currentProductsVar(),
             calculatePrice: captured ? (currentProductsVar().calculatePrice - featurePrice) : (currentProductsVar().calculatePrice + featurePrice),
-            enableInsideColorArr: !captured ? [...currentProductsVar().enableInsideColorArr, {id: featureId, enableColors: isEnableInsideColor}] : [...currentProductsVar().enableInsideColorArr.filter(item => item?.id !== featureId)]
+            enableInsideColorArr: !captured ? [...currentProductsVar().enableInsideColorArr, {id: featureId, enableColors: isEnableInsideColor}] : [...currentProductsVar().enableInsideColorArr.filter(item => item?.id !== featureId)],
+            currentFeatures: !captured ? [...currentProductsVar().currentFeatures, name] : [...currentProductsVar().currentFeatures.filter(item => item !== name)]
         });
         setCaptured(!captured);
     }

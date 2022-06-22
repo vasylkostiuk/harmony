@@ -9,6 +9,7 @@ const initialCurrentProduct = {
     calculatePrice: 0,
     internalColorPrice: 0,
     currentColor: '',
+    currentFeatures: [],
     currentInternalColor: '',
     enableInsideColorArr: []
 }

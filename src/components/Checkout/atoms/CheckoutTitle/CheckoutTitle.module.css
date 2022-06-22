@@ -1,0 +1,16 @@
+@media screen and (min-width: 1px) {
+    .title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .title {
+        font-size: 22px;
+        font-weight: 700;
+    }
+}

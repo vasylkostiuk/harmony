@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width: 1px) {
+    .counter {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #18181B;
+        margin: 0 10px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .counter {
+        font-size: 18px;
+        margin: 0 18px;
+    }
+}

@@ -1,9 +1,46 @@
 import styles from './ProductCta.module.css';
-import {useReactiveVar} from "@apollo/client";
+import {useQuery, useReactiveVar} from "@apollo/client";
 import {currentProductsVar} from "../../../../apolloClient/reactiveVariables/currentProduct";
+import {GET_PRODUCT} from "../../../../apolloClient/queries";
+import {useRouter} from "next/router";
+import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/checkout";
+import {featuresIntersection} from "../../../../services/intersection";
 
 const ProductCta = ({previousPrice}) => {
-    const {calculatePrice, price, internalColorPrice} = useReactiveVar(currentProductsVar);
+    const {
+        calculatePrice,
+        price,
+        internalColorPrice,
+        currentColor,
+        currentFeatures,
+        currentInternalColor
+    } = useReactiveVar(currentProductsVar);
+    const {query} = useRouter();
+    const checkout = useReactiveVar(checkoutProducts);
+
+    const {data} = useQuery(GET_PRODUCT, {
+        variables: {
+            id: query?.productId
+        }
+    })
+
+    function addToCart(product) {
+        checkoutProducts([
+            ...checkoutProducts(),
+            {
+                product: {
+                    ...product,
+                    colors: product?.colors?.filter(c => c.title === currentColor),
+                    extraFeatures: featuresIntersection(product?.extraFeatures, currentFeatures),
+                    internalColor: product?.internalColor.filter(c => c.title === currentInternalColor)
+                },
+                quantity: 1
+            }
+        ]);
+    }
+
+    console.log(checkout)
+
     return (
         <div className={styles.container}>
             <div className={styles.price__container}>
@@ -14,7 +51,7 @@ const ProductCta = ({previousPrice}) => {
                 }
             </div>
             <div className={styles.cta__container}>
-                <button className={styles.cta__button}>
+                <button className={styles.cta__button} onClick={() => addToCart(data?.product)}>
                     <p className={styles.cta__button_text}>Add to cart</p>
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.5 2L3.5 6V20C3.5 20.5304 3.71071 21.0391 4.08579 21.4142C4.46086 21.7893 4.96957 22 5.5 22H19.5C20.0304 22 20.5391 21.7893 20.9142 21.4142C21.2893 21.0391 21.5 20.5304 21.5 20V6L18.5 2H6.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
