@@ -6,6 +6,7 @@
         grid-template-columns: 24px calc(100% - 24px);
         cursor: pointer;
         transition: border .3s ease;
+        height: 100%;
     }
 
     .item {

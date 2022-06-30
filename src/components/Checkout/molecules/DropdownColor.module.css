@@ -1,0 +1,60 @@
+@media screen and (min-width: 1px) {
+    .dropdown {
+        position: absolute;
+        top: 35px;
+        padding: 20px;
+        background-color: #fff;
+        z-index: 1;
+        box-shadow: 0 5px 48px rgba(0, 0, 0, 0.08);
+    }
+    .dropdown__grid {
+        display: grid;
+        grid-gap: 12px;
+        grid-template-columns: repeat(2, 125px);
+    }
+    .dropdown__left {
+        left: 0;
+    }
+    .dropdown__right {
+        left: -85%;
+    }
+    .title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #000000;
+        margin-bottom: 18px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .dropdown {
+        top: 25px;
+    }
+    .dropdown__grid {
+        grid-template-columns: repeat(2, 185px);
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .dropdown {
+        top: 35px;
+    }
+    .dropdown__right {
+        left: auto;
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 1181px) {
+    .dropdown {
+        top: 25px;
+    }
+    .dropdown__grid {
+        grid-template-columns: repeat(3, 185px);
+    }
+    .dropdown__right {
+        right: auto;
+        left: 0;
+    }
+}

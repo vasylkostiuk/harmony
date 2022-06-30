@@ -10,6 +10,7 @@
         letter-spacing: 0.02em;
         color: #000;
         margin-right: 15px;
+        white-space: nowrap;
     }
     .previous {
         font-weight: 300;
@@ -17,18 +18,16 @@
         line-height: 130%;
         text-decoration-line: line-through;
         color: #A1A1AA;
+        white-space: nowrap;
     }
 }
 
 @media screen and (min-width: 767px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
     .current {
         font-size: 22px;
         margin-right: 0;
+        margin-left: 10px;
+        order: 1;
     }
     .previous {
         font-size: 16px;

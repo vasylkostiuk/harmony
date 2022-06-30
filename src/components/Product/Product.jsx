@@ -34,8 +34,13 @@ const Product = (product) => {
             width: image?.width,
             height: image?.height,
             initialPrice: price?.currentPrice,
+            calculatePrice: 0,
+            internalColorPrice: 0,
+            currentInternalColor: '',
             price: price?.currentPrice,
-            currentColor: colors?.length ? colors[0]?.title : undefined
+            currentColor: colors?.length ? colors[0]?.title : undefined,
+            enableInsideColorArr: [],
+            currentFeatures: []
         });
         setDeligated(true);
     }, [currentProduct?.id]);

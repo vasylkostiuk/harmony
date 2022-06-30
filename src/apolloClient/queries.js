@@ -89,6 +89,18 @@ export const GET_PRODUCT = gql(`
           height
           url
         }
+        presentationImage {
+          id
+          width
+          height
+          url
+        }
+        checkoutThumbnail {
+          id
+          url
+          width
+          height
+        }
         info {
           id
           title

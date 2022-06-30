@@ -5,6 +5,7 @@
         line-height: 140%;
         letter-spacing: 0.02em;
         color: #000;
+        white-space: nowrap;
     }
 }
 

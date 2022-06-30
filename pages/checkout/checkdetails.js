@@ -2,8 +2,10 @@ import CheckDetails from "../../src/components/Checkout/CheckDetails";
 
 const CheckDetailsPage = () => {
     return (
-        <CheckDetails/>
+        <div className="container">
+            <CheckDetails/>
+        </div>
     );
 }
 
-export default CheckDetails;
+export default CheckDetailsPage;
