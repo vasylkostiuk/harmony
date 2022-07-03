@@ -1,0 +1,45 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 11px 15px;
+    background: #fff;
+    border: 1px solid #D4D4D8;
+    outline: none;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #3F3F46;
+    margin-bottom: 6px;
+}
+
+.dropdown {
+    position: absolute;
+    left: 0;
+    top: 61px;
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #D4D4D8;
+    height: 160px;
+    overflow-y: scroll;
+}
+
+.dropdown__item {
+    width: 100%;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.dropdown__item:hover {
+    background-color: #000;
+    color: #fff;
+}

@@ -4,9 +4,34 @@ import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/check
 import React from 'react';
 import {reduceTotalAmount} from "../../../../services/changeCheckoutObj";
 import BottomWidget from "../../../../layouts/BottomWidget/BottomWidget";
+import Link from "next/link";
 
-const Summary = () => {
+const Summary = ({isFinal = false}) => {
     const checkout = useReactiveVar(checkoutProducts);
+
+    const btnState = (isFinal) => {
+        if (isFinal) {
+            return (
+                <button className={styles.cta__button}>
+                    <p className={styles.cta__button_text}>Buy products</p>
+                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1L5.5 5.16L1.5 9.66667" stroke="white" strokeWidth="1.5"/>
+                    </svg>
+                </button>
+            )
+        }
+
+        return (
+            <Link href={`/checkout/contact`} passHref>
+                <button className={styles.cta__button}>
+                    <p className={styles.cta__button_text}>Buy products</p>
+                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1L5.5 5.16L1.5 9.66667" stroke="white" strokeWidth="1.5"/>
+                    </svg>
+                </button>
+            </Link>
+        )
+    }
 
     return (
         <div className={styles.container}>
@@ -42,12 +67,7 @@ const Summary = () => {
                 <p className={styles.amount__title}>Total amount</p>
                 <p className={styles.amount__summary}>$ {reduceTotalAmount(checkout)}</p>
             </div>
-            <button className={styles.cta__button}>
-                <p className={styles.cta__button_text}>Buy products</p>
-                <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.5 1L5.5 5.16L1.5 9.66667" stroke="white" strokeWidth="1.5"/>
-                </svg>
-            </button>
+            {btnState(isFinal)}
             <div className={styles.cta__financing}>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.055 3.7334H1.53805C0.983984 3.7334 0.533203 4.18418 0.533203 4.73824V11.5179C0.533203 12.0719 0.983984 12.5227 1.53805 12.5227H14.055C14.6091 12.5227 15.0598 12.0719 15.0598 11.5179V4.73824C15.0598 4.18418 14.6091 3.7334 14.055 3.7334ZM14.4348 11.5179C14.4348 11.7273 14.2644 11.8977 14.055 11.8977H1.53805C1.32861 11.8977 1.1582 11.7273 1.1582 11.5179V4.73824C1.1582 4.5288 1.32861 4.3584 1.53805 4.3584H14.055C14.2644 4.3584 14.4348 4.5288 14.4348 4.73824V11.5179Z" fill="#71717A"/>

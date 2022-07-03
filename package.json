@@ -17,6 +17,7 @@
     "react-dom": "17.0.2",
     "react-responsive-carousel": "^3.2.23",
     "react-scrollmagic": "^2.3.0",
+    "react-select-country-list": "^2.2.3",
     "scrollmagic": "^2.0.8",
     "swiper": "^8.1.0"
   },
