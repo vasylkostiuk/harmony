@@ -2,11 +2,38 @@ import {gql} from "@apollo/client";
 
 export const GET_ARTICLES = gql(`
 query GET_ARTICLES {
-  articles {
+  articles (orderBy: publishedAt_DESC) {
     id
-    createdAt
     title
     description
+    presentationImage {
+      id
+      url
+      width
+      height
+    }
+  }
+}`
+);
+
+export const GET_ARTICLE = gql(`
+query GET_ARTICLE ($id: ID!) {
+  article (where: {id: $id}) {
+    id
+    title
+    description
+    type
+    blocks {
+      id
+      title
+      description
+      image {
+        url
+        width
+        height
+        id
+      }
+    }
   }
 }`
 );

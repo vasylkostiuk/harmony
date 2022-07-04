@@ -1,4 +1,4 @@
-import {GET_MAIN_PAGE, GET_PRODUCT, GET_PRODUCTS} from "../apolloClient/queries";
+import {GET_ARTICLE, GET_ARTICLES, GET_MAIN_PAGE, GET_PRODUCT, GET_PRODUCTS} from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
 export const GetStaticMainPage = async function () {
@@ -63,4 +63,49 @@ export const GetStaticProductsPath = async function () {
     }));
 
     return { paths, fallback: 'blocking' }
+}
+
+export const GetStaticArticles = async function() {
+    const {data} = await client.query({
+        query: GET_ARTICLES
+    });
+
+    return {
+        props: {
+            articles: data?.articles
+        },
+        revalidate: 60
+    }
+}
+
+export const GetStaticArticlesPath = async function() {
+    const {data} = await client.query({
+        query: GET_ARTICLES
+    });
+
+    const paths = data?.articles.map(a => ({
+        params: {
+            articleId: a?.id
+        }
+    }))
+
+    return { paths, fallback: "blocking" }
+}
+
+export const GetStaticArticle = async function(context) {
+    const {params} = context;
+
+    const {data} = await client.query({
+        query: GET_ARTICLE,
+        variables: {
+            id: params.articleId
+        }
+    });
+
+    return {
+        props: {
+            article: data?.article
+        },
+        revalidate: 60
+    }
 }
