@@ -7,7 +7,7 @@ import {currentProductsVar} from "../../apolloClient/reactiveVariables/currentPr
 import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
 import FakeRenderer from "../FakeRenderer/FakeRenderer";
 import OtherProducts from "../OtherProducts/OtherProducts";
-import InProductTitle from "../OtherProducts/atoms/InProductTitle/InProductTitle";
+import InProductTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle";
 import {useEffect, useState} from "react";
 
 const Product = (product) => {
@@ -90,7 +90,11 @@ const Product = (product) => {
             </Sticky>
             <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>
             <OtherProducts>
-                <InProductTitle/>
+                <InProductTitle
+                    title={'Other Products'}
+                    linkTitle={'All products'}
+                    link={'product'}
+                />
             </OtherProducts>
             {/*<CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
             {/*<Modal>*/}

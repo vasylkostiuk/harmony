@@ -16,6 +16,22 @@ query GET_ARTICLES {
 }`
 );
 
+export const GET_SLIDER_ARTICLES = gql(`
+query GET_SLIDER_ARTICLES {
+  articles (orderBy: publishedAt_DESC, where: {type_not: Text}) {
+    id
+    title
+    description
+    presentationImage {
+      id
+      url
+      width
+      height
+    }
+  }
+}`
+);
+
 export const GET_ARTICLE = gql(`
 query GET_ARTICLE ($id: ID!) {
   article (where: {id: $id}) {
