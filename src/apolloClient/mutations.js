@@ -11,3 +11,14 @@ export const INCREASE_PRODUCT_COUNT = gql(`
       }
     }
 `);
+
+export const INCREASE_ARTICLE_COUNT = gql(`
+   mutation updateArticle($count: Int, $id: ID!) {
+      updateArticle(data: {visionCount: $count}, where: {id: $id}) {
+        id
+      }
+      publishArticle(where: {id: $id}) {
+        id
+      }
+   }
+`)

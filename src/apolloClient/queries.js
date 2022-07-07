@@ -12,6 +12,35 @@ query GET_ARTICLES {
       width
       height
     }
+    visionCount
+  }
+}`
+);
+
+export const GET_ARTICLES_PAGINATED = gql(`
+query GET_ARTICLES ($endCursor: String) {
+  articlesConnection(first: 2, orderBy: publishedAt_DESC, after: $endCursor) {
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        type
+        title
+        description
+        presentationImage {
+          height
+          id
+          url
+          width
+        }
+        id
+        visionCount
+      }
+    }
   }
 }`
 );
@@ -28,6 +57,7 @@ query GET_SLIDER_ARTICLES {
       width
       height
     }
+    visionCount
   }
 }`
 );
@@ -50,6 +80,7 @@ query GET_ARTICLE ($id: ID!) {
         id
       }
     }
+    visionCount
   }
 }`
 );
