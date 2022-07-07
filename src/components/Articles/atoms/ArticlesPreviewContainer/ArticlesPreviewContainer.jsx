@@ -1,20 +1,20 @@
-import {useReactiveVar} from "@apollo/client";
-import {currentArticleFilter, mostPopularArr} from "../../../../apolloClient/reactiveVariables/articles";
 import ArticlesList from "./ArticlesList";
-import {useEffect} from "react";
+import {useReactiveVar} from "@apollo/client";
+import {currentArticles} from "../../../../apolloClient/reactiveVariables/articles";
 
-const ArticlesPreviewContainer = ({articles}) => {
-    const currentFilter = useReactiveVar(currentArticleFilter);
-    const filteredArticles = useReactiveVar(mostPopularArr);
+const ArticlesPreviewContainer = ({currentFilter}) => {
 
-    useEffect(() => {
-        if (currentFilter === 'Most popular') {
-            mostPopularArr([...articles.sort((a,b) => b?.node?.visionCount - a?.node?.visionCount )]);
+    const articles = useReactiveVar(currentArticles);
+
+    function filterArticles(filter, arr) {
+        if (filter === 'Most popular') {
+            return [...arr].sort((a,b) => b?.visionCount - a?.visionCount );
         }
-    }, [currentFilter, articles])
+        return arr
+    }
 
     return (
-        <ArticlesList articles={currentFilter === 'Most popular' ? filteredArticles : articles}/>
+        <ArticlesList articles={filterArticles(currentFilter, articles)}/>
     );
 }
 

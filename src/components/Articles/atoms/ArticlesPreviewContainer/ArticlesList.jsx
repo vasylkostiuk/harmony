@@ -9,13 +9,13 @@ const ArticlesList = ({articles}) => {
                 ?
                 articles.map(article => {
                     return <ArticlePreview
-                        key={article?.node?.id}
-                        articleId={article?.node?.id}
-                        imageSrc={article?.node?.presentationImage?.url}
-                        width={article?.node?.presentationImage?.width}
-                        height={article?.node?.presentationImage?.height}
-                        description={article?.node?.description}
-                        title={article?.node?.title}
+                        key={article?.id}
+                        articleId={article?.id}
+                        imageSrc={article?.presentationImage?.url}
+                        width={article?.presentationImage?.width}
+                        height={article?.presentationImage?.height}
+                        description={article?.description}
+                        title={article?.title}
                     />
                 })
                 :
