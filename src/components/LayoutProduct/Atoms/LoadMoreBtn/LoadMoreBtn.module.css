@@ -7,10 +7,14 @@
         border: 1px solid #18181B;
         letter-spacing: 0.02em;
         color: #000000;
-        padding: 12px 64px;
+        display: grid;
+        width: 205px;
+        height: 45px;
+        place-items: center;
         margin: 60px auto 75px auto;
         cursor: pointer;
         background-color: #fff;
+        position: relative;
     }
     .container {
         display: grid;

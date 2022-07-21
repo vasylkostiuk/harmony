@@ -13,6 +13,7 @@ const ArticlesQueryContainer = ({cursor, filter}) => {
 
 
     useEffect(() => {
+        setLoading(true)
         client.query({
             query: GET_ARTICLES_PAGINATED,
             variables: {
@@ -43,7 +44,7 @@ const ArticlesQueryContainer = ({cursor, filter}) => {
             }
             {
                 hasNextPage &&
-                <ArticleLoadMore cursor={endCursor}/>
+                <ArticleLoadMore cursor={endCursor} loading={loading}/>
             }
         </>
     );

@@ -2,6 +2,7 @@ import {makeVar} from "@apollo/client";
 
 const initialCurrentProduct = {
     url: '',
+    placeholder: '',
     width: 0,
     height: 0,
     initialPrice: 0,
@@ -11,7 +12,7 @@ const initialCurrentProduct = {
     currentColor: '',
     currentFeatures: [],
     currentInternalColor: '',
-    enableInsideColorArr: []
+    enableInsideColorArr: [],
 }
 
 export const currentProductsVar = makeVar({

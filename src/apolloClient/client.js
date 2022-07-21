@@ -1,7 +1,6 @@
-import {ApolloClient, from, HttpLink} from "@apollo/client";
+import {ApolloClient, from, HttpLink, InMemoryCache} from "@apollo/client";
 import {onError} from "@apollo/client/link/error";
 import Router from "next/router";
-import initCache from "./persistCache";
 
 const httpLink = new HttpLink({
     uri: "https://api-us-east-1.graphcms.com/v2/cl2gfmaf42zy601xmf6kr2bfn/master",
@@ -19,6 +18,6 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 export const client = new ApolloClient({
     link: from([errorLink, httpLink]),
-    cache: initCache(),
+    cache: new InMemoryCache(),
     connectToDevTools: true
 });

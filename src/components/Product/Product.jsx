@@ -21,7 +21,8 @@ const Product = (product) => {
       colors,
       imageGallery,
       category,
-      internalColor
+      internalColor,
+      placeholder
   } = currentProduct;
 
   const [deligated, setDeligated] = useState(false);
@@ -31,6 +32,7 @@ const Product = (product) => {
         currentProductsVar({
             ...currentProductsVar(),
             url: image?.url,
+            placeholder: placeholder?.url,
             width: image?.width,
             height: image?.height,
             initialPrice: price?.currentPrice,
@@ -62,7 +64,11 @@ const Product = (product) => {
                 internalColors={internalColor}
             />
             <OtherProducts>
-                <InProductTitle/>
+                <InProductTitle
+                    title={'Other Products'}
+                    linkTitle={'All products'}
+                    link={'product'}
+                />
             </OtherProducts>
         </div>
         <div className={styles.desktop}>
@@ -100,11 +106,11 @@ const Product = (product) => {
             {/*<Modal>*/}
             {/*    <CenteredSlider images={imageGallery.galleryImage.map(image => image.url)}/>*/}
             {/*</Modal>*/}
-            {
-                colors.map(color => {
-                    return <FakeRenderer url={color?.image?.url} key={color?.id}/>
-                })
-            }
+            {/*{*/}
+            {/*    colors.map(color => {*/}
+            {/*        return <FakeRenderer url={color?.image?.url} key={color?.id}/>*/}
+            {/*    })*/}
+            {/*}*/}
         </div>
     </>
 

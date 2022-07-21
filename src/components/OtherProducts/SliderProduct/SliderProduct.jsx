@@ -20,6 +20,7 @@ const SliderProduct = ({title, imageSrc, width, height, productId}) => {
                     placeholder='blur'
                     blurDataURL={imageSrc}
                     alt='Harmony Domes'
+                    loading="lazy"
                     loader={customLoader}
                 />
             </div>

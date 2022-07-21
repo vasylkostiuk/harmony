@@ -33,8 +33,8 @@ const CheckDetails = () => {
                             {
                                 checkout?.length
                                     ?
-                                    checkout.map((p,idx) => {
-                                        return  <div className={styles.container} key={idx}>
+                                    checkout.map((p) => {
+                                        return  <div className={styles.container} key={p?.product?.uniqueId}>
                                             <div className={styles.image}>
                                                 <CheckoutProductImage
                                                     url={p.product?.checkoutThumbnail?.url}

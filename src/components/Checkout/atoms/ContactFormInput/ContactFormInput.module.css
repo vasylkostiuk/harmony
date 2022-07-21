@@ -8,6 +8,31 @@
     background: #fff;
     border: 1px solid #D4D4D8;
     outline: none;
+    transition: border .3s ease;
+    margin-bottom: 22px;
+}
+
+.input:focus {
+    border-color: #000;
+}
+
+.input.error {
+    border-color: #DB2424;
+    color: #DB2424;
+    margin-bottom: 0;
+}
+
+.error__message {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #DB2424;
+    padding-top: 5px;
+}
+
+.input.error::placeholder {
+    color: #DB2424;
 }
 
 .label {
@@ -28,8 +53,6 @@
     flex-direction: column;
     background-color: #fff;
     border: 1px solid #D4D4D8;
-    height: 160px;
-    overflow-y: scroll;
 }
 
 .dropdown__item {

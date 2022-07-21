@@ -19,10 +19,12 @@ const ProductCta = ({previousPrice}) => {
     } = useReactiveVar(currentProductsVar);
     const {query} = useRouter();
 
+
     const {data} = useQuery(GET_PRODUCT, {
         variables: {
             id: query?.productId
-        }
+        },
+        fetchPolicy: 'no-cache'
     })
 
     function addToCart(product) {

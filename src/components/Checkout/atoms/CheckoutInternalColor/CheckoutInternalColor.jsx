@@ -9,6 +9,7 @@ import {deleteInternalColorPrice} from "../../../../services/changeCheckoutObj";
 
 const CheckoutInternalColor = ({color, text, productId, isEditable, isDisplayed, uniqueId}) => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [colors, setColors] = useState([]);
 
     useEffect(() => {
         if (!isDisplayed) {
@@ -17,13 +18,17 @@ const CheckoutInternalColor = ({color, text, productId, isEditable, isDisplayed,
     }, [isDisplayed]);
 
 
-    const {data} = useQuery(GET_PRODUCT, {
+    const {data, loading} = useQuery(GET_PRODUCT, {
         variables: {
             id: productId
         }
     });
 
-    const {internalColor} = data?.product;
+    useEffect(() => {
+        if (!loading) {
+            setColors([...data?.product?.internalColor])
+        }
+    }, [uniqueId, loading])
 
     return (
         <>
@@ -41,7 +46,7 @@ const CheckoutInternalColor = ({color, text, productId, isEditable, isDisplayed,
                         }
                         {
                             isEditable && showDropdown &&
-                            <DropdownInternal colors={internalColor} currentColor={color} productId={uniqueId}/>
+                            <DropdownInternal colors={colors} currentColor={color} productId={uniqueId}/>
                         }
                     </div>
                 :

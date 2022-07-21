@@ -1,20 +1,25 @@
 import styles from './CheckoutColor.module.css';
 import {configureColor} from "../../../../services/configureColor";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useQuery} from "@apollo/client";
 import {GET_PRODUCT} from "../../../../apolloClient/queries";
 import DropdownColor from "../../molecules/DropdownColor/DropdownColor";
 
 const CheckoutColor = ({color, text, isEditable, productId, initialPrice, uniqueId}) => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [colors, setColors] = useState([])
 
-    const {data} = useQuery(GET_PRODUCT, {
+    const {data, loading} = useQuery(GET_PRODUCT, {
         variables: {
             id: productId
         }
     });
 
-    const {colors} = data?.product;
+    useEffect(() => {
+        if (!loading) {
+            setColors([...data?.product?.colors])
+        }
+    }, [uniqueId, loading])
 
     return (
         <div className={styles.container} onClick={() => setShowDropdown(!showDropdown)}>

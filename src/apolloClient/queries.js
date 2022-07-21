@@ -19,7 +19,7 @@ query GET_ARTICLES {
 
 export const GET_ARTICLES_PAGINATED = gql(`
 query GET_ARTICLES ($endCursor: String) {
-  articlesConnection(first: 2, orderBy: publishedAt_DESC, after: $endCursor) {
+  articlesConnection(first: 5, orderBy: publishedAt_DESC, after: $endCursor) {
     pageInfo {
       endCursor
       startCursor
@@ -226,6 +226,10 @@ export const GET_PRODUCT = gql(`
             hex
           }
           price
+        }
+        placeholder {
+          id
+          url
         }
         imageGallery {
               id

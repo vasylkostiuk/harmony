@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  outline: none;
+}
+
 h1,h2,h3,h4,h5,h6,p {
   margin: 0;
 }
@@ -319,5 +323,41 @@ h1,h2,h3,h4,h5,h6,p {
 @keyframes shine {
   to {
     background-position-x: -200%;
+  }
+}
+
+.loader__svg {
+  fill: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: contain;
+  height: 90%;
+  animation: 1s svgShine linear infinite;
+}
+
+@keyframes svgShine {
+  0% {
+    opacity: .3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .3;
+  }
+}
+
+.loader__circle {
+  border: 3px solid #ffffff;
+  border-right-color: #18181B;
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
   }
 }
