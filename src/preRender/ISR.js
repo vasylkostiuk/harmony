@@ -1,4 +1,11 @@
-import {GET_ARTICLE, GET_ARTICLES, GET_MAIN_PAGE, GET_PRODUCT, GET_PRODUCTS} from "../apolloClient/queries";
+import {
+    GET_ARTICLE,
+    GET_ARTICLES,
+    GET_MAIN_PAGE,
+    GET_PRODUCT,
+    GET_PRODUCTS,
+    GET_SEQUENCE_PAGE
+} from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
 export const GetStaticMainPage = async function () {
@@ -105,6 +112,22 @@ export const GetStaticArticle = async function(context) {
     return {
         props: {
             article: data?.article
+        },
+        revalidate: 60
+    }
+}
+
+export const GetStaticSequencePage = async function() {
+    const {data} = await client.query({
+        query: GET_SEQUENCE_PAGE,
+        variables: {
+            id: "cl5v0twvnkas20ciny2i61g7u"
+        }
+    });
+
+    return {
+        props: {
+            sequenceData: data?.sequencePage
         },
         revalidate: 60
     }

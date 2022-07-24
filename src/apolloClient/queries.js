@@ -243,3 +243,46 @@ export const GET_PRODUCT = gql(`
     }
   }
 `);
+
+export const GET_SEQUENCE_PAGE = gql(`
+  query GetSequencePage($id: ID!) {
+        sequencePage(where: {id: $id}) {
+            id
+            presentationHero {
+              id
+              title
+              linkText
+              image {
+                id
+                width
+                height
+                url
+              }
+              bottomHeader
+            }
+            sequence {
+              id
+              sequence(first: 500) {
+                id
+                width
+                height
+                url
+              }
+            }
+            sequenceColors {
+              id
+              title
+              description
+              image {
+                id
+                width
+                height
+                url
+              }
+              color {
+                hex
+              }
+            }
+      }
+  } 
+`);
