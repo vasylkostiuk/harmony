@@ -14,8 +14,10 @@ const ImageSequence = ({images, progress}) => {
                    backgroundSize: "cover",
                    backgroundPosition: "center",
                    height:'100%',
-                   width: '100%'
+                   width: '100%',
+                   objectFit: 'cover'
                }}
+             alt="Harmony Domes"
         />
     ));
 

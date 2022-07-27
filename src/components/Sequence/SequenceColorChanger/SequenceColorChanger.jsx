@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import styles from './SequenceColorChanger.module.css';
-import Image from "next/image";
 import {useReactiveVar} from "@apollo/client";
 import {sequenceColors} from "../../../apolloClient/reactiveVariables/sequenceColors";
 
@@ -19,7 +18,15 @@ const SequenceColorChanger = ({isDisplayed}) => {
                             return (
                                 <React.Fragment key={c?.id}>
                                     <div style={{display: idx === currentColor ? 'block' : 'none'}}>
-                                        <Image src={c?.image?.url} layout="fill" loading="eager" alt="Harmony Domes"/>
+                                        <img src={c?.image?.url}
+                                             loading="eager"
+                                             style={{
+                                                 objectFit: 'cover',
+                                                 width: '100vw',
+                                                 height: '100vh'
+                                             }}
+                                             alt="Harmony Domes"
+                                        />
                                         <div className={styles.changer__container}>
                                             <p className={styles.title}>{c?.title}</p>
                                             <p className={styles.description}>{c?.description}</p>
