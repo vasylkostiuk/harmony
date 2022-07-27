@@ -13,8 +13,8 @@ const ImageSequence = ({images, progress}) => {
                    display: i !== index ? "none" : "block",
                    backgroundSize: "cover",
                    backgroundPosition: "center",
-                   height:'100%',
-                   width: '100%',
+                   height:'100vh',
+                   width: '100vw',
                    objectFit: 'cover'
                }}
              alt="Harmony Domes"
