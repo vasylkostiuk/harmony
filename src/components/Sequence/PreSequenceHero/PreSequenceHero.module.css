@@ -29,6 +29,9 @@
         color: #18181B;
         margin-right: 15px;
     }
+    .more__svg {
+        animation: bounceArrow .75s infinite;
+    }
     .harmony {
         width: 100%;
         display: grid;
@@ -76,5 +79,23 @@
     .random__header {
         font-size: 48px;
         margin: 80px 0 80px 0;
+    }
+}
+
+@keyframes bounceArrow {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-4px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-4px)
+    }
+    100% {
+        transform: translateY(0);
     }
 }
