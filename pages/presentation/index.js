@@ -1,14 +1,20 @@
 import {GetStaticSequencePage} from "../../src/preRender/ISR";
 import SequenceContainer from "../../src/components/Sequence/SequenceContainer";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {sequenceColors} from "../../src/apolloClient/reactiveVariables/sequenceColors";
 import PreSequenceHero from "../../src/components/Sequence/PreSequenceHero/PreSequenceHero";
 
 const SequencePage = ({sequenceData}) => {
-    console.log(sequenceData);
+    const [actualSequence, setActualSequence] = useState(null);
 
     useEffect(() => {
-        sequenceColors([...sequenceData?.sequenceColors]);
+        if (typeof window !== "undefined" && window.matchMedia("(min-width: 1281px)").matches) {
+            setActualSequence(sequenceData.sequence.sequence);
+            sequenceColors([...sequenceData?.sequenceColors]);
+        } else {
+            setActualSequence(sequenceData.tabletSequence.sequence);
+            sequenceColors([...sequenceData?.tabletSequenceColors]);
+        }
     }, [sequenceData?.id]);
 
     return (
@@ -21,7 +27,13 @@ const SequencePage = ({sequenceData}) => {
                 description={sequenceData?.presentationHero?.linkText}
                 randomHeader={sequenceData?.presentationHero?.bottomHeader}
             />
-            <SequenceContainer images={sequenceData.sequence.sequence}/>
+            {
+                actualSequence && actualSequence?.length
+                ?
+                <SequenceContainer images={actualSequence}/>
+                :
+                <></>
+            }
         </>
     );
 }

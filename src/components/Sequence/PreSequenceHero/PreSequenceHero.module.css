@@ -19,6 +19,8 @@
         justify-content: center;
         margin-bottom: 50px;
         cursor: pointer;
+        padding-bottom: 2px;
+        border-bottom: 1px solid #000;
     }
     .more__text {
         font-weight: 600;
@@ -30,7 +32,7 @@
         margin-right: 15px;
     }
     .more__svg {
-        animation: bounceArrow .75s infinite;
+        animation: bounceArrow 1.25s infinite;
     }
     .harmony {
         width: 100%;

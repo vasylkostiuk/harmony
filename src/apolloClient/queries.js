@@ -269,7 +269,30 @@ export const GET_SEQUENCE_PAGE = gql(`
                 url
               }
             }
+            tabletSequence {
+              id
+              sequence(first: 500) {
+                id
+                width
+                height
+                url
+              }
+            }
             sequenceColors {
+              id
+              title
+              description
+              image {
+                id
+                width
+                height
+                url
+              }
+              color {
+                hex
+              }
+            }
+            tabletSequenceColors {
               id
               title
               description

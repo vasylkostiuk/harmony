@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from './SequenceColorChanger.module.css';
 import {useReactiveVar} from "@apollo/client";
 import {sequenceColors} from "../../../apolloClient/reactiveVariables/sequenceColors";
+import {Tween} from "react-gsap";
 
 const SequenceColorChanger = ({isDisplayed}) => {
     const colors = useReactiveVar(sequenceColors);
@@ -28,30 +29,34 @@ const SequenceColorChanger = ({isDisplayed}) => {
                                              alt="Harmony Domes"
                                         />
                                         <div className={styles.changer__container}>
-                                            <p className={styles.title}>{c?.title}</p>
-                                            <p className={styles.description}>{c?.description}</p>
-                                            <div className={styles.changer__color_container}>
-                                                {
-                                                    colors.map((c, idx) => {
-                                                        return (
-                                                            <div key={c?.id}
-                                                                 className={`${styles.changer__color_wrapper} ${idx === currentColor ? styles.current : ''}`}
-                                                                 onClick={() => setCurrentColor(idx)}
-                                                            >
-                                                                <div
-                                                                    style={
-                                                                        {
-                                                                            backgroundColor: c?.color?.hex
-                                                                        }
-                                                                    }
-                                                                    className={styles.changer__color}
+                                            <Tween from={{opacity: 0}} to={{opacity: 1}} stagger={.3}>
+                                                <p className={styles.color__choose}>Choose your colour.</p>
+                                                <div className={styles.line}></div>
+                                                <p className={styles.title}>{c?.title}</p>
+                                                <p className={styles.description}>{c?.description}</p>
+                                                <div className={styles.changer__color_container}>
+                                                    {
+                                                        colors.map((c, idx) => {
+                                                            return (
+                                                                <div key={c?.id}
+                                                                     className={`${styles.changer__color_wrapper} ${idx === currentColor ? styles.current : ''}`}
+                                                                     onClick={() => setCurrentColor(idx)}
                                                                 >
+                                                                    <div
+                                                                        style={
+                                                                            {
+                                                                                backgroundColor: c?.color?.hex
+                                                                            }
+                                                                        }
+                                                                        className={styles.changer__color}
+                                                                    >
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        )
-                                                    })
-                                                }
-                                            </div>
+                                                            )
+                                                        })
+                                                    }
+                                                </div>
+                                            </Tween>
                                         </div>
                                     </div>
                                 </React.Fragment>
