@@ -5,6 +5,7 @@ import React, {useEffect, useState} from "react";
 import {currentArticles} from "../../../../apolloClient/reactiveVariables/articles";
 import {client} from "../../../../apolloClient/client";
 import ArticleSkeleton from "../../molecules/ArticleSkeleton/ArticleSkeleton";
+import {getUniqueById} from "../../../../services/getUniqueById";
 
 const ArticlesQueryContainer = ({cursor, filter}) => {
     const [hasNextPage, setHasNextPage] = useState(false);
@@ -23,7 +24,7 @@ const ArticlesQueryContainer = ({cursor, filter}) => {
         }).then(res => {
             setHasNextPage(res?.data?.articlesConnection?.pageInfo?.hasNextPage)
             setEndCursor(res?.data?.articlesConnection?.pageInfo?.endCursor)
-            currentArticles([...currentArticles()].concat(res?.data?.articlesConnection?.edges.map(item => item.node)));
+            currentArticles(getUniqueById([...currentArticles()].concat(res?.data?.articlesConnection?.edges.map(item => item.node))));
             setLoading(false);
         })
     }, [cursor]);
