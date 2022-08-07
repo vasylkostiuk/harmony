@@ -1,0 +1,25 @@
+@media screen and (min-width: 1px) {
+    .image {
+        height: 206px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .image {
+        height: 387px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .image {
+        height: 487px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .image {
+        height: 565px;
+    }
+}

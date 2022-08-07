@@ -1,6 +1,6 @@
 import {
     GET_ARTICLE,
-    GET_ARTICLES,
+    GET_ARTICLES, GET_HUB,
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
@@ -128,6 +128,20 @@ export const GetStaticSequencePage = async function() {
     return {
         props: {
             sequenceData: data?.sequencePage
+        },
+        revalidate: 60
+    }
+}
+
+export const getHub = async function() {
+    const {data} = await client.query({
+        query: GET_HUB
+    });
+    const hub = data?.hubs[0];
+
+    return {
+        props: {
+            hub
         },
         revalidate: 60
     }

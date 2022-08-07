@@ -17,6 +17,42 @@ query GET_ARTICLES {
 }`
 );
 
+export const GET_HUB = gql(`
+    query GET_HUB {
+        hubs {
+            id
+            aboutUsLeftColumn
+            aboutUsRightColumn
+            aboutUsTitle
+            createdAt
+            id
+            mainImage {
+              id
+              width
+              height
+              url
+            }
+            mao {
+              latitude
+              longitude
+            }
+            sliderImages(first: 500) {
+              id
+              width
+              height
+              url
+            }
+            title
+            contactInfo {
+              id
+              tel
+              email
+              adress
+            }
+        }
+    }
+`)
+
 export const GET_ARTICLES_PAGINATED = gql(`
 query GET_ARTICLES ($endCursor: String) {
   articlesConnection(first: 5, orderBy: publishedAt_DESC, after: $endCursor) {

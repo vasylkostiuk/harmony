@@ -1,0 +1,50 @@
+@media screen and (min-width: 1px) {
+    .title {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #18181B;
+        margin-bottom: 25px;
+    }
+    .contact__item {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: #18181B;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .contact__item:last-of-type {
+        margin-bottom: 0;
+    }
+    .btn {
+        outline: none;
+        padding: 14px 50px;
+        background-color: transparent;
+        border: 1px solid #000;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    .btn__inside_container {
+        display: flex;
+        align-items: center;
+    }
+    .btn__inside_text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #18181B;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .title {
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}

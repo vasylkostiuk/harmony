@@ -17,7 +17,8 @@ const SliderProduct = ({title, imageSrc, articleId}) => {
                     style={{
                         width: '100%',
                         height: '100%',
-                        aspectRatio: '16 / 9'
+                        aspectRatio: '16 / 9',
+                        objectFit: 'cover'
                     }}
                 />
             </div>

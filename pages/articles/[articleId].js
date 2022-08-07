@@ -10,7 +10,6 @@ import {useMutation} from "@apollo/client";
 import {INCREASE_ARTICLE_COUNT} from "../../src/apolloClient/mutations";
 
 const ArticleId = ({article}) => {
-    console.log(article)
     const [increaseCount] = useMutation(INCREASE_ARTICLE_COUNT,
         {
             variables: {
