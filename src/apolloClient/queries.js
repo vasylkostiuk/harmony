@@ -49,6 +49,58 @@ export const GET_HUB = gql(`
               email
               adress
             }
+            visitHours {
+              id
+              sunday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              monday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              tuesday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              wednesday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              thursday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              friday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+              saturday {
+                id
+                start
+                startAmPm
+                end
+                endAmPm
+              }
+            }
         }
     }
 `)

@@ -6,12 +6,21 @@ import HubSlider from "./atoms/HubSlider/HubSlider";
 import InSliderTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle";
 
 const HubContainer = ({hub}) => {
-    const {title, mainImage, aboutUsTitle, aboutUsLeftColumn, aboutUsRightColumn, contactInfo, sliderImages} = hub;
+    const {
+        title,
+        mainImage,
+        aboutUsTitle,
+        aboutUsLeftColumn,
+        aboutUsRightColumn,
+        contactInfo,
+        sliderImages,
+        visitHours
+    } = hub;
 
     return (
         <div className="container">
             <HubHero title={title} imageSrc={mainImage?.url} width={mainImage?.width} height={mainImage?.height}/>
-            <ContactContainer contactInfo={contactInfo}/>
+            <ContactContainer contactInfo={contactInfo} visitHours={visitHours}/>
             <HubAboutUs title={aboutUsTitle} leftColumnText={aboutUsLeftColumn} rightColumnText={aboutUsRightColumn}/>
             <HubSlider images={sliderImages}/>
             <OtherArticles>
