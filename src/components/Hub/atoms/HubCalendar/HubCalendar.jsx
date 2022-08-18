@@ -11,11 +11,13 @@ const HubCalendar = () => {
         <Calendar
             locale={"en-US"}
             value={value}
+            minDate={new Date()}
             onChange={(val) => {
                 setValue(val)
                 hubContacts({
                     ...hubContacts(),
-                    date: getCorrectDate(val)
+                    date: getCorrectDate(val),
+                    day: val.getDay()
                 })
             }}
         />

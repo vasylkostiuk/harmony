@@ -13,6 +13,16 @@
         padding: 0;
         cursor: pointer;
     }
+    .dropdown__container.time__picker {
+        width: 100%;
+        background-color: #fff;
+        top: auto;
+        bottom: 48px;
+        height: 120px;
+        overflow-y: scroll;
+        border: 1px solid #D4D4D8;
+        box-sizing: border-box;
+    }
 }
 
 @media screen and (min-width: 767px) {

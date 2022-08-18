@@ -4,7 +4,7 @@ import styles from './SchedulePopup.module.css';
 import {useReactiveVar} from "@apollo/client";
 import {showSchedulePopup} from "../../../../apolloClient/reactiveVariables/hubContacts";
 
-const SchedulePopup = () => {
+const SchedulePopup = ({weekObj}) => {
     const display = useReactiveVar(showSchedulePopup);
     return (
         <>
@@ -30,7 +30,7 @@ const SchedulePopup = () => {
                         <p className={styles.description}>Please book a service and time with us below. We will notify you about your appointment by email, and payments will be processed externally.</p>
                         <div className={styles.schedule__container}>
                             <EnterDetails/>
-                            <SelectDate/>
+                            <SelectDate weekObj={weekObj}/>
                         </div>
                     </div>
                 </div>

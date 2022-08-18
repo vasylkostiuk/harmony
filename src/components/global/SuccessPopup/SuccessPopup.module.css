@@ -1,0 +1,72 @@
+@media screen and (min-width: 1px) {
+    .container {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 40px);
+        display: grid;
+        place-items: center;
+        padding: 50px 20px 40px 20px;
+        z-index: 200;
+        background: #fff;
+        box-shadow: 0 3px 59px rgba(0, 0, 0, 0.1);
+    }
+    .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin: 20px 0 12px 0;
+    }
+    .subtitle {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #3F3F46;
+    }
+    .button {
+        background: #18181B;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        padding: 10px 0;
+        margin-top: 30px;
+        cursor: pointer;
+        border: 1px solid #18181B;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        width: calc(100% - 210px);
+        padding: 70px 70px 60px 70px;
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .button {
+        width: 180px;
+        padding: 15px 0;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container {
+        width: 560px;
+    }
+}

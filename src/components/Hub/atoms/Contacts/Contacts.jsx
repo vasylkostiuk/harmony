@@ -2,7 +2,7 @@ import styles from './Contacts.module.css';
 import SchedulePopup from "../../organisms/SchedulePopup/SchedulePopup";
 import {showSchedulePopup} from "../../../../apolloClient/reactiveVariables/hubContacts";
 
-const Contacts = ({phoneNumber, email, address}) => {
+const Contacts = ({phoneNumber, email, address, weekObj}) => {
     return (
         <>
             <h3 className={styles.title}>Contact info</h3>
@@ -17,7 +17,7 @@ const Contacts = ({phoneNumber, email, address}) => {
                     </svg>
                 </div>
             </button>
-            <SchedulePopup/>
+            <SchedulePopup weekObj={weekObj}/>
         </>
     );
 }

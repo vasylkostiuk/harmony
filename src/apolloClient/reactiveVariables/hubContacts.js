@@ -6,7 +6,8 @@ const hubContactsDefaults = {
     email: '',
     phone: '',
     date: '',
-    time: ''
+    day: '',
+    time: '10:00 AM'
 }
 
 

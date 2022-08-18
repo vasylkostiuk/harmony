@@ -134,3 +134,27 @@ export function createContactMail(contacts) {
     `
 }
 
+function createHubBody(contacts) {
+    return `
+        <div>
+            <br/>
+            <br/>
+            <b>Contacts</b>
+            <br/>
+            <p>First name: ${contacts?.firstName}</p>
+            <p>Second name: ${contacts?.secondName}</p>
+            <p>Email: ${contacts?.email}</p>
+            <p>Phone: ${contacts?.phone}</p>
+            <br/>
+            <b>Date and time</b>
+            <br/>
+            <p>First name: ${contacts?.date}</p>
+            <p>Second name: ${contacts?.time}</p>
+        </div>
+    `
+}
+
+export function createHubLetter(contacts) {
+    return createHubBody(contacts);
+}
+

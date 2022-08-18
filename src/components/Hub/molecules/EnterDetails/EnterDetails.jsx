@@ -1,6 +1,7 @@
 import titleStyles from '../SelectDate/SelectDate.module.css';
 import HubContactField from "../../atoms/HubContactField/HubContactField";
 import styles from './EnterDetails.module.css';
+import {validateEmail, validatePhoneNumber} from "../../../../services/contactValidation";
 
 const EnterDetails = () => {
     return (
@@ -23,12 +24,16 @@ const EnterDetails = () => {
                 placeholder={"email@gmail.com"}
                 label={"E-mail"}
                 contactField={"email"}
+                validation={validateEmail}
+                errorMessage={"Fill this field or type actual email, please"}
             />
             <HubContactField
                 type={"tel"}
                 placeholder={"+1 999 999 9999"}
                 label={"Phone number"}
                 contactField={"phone"}
+                validation={validatePhoneNumber}
+                errorMessage={"Fill this field or type actual phone number, please"}
             />
         </div>
     );

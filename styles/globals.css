@@ -405,3 +405,8 @@ h1,h2,h3,h4,h5,h6,p {
 .react-calendar__navigation__next2-button {
   display: none;
 }
+
+.react-calendar__tile:disabled {
+  background: #fff !important;
+  opacity: .5;
+}

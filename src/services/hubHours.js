@@ -29,6 +29,14 @@ export function createWeek(visitHours) {
     })
 }
 
+function createInterval(time) {
+    if (time > 12) {
+        return [`${time - 12}:00 PM`, `${time - 12}:15 PM`, `${time - 12}:30 PM`, `${time - 12}:45 PM`]
+    }
+
+    return [`${time}:00 AM`, `${time}:15 AM`, `${time}:30 AM`, `${time}:45 AM`]
+}
+
 export function createTimeIntervals(visitHours) {
     const visitHoursArr = Object.entries(visitHours);
     const filteredArr = visitHoursArr.filter(day => day[0] !== 'id' && day[0] !== "__typename");
@@ -40,9 +48,14 @@ export function createTimeIntervals(visitHours) {
         let result = [];
 
         for (let i = 0; i < hourInterval; i++) {
-            result.push([`${day[1]?.start + i}:00`, `${day[1]?.start + i}:15`, `${day[1]?.start + i}:30`, `${day[1]?.start + i}:45`])
+            result.push(createInterval(day[1]?.start + i))
         }
 
-        return result;
+        return (
+            {
+                day: createDayName(day[0]),
+                intervals: result
+            }
+        );
     })
 }

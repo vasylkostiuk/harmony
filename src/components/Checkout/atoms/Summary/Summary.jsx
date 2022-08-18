@@ -1,7 +1,7 @@
 import styles from './Summary.module.css';
 import {useReactiveVar} from "@apollo/client";
 import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/checkout";
-import React from 'react';
+import React, {useState} from 'react';
 import {reduceTotalAmount} from "../../../../services/changeCheckoutObj";
 import BottomWidget from "../../../../layouts/BottomWidget/BottomWidget";
 import Link from "next/link";
@@ -9,14 +9,17 @@ import {init, send} from "@emailjs/browser";
 import {createProductMail} from "../../../../services/createProductMail";
 import {contactInfo, isInputsFullFilled} from "../../../../apolloClient/reactiveVariables/contactInfo";
 import {isContactFullFilled} from "../../../../services/contactValidation";
+import SuccessPopup from "../../../global/SuccessPopup/SuccessPopup";
 
 const Summary = ({isFinal = false}) => {
     const checkout = useReactiveVar(checkoutProducts);
     const contacts = useReactiveVar(contactInfo);
+    const [showPopup, setShowPopup] = useState(false);
 
     init("F8o0joNoID8s9-JWd");
     const serviceID = 'service_isfvdvd';
     const templateID = 'template_e0ehvvu';
+
 
     const sendData = {
         products: createProductMail(checkout, contacts)
@@ -25,7 +28,10 @@ const Summary = ({isFinal = false}) => {
     const sendEmail = () => {
         if (isContactFullFilled(contacts)) {
             isInputsFullFilled(false);
-            send(serviceID, templateID, sendData);
+            send(serviceID, templateID, sendData)
+                .then(() => {
+                    setShowPopup(true)
+                });
         } else {
             isInputsFullFilled(true);
         }
@@ -111,6 +117,13 @@ const Summary = ({isFinal = false}) => {
                     </div>
                 </BottomWidget>
             </div>
+            {
+                showPopup
+                    ?
+                    <SuccessPopup/>
+                    :
+                    <></>
+            }
         </div>
     );
 }
