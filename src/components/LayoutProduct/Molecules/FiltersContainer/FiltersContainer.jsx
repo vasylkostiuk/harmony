@@ -1,5 +1,5 @@
 import styles from './FiltersContainer.module.css';
-import CategoriesLayout from "../../../../layouts/CategoriesLayout/CategoriesLayout";
+import CategoriesLayout from "../../../global/LoadCircle/layouts/CategoriesLayout/CategoriesLayout";
 import CategoryItem from "../../Atoms/CategoryItem/CategoryItem";
 import {useReactiveVar} from "@apollo/client";
 import {currentProductsVar, productsVar, currentCategoryVar} from "../../../../apolloClient/reactiveVariables/products";

@@ -4,7 +4,7 @@ import Image from "next/image";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import customLoader from "../../preRender/customLoader";
+import customLoader from "../../../../../preRender/customLoader";
 
 const ExtendedSlider = ({images}) => {
     return (

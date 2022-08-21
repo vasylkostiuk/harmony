@@ -410,3 +410,7 @@ h1,h2,h3,h4,h5,h6,p {
   background: #fff !important;
   opacity: .5;
 }
+
+.react-calendar__navigation button:disabled {
+  background: #fff !important;
+}

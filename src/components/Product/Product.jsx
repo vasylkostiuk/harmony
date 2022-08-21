@@ -1,11 +1,10 @@
 import styles from './Product.module.css';
-import Sticky from "../../layouts/Sticky/Sticky";
+import Sticky from "../global/LoadCircle/layouts/Sticky/Sticky";
 import ProductImage from "./Atoms/ProductImage/ProductImage";
 import ProductCta from "./Atoms/ProductCta/ProductCta";
 import ProductLayout from "./Molecules/ProductLayout";
 import {currentProductsVar} from "../../apolloClient/reactiveVariables/currentProduct";
-import ExtendedSlider from "../../layouts/ExtendedSlider/ExtendedSlider";
-import FakeRenderer from "../FakeRenderer/FakeRenderer";
+import ExtendedSlider from "../global/LoadCircle/layouts/ExtendedSlider/ExtendedSlider";
 import OtherProducts from "../OtherProducts/OtherProducts";
 import InProductTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle";
 import {useEffect, useState} from "react";

@@ -10,7 +10,7 @@ import {useReactiveVar} from "@apollo/client";
 import {checkoutProducts} from "../../apolloClient/reactiveVariables/checkout";
 import CheckoutProductImage from "./atoms/CheckoutProductImage/CheckoutProductImage";
 import CheckoutInternalColor from "./atoms/CheckoutInternalColor/CheckoutInternalColor";
-import CheckoutLayout from "../../layouts/CheckoutLayout/CheckoutLayout";
+import CheckoutLayout from "../global/LoadCircle/layouts/CheckoutLayout/CheckoutLayout";
 import Summary from "./atoms/Summary/Summary";
 import CheckoutEmpty from "./atoms/CheckoutEmpty/CheckoutEmpty";
 import CheckoutRoadmap from "./atoms/CheckoutRoadmap/CheckoutRoadmap";

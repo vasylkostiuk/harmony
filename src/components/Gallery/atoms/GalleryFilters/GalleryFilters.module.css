@@ -1,0 +1,29 @@
+@media screen and (min-width: 1px) {
+    .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #000;
+        margin: 45px 0 70px 0;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .description {
+        font-size: 18px;
+        margin: 40px 0 80px 0;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .description {
+        width: 720px;
+        margin: 40px 0 100px 0;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .description {
+        margin: 40px 0 70px 0;
+    }
+}

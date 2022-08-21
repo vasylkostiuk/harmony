@@ -3,7 +3,7 @@ import {useReactiveVar} from "@apollo/client";
 import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/checkout";
 import React, {useState} from 'react';
 import {reduceTotalAmount} from "../../../../services/changeCheckoutObj";
-import BottomWidget from "../../../../layouts/BottomWidget/BottomWidget";
+import BottomWidget from "../../../global/LoadCircle/layouts/BottomWidget/BottomWidget";
 import Link from "next/link";
 import {init, send} from "@emailjs/browser";
 import {createProductMail} from "../../../../services/createProductMail";

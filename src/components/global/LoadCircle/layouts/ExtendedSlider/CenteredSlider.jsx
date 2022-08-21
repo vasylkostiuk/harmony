@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "swiper/css/thumbs";
-import customLoader from "../../preRender/customLoader";
+import customLoader from "../../../../../preRender/customLoader";
 
 const CenteredSlider = ({images}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);

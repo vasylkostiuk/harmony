@@ -6,7 +6,7 @@ import {
 } from "../../apolloClient/reactiveVariables/products";
 import {useReactiveVar} from "@apollo/client";
 import LayoutProduct from "./LayoutProduct";
-import ProductsGrid from "../../layouts/ProductsGrid/ProductsGrid";
+import ProductsGrid from "../global/LoadCircle/layouts/ProductsGrid/ProductsGrid";
 import FiltersContainer from "./Molecules/FiltersContainer/FiltersContainer";
 import LoadMoreBtn from "./Atoms/LoadMoreBtn/LoadMoreBtn";
 import {paginateProducts, paginationCalculate} from "../../services/pagination";

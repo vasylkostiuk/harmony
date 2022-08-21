@@ -1,6 +1,6 @@
 import {
     GET_ARTICLE,
-    GET_ARTICLES, GET_HUB,
+    GET_ARTICLES, GET_GALLERY, GET_HUB,
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
@@ -142,6 +142,19 @@ export const getHub = async function() {
     return {
         props: {
             hub
+        },
+        revalidate: 60
+    }
+}
+
+export const getGallery = async function() {
+    const {data} = await client.query({
+        query: GET_GALLERY
+    });
+
+    return {
+        props: {
+            gallery: data
         },
         revalidate: 60
     }

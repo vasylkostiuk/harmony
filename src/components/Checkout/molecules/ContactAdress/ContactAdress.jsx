@@ -1,6 +1,6 @@
 import styles from '../Contact.module.css';
 import ContactFormInput from "../../atoms/ContactFormInput/ContactFormInput";
-import ContactFormLayout from "../../../../layouts/ContactFormLayout/ContactFormLayout";
+import ContactFormLayout from "../../../global/LoadCircle/layouts/ContactFormLayout/ContactFormLayout";
 import CheckoutCountriesInput from "../../atoms/CheckoutCountriesInput/CheckoutCountriesInput";
 
 const ContactAddress = () => {

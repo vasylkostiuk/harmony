@@ -397,3 +397,32 @@ export const GET_SEQUENCE_PAGE = gql(`
       }
   } 
 `);
+
+export const GET_GALLERY = gql(`
+    query GET_GALLERY {
+      galleryContainersConnection {
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
+        }
+        edges {
+          cursor
+          node {
+            gallery {
+              id
+              galleryImage(first: 500) {
+                height
+                id
+                width
+                url
+              }
+              category
+            }
+            description
+            title
+          }
+        }
+      }
+    }
+`);
