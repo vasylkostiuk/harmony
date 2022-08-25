@@ -17,7 +17,8 @@ export const GetStaticMainPage = async function () {
     return {
         props: {
             heroBlocks: hero,
-            video: herovideo
+            video: herovideo,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }

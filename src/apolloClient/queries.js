@@ -275,6 +275,50 @@ query GET_TEST_SEQUENCE {
 
 export const GET_MAIN_PAGE = gql(`
     query MainPage {
+    footers {
+        id
+        description
+        contacts {
+          id
+          tel
+          email
+        }
+        logo {
+          id
+          url
+        }
+        links {
+          id
+          title
+          links {
+            id
+            text
+            link
+          }
+        }
+        socialLinks {
+          id
+          icon {
+            id
+            width
+            height
+            url
+          }
+          link
+        }
+        advantages {
+          id
+          title
+          description
+          link
+          image {
+            id
+            width
+            height
+            url
+          }
+        }
+      }
       mainPage(where: {id: "cl39uuqjwt8940ck3mfoqe5am"}) {
         hero {
           id
