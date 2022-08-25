@@ -8,8 +8,9 @@ import InSliderTitle from "../../src/components/OtherProducts/atoms/InProductTit
 import {useEffect} from "react";
 import {useMutation} from "@apollo/client";
 import {INCREASE_ARTICLE_COUNT} from "../../src/apolloClient/mutations";
+import Footer from "../../src/components/Footer/Footer";
 
-const ArticleId = ({article}) => {
+const ArticleId = ({article, footer}) => {
     const [increaseCount] = useMutation(INCREASE_ARTICLE_COUNT,
         {
             variables: {
@@ -24,16 +25,19 @@ const ArticleId = ({article}) => {
     }, [article?.id])
 
     return (
-        <div className="container">
-            <Article article={article}/>
-            <OtherArticles>
-                <InSliderTitle
-                    title={'Our News'}
-                    linkTitle={'All news'}
-                    link={'articles'}
-                />
-            </OtherArticles>
-        </div>
+        <>
+            <div className="container">
+                <Article article={article}/>
+                <OtherArticles>
+                    <InSliderTitle
+                        title={'Our News'}
+                        linkTitle={'All news'}
+                        link={'articles'}
+                    />
+                </OtherArticles>
+            </div>
+            <Footer footer={footer}/>
+        </>
     );
 }
 

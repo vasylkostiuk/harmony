@@ -102,6 +102,50 @@ export const GET_HUB = gql(`
               }
             }
         }
+        footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
     }
 `)
 
@@ -152,6 +196,50 @@ query GET_SLIDER_ARTICLES {
 
 export const GET_ARTICLE = gql(`
 query GET_ARTICLE ($id: ID!) {
+   footers {
+        id
+        description
+        contacts {
+          id
+          tel
+          email
+        }
+        logo {
+          id
+          url
+        }
+        links {
+          id
+          title
+          links {
+            id
+            text
+            link
+          }
+        }
+        socialLinks {
+          id
+          icon {
+            id
+            width
+            height
+            url
+          }
+          link
+        }
+        advantages {
+          id
+          title
+          description
+          link
+          image {
+            id
+            width
+            height
+            url
+          }
+        }
+    }
   article (where: {id: $id}) {
     id
     title
@@ -234,11 +322,99 @@ export const GET_PRODUCTS = gql(`
           previousPrice
         }
       }
+      footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
     }
 `);
 
 export const GET_PRODUCT = gql(`
     query Product ($id: ID!) {
+    footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
       product(where: {id: $id}) {
         id
         badge
@@ -328,12 +504,57 @@ export const GET_PRODUCT = gql(`
                 url
               }
         }
+        
     }
   }
 `);
 
 export const GET_SEQUENCE_PAGE = gql(`
   query GetSequencePage($id: ID!) {
+      footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
         sequencePage(where: {id: $id}) {
             id
             presentationHero {
@@ -424,5 +645,98 @@ export const GET_GALLERY = gql(`
           }
         }
       }
+      footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
     }
 `);
+
+export const GET_FOOTER = gql(`
+    query GET_FOOTER {
+        footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
+    }
+`)

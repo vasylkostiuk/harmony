@@ -1,11 +1,13 @@
 import {getHub} from "../../src/preRender/ISR";
 import HubContainer from "../../src/components/Hub/HubContainer";
-import {createTimeIntervals, createWeek} from "../../src/services/hubHours";
+import Footer from "../../src/components/Footer/Footer";
 
-const Hub = ({hub}) => {
-    console.log(createTimeIntervals(hub?.visitHours));
+const Hub = ({hub, footer}) => {
     return (
-        <HubContainer hub={hub}/>
+        <>
+            <HubContainer hub={hub}/>
+            <Footer footer={footer}/>
+        </>
     );
 }
 

@@ -3,9 +3,10 @@ import {getGallery} from "../../src/preRender/ISR";
 import {galleryVar} from "../../src/apolloClient/reactiveVariables/gallery";
 import {useEffect, useState} from "react";
 import GalleryFilters from "../../src/components/Gallery/atoms/GalleryFilters/GalleryFilters";
+import Footer from "../../src/components/Footer/Footer";
 
 const GalleryPage = ({gallery}) => {
-    const [showGallery, setShowGallery] = useState(false)
+    const [showGallery, setShowGallery] = useState(false);
 
     useEffect(() => {
         if (gallery) {
@@ -20,19 +21,22 @@ const GalleryPage = ({gallery}) => {
     }, [gallery])
 
     return (
-        <div className="container">
-            <GalleryFilters
-                title={gallery?.galleryContainersConnection?.edges[0]?.node?.title}
-                description={gallery?.galleryContainersConnection?.edges[0]?.node?.description}
-            />
-            {
-                showGallery
-                ?
-                    <Gallery/>
-                :
-                    <></>
-            }
-        </div>
+        <>
+            <div className="container">
+                <GalleryFilters
+                    title={gallery?.galleryContainersConnection?.edges[0]?.node?.title}
+                    description={gallery?.galleryContainersConnection?.edges[0]?.node?.description}
+                />
+                {
+                    showGallery
+                        ?
+                        <Gallery/>
+                        :
+                        <></>
+                }
+            </div>
+            <Footer footer={gallery?.footers[0]}/>
+        </>
     );
 }
 

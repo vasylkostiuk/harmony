@@ -6,8 +6,9 @@ import {
     currentCategoryVar,
     currentFilterVar
 } from "../../src/apolloClient/reactiveVariables/products";
+import Footer from "../../src/components/Footer/Footer";
 
-const Products = ({products}) => {
+const Products = ({products, footer}) => {
     productsVar([...products]);
     currentProductsVar([...products]);
     currentCategoryVar('All products');
@@ -19,9 +20,12 @@ const Products = ({products}) => {
     );
 
     return (
-        <div className="container">
-           <LayoutProductContainer/>
-        </div>
+        <>
+            <div className="container">
+                <LayoutProductContainer/>
+            </div>
+            <Footer footer={footer}/>
+        </>
     );
 }
 

@@ -3,6 +3,7 @@ import {GetStaticProduct, GetStaticProductsPath} from "../../src/preRender/ISR";
 import {useMutation} from "@apollo/client";
 import {INCREASE_PRODUCT_COUNT} from "../../src/apolloClient/mutations";
 import {useEffect} from "react";
+import Footer from "../../src/components/Footer/Footer";
 
 const ProductId = (product) => {
     const [increaseCount] = useMutation(INCREASE_PRODUCT_COUNT, {
@@ -18,9 +19,12 @@ const ProductId = (product) => {
 
 
     return (
-        <div className='container'>
-            <Product product={product}/>
-        </div>
+        <>
+            <div className='container'>
+                <Product product={product}/>
+            </div>
+            <Footer footer={product?.footer}/>
+        </>
     );
 }
 

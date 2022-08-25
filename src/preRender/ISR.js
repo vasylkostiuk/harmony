@@ -33,7 +33,8 @@ export const GetStaticProducts = async function () {
 
     return {
         props: {
-            products: data?.products
+            products: data?.products,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }
@@ -51,7 +52,8 @@ export const GetStaticProduct = async function (context) {
 
     return {
         props: {
-            product: data?.product
+            product: data?.product,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }
@@ -111,7 +113,8 @@ export const GetStaticArticle = async function(context) {
 
     return {
         props: {
-            article: data?.article
+            article: data?.article,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }
@@ -127,7 +130,8 @@ export const GetStaticSequencePage = async function() {
 
     return {
         props: {
-            sequenceData: data?.sequencePage
+            sequenceData: data?.sequencePage,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }
@@ -141,7 +145,8 @@ export const getHub = async function() {
 
     return {
         props: {
-            hub
+            hub,
+            footer: data?.footers[0]
         },
         revalidate: 60
     }

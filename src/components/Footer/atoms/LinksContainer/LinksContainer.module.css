@@ -1,0 +1,31 @@
+@media screen and (min-width: 1px) {
+    .title {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #18181B;
+        margin-bottom: 15px;
+    }
+    .link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #18181B;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .link:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .title {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    .link {
+        font-size: 16px;
+    }
+}

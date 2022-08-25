@@ -3,8 +3,9 @@ import SequenceContainer from "../../src/components/Sequence/SequenceContainer";
 import {useEffect, useState} from "react";
 import {sequenceColors} from "../../src/apolloClient/reactiveVariables/sequenceColors";
 import PreSequenceHero from "../../src/components/Sequence/PreSequenceHero/PreSequenceHero";
+import Footer from "../../src/components/Footer/Footer";
 
-const SequencePage = ({sequenceData}) => {
+const SequencePage = ({sequenceData, footer}) => {
     const [actualSequence, setActualSequence] = useState(null);
 
     useEffect(() => {
@@ -34,6 +35,7 @@ const SequencePage = ({sequenceData}) => {
                 :
                 <></>
             }
+            <Footer footer={footer}/>
         </>
     );
 }
