@@ -8,14 +8,21 @@ import {checkoutProducts} from "../../src/apolloClient/reactiveVariables/checkou
 import CheckoutEmpty from "../../src/components/Checkout/atoms/CheckoutEmpty/CheckoutEmpty";
 import {GET_FOOTER} from "../../src/apolloClient/queries";
 import Footer from "../../src/components/Footer/Footer";
+import {getHeader} from "../../src/preRender/ISR";
+import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 
-const Contact = () => {
+const Contact = ({header}) => {
     const checkout = useReactiveVar(checkoutProducts);
     const {data, loading} = useQuery(GET_FOOTER);
 
     return (
         <>
             <div className="container">
+                <HeaderTop
+                    logoUrl={header?.logo?.url}
+                    otherLinks={header?.otherLinks}
+                    productLinks={header?.productLinks}
+                />
                 {
                     !checkout?.length
                         ?
@@ -43,5 +50,7 @@ const Contact = () => {
         </>
     );
 }
+
+export const getStaticProps = getHeader;
 
 export default Contact;

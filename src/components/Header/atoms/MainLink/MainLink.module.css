@@ -1,0 +1,58 @@
+@media screen and (min-width: 1px) {
+    .link {
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 49px;
+        text-align: right;
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .link {
+        font-size: 66px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .link {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .link__container {
+        position: relative;
+        cursor: pointer;
+    }
+    .link {
+        font-size: 90px;
+        transition: transform .5s ease;
+    }
+    .link__container:hover .link {
+        transform: translateX(-200px);
+    }
+    .line {
+        width: 180px;
+        height: 4px;
+        background-color: #000;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    .link__container:hover .line {
+        opacity: 1;
+    }
+}
+
+@keyframes lineAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

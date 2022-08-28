@@ -6,8 +6,10 @@ import ArticlesQueryContainer
     from "../../src/components/Articles/atoms/ArticlesPreviewContainer/ArticlesQueryContainer";
 import {GET_FOOTER} from "../../src/apolloClient/queries";
 import Footer from "../../src/components/Footer/Footer";
+import {getHeader} from "../../src/preRender/ISR";
+import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 
-const Articles = () => {
+const Articles = ({header}) => {
     const cursor = useReactiveVar(currentEndCursor);
     const currentFilter = useReactiveVar(currentArticleFilter);
     const {data, loading} = useQuery(GET_FOOTER);
@@ -15,6 +17,11 @@ const Articles = () => {
     return (
         <>
             <div className="container">
+                <HeaderTop
+                    logoUrl={header?.logo?.url}
+                    otherLinks={header?.otherLinks}
+                    productLinks={header?.productLinks}
+                />
                 <ArticlesFilterContainer/>
                 <ArticlesQueryContainer
                     cursor={cursor}
@@ -31,5 +38,7 @@ const Articles = () => {
         </>
     )
 }
+
+export const getStaticProps = getHeader;
 
 export default Articles;

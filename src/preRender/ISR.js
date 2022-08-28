@@ -1,6 +1,6 @@
 import {
     GET_ARTICLE,
-    GET_ARTICLES, GET_GALLERY, GET_HUB,
+    GET_ARTICLES, GET_GALLERY, GET_HEADER, GET_HUB,
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
@@ -18,7 +18,8 @@ export const GetStaticMainPage = async function () {
         props: {
             heroBlocks: hero,
             video: herovideo,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
@@ -35,7 +36,8 @@ export const GetStaticProducts = async function () {
     return {
         props: {
             products: data?.products,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
@@ -54,7 +56,8 @@ export const GetStaticProduct = async function (context) {
     return {
         props: {
             product: data?.product,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
@@ -115,7 +118,8 @@ export const GetStaticArticle = async function(context) {
     return {
         props: {
             article: data?.article,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
@@ -147,7 +151,8 @@ export const getHub = async function() {
     return {
         props: {
             hub,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
@@ -160,7 +165,22 @@ export const getGallery = async function() {
 
     return {
         props: {
-            gallery: data
+            gallery: data,
+            footer: data?.footers[0],
+            header: data?.headers[0]
+        },
+        revalidate: 60
+    }
+}
+
+export const getHeader = async function() {
+    const {data} = await client.query({
+        query: GET_HEADER
+    });
+
+    return {
+        props: {
+            header: data?.headers[0]
         },
         revalidate: 60
     }

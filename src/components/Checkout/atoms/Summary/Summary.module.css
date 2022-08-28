@@ -1,6 +1,7 @@
 @media screen and (min-width: 1px) {
     .cta__button {
         display: none;
+        white-space: nowrap;
     }
     .cta__financing {
         display: none;
@@ -23,6 +24,7 @@
         letter-spacing: 0.02em;
         color: #fff;
         margin-right: 12px;
+        white-space: nowrap;
     }
     .widget .cta__financing {
         display: flex;

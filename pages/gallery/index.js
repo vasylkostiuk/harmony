@@ -4,8 +4,9 @@ import {galleryVar} from "../../src/apolloClient/reactiveVariables/gallery";
 import {useEffect, useState} from "react";
 import GalleryFilters from "../../src/components/Gallery/atoms/GalleryFilters/GalleryFilters";
 import Footer from "../../src/components/Footer/Footer";
+import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 
-const GalleryPage = ({gallery}) => {
+const GalleryPage = ({gallery, footer, header}) => {
     const [showGallery, setShowGallery] = useState(false);
 
     useEffect(() => {
@@ -23,6 +24,11 @@ const GalleryPage = ({gallery}) => {
     return (
         <>
             <div className="container">
+                <HeaderTop
+                    logoUrl={header?.logo?.url}
+                    otherLinks={header?.otherLinks}
+                    productLinks={header?.productLinks}
+                />
                 <GalleryFilters
                     title={gallery?.galleryContainersConnection?.edges[0]?.node?.title}
                     description={gallery?.galleryContainersConnection?.edges[0]?.node?.description}
@@ -35,7 +41,7 @@ const GalleryPage = ({gallery}) => {
                         <></>
                 }
             </div>
-            <Footer footer={gallery?.footers[0]}/>
+            <Footer footer={footer}/>
         </>
     );
 }

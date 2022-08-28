@@ -19,6 +19,23 @@ query GET_ARTICLES {
 
 export const GET_HUB = gql(`
     query GET_HUB {
+        headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+        }
         hubs {
             id
             aboutUsLeftColumn
@@ -102,6 +119,7 @@ export const GET_HUB = gql(`
               }
             }
         }
+        
         footers {
             id
             description
@@ -196,6 +214,23 @@ query GET_SLIDER_ARTICLES {
 
 export const GET_ARTICLE = gql(`
 query GET_ARTICLE ($id: ID!) {
+    headers {
+        id
+        logo {
+          id
+          url
+        }
+        productLinks {
+          id
+          text
+          link
+        }
+        otherLinks {
+          id
+          text
+          link
+        }
+    }
    footers {
         id
         description
@@ -275,7 +310,24 @@ query GET_TEST_SEQUENCE {
 
 export const GET_MAIN_PAGE = gql(`
     query MainPage {
-    footers {
+      headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
+      footers {
         id
         description
         contacts {
@@ -366,6 +418,23 @@ export const GET_PRODUCTS = gql(`
           previousPrice
         }
       }
+      headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
       footers {
             id
             description
@@ -415,7 +484,24 @@ export const GET_PRODUCTS = gql(`
 
 export const GET_PRODUCT = gql(`
     query Product ($id: ID!) {
-    footers {
+      headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
+      footers {
             id
             description
             contacts {
@@ -689,6 +775,23 @@ export const GET_GALLERY = gql(`
           }
         }
       }
+      headers {
+        id
+        logo {
+          id
+          url
+        }
+        productLinks {
+          id
+          text
+          link
+        }
+        otherLinks {
+          id
+          text
+          link
+        }
+      }
       footers {
             id
             description
@@ -783,4 +886,26 @@ export const GET_FOOTER = gql(`
             }
         }
     }
-`)
+`);
+
+export const GET_HEADER = gql(`
+    query GET_HEADER {
+        headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+        }
+    }
+`);

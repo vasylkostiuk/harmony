@@ -4,6 +4,7 @@ import {useMutation} from "@apollo/client";
 import {INCREASE_PRODUCT_COUNT} from "../../src/apolloClient/mutations";
 import {useEffect} from "react";
 import Footer from "../../src/components/Footer/Footer";
+import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 
 const ProductId = (product) => {
     const [increaseCount] = useMutation(INCREASE_PRODUCT_COUNT, {
@@ -21,6 +22,11 @@ const ProductId = (product) => {
     return (
         <>
             <div className='container'>
+                <HeaderTop
+                    productLinks={product?.header?.productLinks}
+                    otherLinks={product?.header?.otherLinks}
+                    logoUrl={product?.header?.logo?.url}
+                />
                 <Product product={product}/>
             </div>
             <Footer footer={product?.footer}/>

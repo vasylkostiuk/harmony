@@ -14,9 +14,6 @@ const Gallery = () => {
     const count = useReactiveVar(galleryCount);
     const category = useReactiveVar(galleryCategory);
 
-    console.log(getImagesToShow(gal, category))
-
-
     return (
         <div>
             <ResponsiveMasonry

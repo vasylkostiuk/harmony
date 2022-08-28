@@ -1,0 +1,37 @@
+@media screen and (min-width: 1px) {
+    .container {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 100;
+        transition: transform .5s ease;
+        transform: translateX(100%);
+        overflow-y: scroll;
+    }
+    .container.opened {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        left: auto;
+        right: 0;
+        width: 580px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container {
+        width: 740px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .container {
+        width: 1165px;
+    }
+}

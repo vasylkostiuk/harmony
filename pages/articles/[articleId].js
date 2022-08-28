@@ -9,8 +9,9 @@ import {useEffect} from "react";
 import {useMutation} from "@apollo/client";
 import {INCREASE_ARTICLE_COUNT} from "../../src/apolloClient/mutations";
 import Footer from "../../src/components/Footer/Footer";
+import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 
-const ArticleId = ({article, footer}) => {
+const ArticleId = ({article, footer, header}) => {
     const [increaseCount] = useMutation(INCREASE_ARTICLE_COUNT,
         {
             variables: {
@@ -27,6 +28,11 @@ const ArticleId = ({article, footer}) => {
     return (
         <>
             <div className="container">
+                <HeaderTop
+                    logoUrl={header?.logo?.url}
+                    otherLinks={header?.otherLinks}
+                    productLinks={header?.productLinks}
+                />
                 <Article article={article}/>
                 <OtherArticles>
                     <InSliderTitle
