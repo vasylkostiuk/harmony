@@ -9,7 +9,7 @@ import HeaderBody from "../../../global/HeaderBody/HeaderBody";
 import MainLink from "../../atoms/MainLink/MainLink";
 import SubLink from "../../atoms/SubLink/SubLink";
 import {useReactiveVar} from "@apollo/client";
-import {showCheckout} from "../../../../apolloClient/reactiveVariables/header";
+import {showCheckout, showHeaderDropdown} from "../../../../apolloClient/reactiveVariables/header";
 import CheckoutProductImage from "../../../Checkout/atoms/CheckoutProductImage/CheckoutProductImage";
 import CheckoutTitle from "../../../Checkout/atoms/CheckoutTitle/CheckoutTitle";
 import CheckoutColor from "../../../Checkout/atoms/CheckoutColor/CheckoutColor";
@@ -23,13 +23,32 @@ import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/check
 import CheckoutEmpty from "../../../Checkout/atoms/CheckoutEmpty/CheckoutEmpty";
 import {reduceTotalAmount} from "../../../../services/changeCheckoutObj";
 import Link from "next/link";
+import {useEffect, useRef} from "react";
 
 const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => {
     const showCheckoutDropdown = useReactiveVar(showCheckout);
     const checkout = useReactiveVar(checkoutProducts);
 
+    const wrapperRef = useRef(null);
+
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    showHeaderDropdown(false);
+                }
+            }
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+
+    useOutsideAlerter(wrapperRef);
+
     return (
-        <>
+        <div ref={wrapperRef}>
             <div className={`${styles.global__container} ${isAbsolute ? styles.global__container_hero : ''}`}>
                 <div className={styles.container}>
                     <HeaderLogo src={logoUrl}/>
@@ -200,7 +219,7 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
                         </div>
                 }
             </HeaderBody>
-        </>
+        </div>
     );
 }
 
