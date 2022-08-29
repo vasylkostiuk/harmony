@@ -5,7 +5,7 @@ const MainLink = ({link, text}) => {
     return (
         <Link href={link} passHref>
             <div className={styles.link__container}>
-                <p className={styles.link}>{text}</p>
+                <div className={styles.link}>{text}</div>
                 <div className={styles.line}></div>
             </div>
         </Link>

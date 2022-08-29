@@ -28,23 +28,22 @@
     }
     .link {
         font-size: 90px;
-        transition: transform .5s ease;
+        transition: transform .75s ease;
     }
     .link__container:hover .link {
         transform: translateX(-200px);
     }
     .line {
-        width: 180px;
+        width: 0;
         height: 4px;
         background-color: #000;
         position: absolute;
         right: 0;
         top: 50%;
-        opacity: 0;
-        transition: opacity 1s ease;
+        transition: width .65s ease;
     }
     .link__container:hover .line {
-        opacity: 1;
+        width: 180px;
     }
 }
 
