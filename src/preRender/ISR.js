@@ -1,6 +1,6 @@
 import {
     GET_ARTICLE,
-    GET_ARTICLES, GET_GALLERY, GET_HEADER, GET_HUB,
+    GET_ARTICLES, GET_FAQ, GET_FAQS_PATHS, GET_GALLERY, GET_HEADER, GET_HUB,
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
@@ -76,6 +76,41 @@ export const GetStaticProductsPath = async function () {
     }));
 
     return { paths, fallback: 'blocking' }
+}
+
+export const GetStaticFaqsPath = async function () {
+    const {data} = await client.query({
+        query: GET_FAQS_PATHS,
+        variables: {
+            quantity: 500
+        }
+    });
+
+    const paths = data?.faqs.map((f) => ({
+        params: { faqid: f.id },
+    }));
+
+    return { paths, fallback: 'blocking' }
+}
+
+export const GetFaq = async function (context) {
+    const {params} = context;
+
+    const {data} = await client.query({
+        query: GET_FAQ,
+        variables: {
+            id: params.faqid
+        }
+    });
+
+    return {
+        props: {
+            faq: data?.faq,
+            footer: data?.footers[0],
+            header: data?.headers[0]
+        },
+        revalidate: 60
+    }
 }
 
 export const GetStaticArticles = async function() {

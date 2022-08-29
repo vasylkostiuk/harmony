@@ -909,3 +909,86 @@ export const GET_HEADER = gql(`
         }
     }
 `);
+
+export const GET_FAQS_PATHS = gql(`
+    query GET_FAQS_PATHS($quantity: Int) {
+      faqs (first: $quantity) {
+        id
+      }
+   }
+`);
+
+export const GET_FAQ = gql(`
+    query GET_FAQ($id: ID!) {
+      faq (where: {id: $id}) {
+        id
+        title
+        qAs {
+          id
+          question
+          answer
+        }
+      }
+      headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
+      footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
+    }
+`);
