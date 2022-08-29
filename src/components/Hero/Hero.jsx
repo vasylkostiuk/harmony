@@ -3,14 +3,14 @@ import Image from "next/image";
 import customLoader from "../../preRender/customLoader";
 
 const Hero = ({image, name, description, link, linkText}) => {
-
     return (
         <>
             <div className={styles.hero}>
                 <div className={styles.imageContainer}>
                     <Image
                         src={image?.url}
-                        layout='fill'
+                        width={image?.width}
+                        height={image?.height}
                         alt="Harmony Domes"
                         loading='eager'
                         loader={customLoader}
