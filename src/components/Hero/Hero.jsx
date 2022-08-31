@@ -12,11 +12,10 @@ const Hero = ({image, name, description, link, linkText}) => {
                         width={image?.width}
                         height={image?.height}
                         alt="Harmony Domes"
-                        loading='eager'
+                        loading='lazy'
                         loader={customLoader}
                         placeholder='blur'
                         blurDataURL={image?.url}
-                        priority={true}
                     />
                 </div>
                 <div className='container'>

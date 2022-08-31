@@ -73,11 +73,12 @@
 
 @media screen and (min-width: 1281px) {
     .ctaContainer {
-        width: 326px;
+        width: max-content;
         padding-top: 15%;
     }
     .description {
         margin-bottom: 0;
+        max-width: 326px;
     }
     .linkContainer {
         justify-content: flex-end;
