@@ -18,7 +18,13 @@ const LayoutProduct = ({image, badge, title, description, previousPrice, current
                         placeholder='blur'
                         blurDataURL={image?.url}
                     />
-                    <LayoutBadge text={badge}/>
+                    {
+                        badge
+                        ?
+                            <LayoutBadge text={badge}/>
+                        :
+                            <></>
+                    }
                 </div>
                 <div className={styles.info__container}>
 
