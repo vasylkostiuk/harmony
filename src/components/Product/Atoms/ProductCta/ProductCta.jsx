@@ -33,7 +33,7 @@ const ProductCta = ({previousPrice}) => {
             {
                 product: {
                     ...product,
-                    uniqueId: product.id + Math.random(),
+                    uniqueId: product?.id + Math.random(),
                     colors: product?.colors?.filter(c => c.title === currentColor),
                     extraFeatures: featuresIntersection(product?.extraFeatures, currentFeatures),
                     internalColor: product?.internalColor.filter(c => c.title === currentInternalColor),
