@@ -29,7 +29,13 @@ const LayoutProduct = ({image, badge, title, description, previousPrice, current
                         </svg>
                     </div>
                     <div className={styles.price__container}>
-                        <p className={styles.price__previous}>$ {previousPrice}</p>
+                        {
+                            previousPrice
+                            ?
+                                <p className={styles.price__previous}>$ {previousPrice}</p>
+                            :
+                                <></>
+                        }
                         <p className={styles.price__current}>$ {currentPrice}</p>
                     </div>
                 </div>
