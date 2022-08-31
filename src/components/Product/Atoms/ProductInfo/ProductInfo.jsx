@@ -24,7 +24,7 @@ const ProductInfo = ({title, badgeText, description, parameters}) => {
             <ProductParameters
                 area={parameters?.area}
                 diameter={parameters?.diameter}
-                maxHeight={parameters?.maxHeight}
+                maxHeight={parameters?.maximumHeight}
                 weight={parameters?.weight}
             />
         </>
