@@ -8,7 +8,14 @@ const ProductInfo = ({title, badgeText, description, parameters}) => {
         <>
             <div className={styles.heading}>
                 <h1 className={styles.title}>{title}</h1>
-                <Badge text={badgeText}/>
+                {
+                    badgeText
+                    ?
+                        <Badge text={badgeText}/>
+                    :
+                        <></>
+                }
+
             </div>
             <div className={styles.image}>
                 <ProductImage/>
