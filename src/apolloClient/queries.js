@@ -621,10 +621,6 @@ export const GET_PRODUCT = gql(`
           }
           price
         }
-        placeholder {
-          id
-          url
-        }
         imageGallery {
               id
               galleryImage(first: 500) {
