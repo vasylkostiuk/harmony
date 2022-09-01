@@ -10,7 +10,8 @@
 @media screen and (min-width: 767px) {
     .container {
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
+        padding-top: 55px;
     }
 }
