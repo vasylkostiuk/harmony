@@ -8,15 +8,7 @@ const ArticleBlock = ({imageSrc, title, description, type, height, width}) => {
         <div className={`${styles.container} ${gridStyling}`}>
             {
                 type !== 'Text' &&
-                <Image
-                    src={imageSrc}
-                    width={width}
-                    height={height}
-                    placeholder='blur'
-                    blurDataURL={imageSrc}
-                    loading='lazy'
-                    alt={'Harmony Domes'}
-                />
+                <img src={imageSrc} alt="Harmony Domes" style={{width: '100%', objectFit: 'contain'}}/>
             }
             <div className={styles.info__block}>
                 <h4 className={styles.title}>{title}</h4>
