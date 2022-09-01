@@ -12,12 +12,13 @@ export const GetStaticMainPage = async function () {
     const {data} = await client.query({
         query: GET_MAIN_PAGE
     });
-    const {hero, herovideo} = data.mainPage;
+    const {hero, herovideo, preTitle, sliderDescription, sliderTitle} = data.mainPage;
 
     return {
         props: {
             heroBlocks: hero,
             video: herovideo,
+            sliderInfo: {preTitle, sliderDescription, sliderTitle},
             footer: data?.footers[0],
             header: data?.headers[0]
         },

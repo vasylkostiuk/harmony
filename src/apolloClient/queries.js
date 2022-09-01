@@ -389,6 +389,9 @@ export const GET_MAIN_PAGE = gql(`
           id
           url
         }
+        preTitle
+        sliderDescription
+        sliderTitle
       }
     }
 `);

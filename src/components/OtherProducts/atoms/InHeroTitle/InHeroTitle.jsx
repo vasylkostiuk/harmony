@@ -1,14 +1,12 @@
 import styles from './InHeroTitle.module.css';
 
-const InHeroTitle = () => {
+const InHeroTitle = ({title, preTitle, description}) => {
     return (
         <>
-            <h4 className={styles.subtitle}>Harmony.</h4>
+            <h4 className={styles.subtitle} dangerouslySetInnerHTML={{__html: preTitle}}></h4>
             <div className={styles.line}></div>
-            <h3 className={styles.title}>products</h3>
-            <p className={styles.description}>
-                Harmony Domes will create the ideal space for you to live in harmony – without any of the construction headaches.
-            </p>
+            <h3 className={styles.title} dangerouslySetInnerHTML={{__html: title}}></h3>
+            <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}></p>
         </>
     );
 }

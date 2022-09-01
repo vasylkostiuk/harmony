@@ -5,7 +5,7 @@ import InHeroTitle from "../src/components/OtherProducts/atoms/InHeroTitle/InHer
 import Footer from "../src/components/Footer/Footer";
 import HeaderTop from "../src/components/Header/molecules/HeaderTop/HeaderTop";
 
-export default function Home({heroBlocks, video, footer, header}) {
+export default function Home({heroBlocks, video, sliderInfo, footer, header}) {
   return (
       <>
         <div className="container">
@@ -19,7 +19,11 @@ export default function Home({heroBlocks, video, footer, header}) {
         <HeroSlider heroBlocks={heroBlocks} video={video}/>
         <div className="container">
           <OtherProducts>
-            <InHeroTitle/>
+            <InHeroTitle
+                title={sliderInfo?.sliderTitle}
+                description={sliderInfo?.sliderDescription}
+                preTitle={sliderInfo?.preTitle}
+            />
           </OtherProducts>
         </div>
         <Footer footer={footer}/>
