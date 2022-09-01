@@ -26,10 +26,8 @@ const Hero = ({image, name, description, link, linkText}) => {
                                 <path d="M1 1L7 7.24L1 14" stroke="black" strokeWidth="2"/>
                             </svg>
                         </a>
-                        <h1 className={styles.title}>{name}</h1>
-                        <p className={styles.description}>
-                            {description}
-                        </p>
+                        <h1 className={styles.title} dangerouslySetInnerHTML={{__html: name}}></h1>
+                        <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}></p>
                     </div>
                 </div>
             </div>
@@ -42,10 +40,8 @@ const Hero = ({image, name, description, link, linkText}) => {
                                 <path d="M1 1L7 7.24L1 14" stroke="black" strokeWidth="2"/>
                             </svg>
                         </a>
-                        <h1 className={styles.title}>{name}</h1>
-                        <p className={styles.description}>
-                            {description}
-                        </p>
+                        <h1 className={styles.title} dangerouslySetInnerHTML={{__html: name}}></h1>
+                        <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}></p>
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
