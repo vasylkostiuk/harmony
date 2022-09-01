@@ -6,8 +6,8 @@ const Contacts = ({phoneNumber, email, address, weekObj}) => {
     return (
         <>
             <h3 className={styles.title}>Contact info</h3>
-            <p className={styles.contact__item}>{phoneNumber}</p>
-            <p className={styles.contact__item}>{email}</p>
+            <a href={`tel:${phoneNumber}`} className={styles.contact__item} style={{cursor: 'pointer'}}>{phoneNumber}</a>
+            <a href={`mailto:${email}`} className={styles.contact__item} style={{cursor: 'pointer'}}>{email}</a>
             <p className={styles.contact__item}>{address}</p>
             <button className={styles.btn} onClick={() => showSchedulePopup(true)}>
                 <div className={styles.btn__inside_container}>

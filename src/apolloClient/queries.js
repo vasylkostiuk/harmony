@@ -127,6 +127,7 @@ export const GET_HUB = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -238,6 +239,7 @@ query GET_ARTICLE ($id: ID!) {
           id
           tel
           email
+          adress
         }
         logo {
           id
@@ -334,6 +336,7 @@ export const GET_MAIN_PAGE = gql(`
           id
           tel
           email
+          adress
         }
         logo {
           id
@@ -445,6 +448,7 @@ export const GET_PRODUCTS = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -511,6 +515,7 @@ export const GET_PRODUCT = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -647,6 +652,7 @@ export const GET_SEQUENCE_PAGE = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -798,6 +804,7 @@ export const GET_GALLERY = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -847,6 +854,7 @@ export const GET_FOOTER = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id
@@ -952,6 +960,7 @@ export const GET_FAQ = gql(`
               id
               tel
               email
+              adress
             }
             logo {
               id

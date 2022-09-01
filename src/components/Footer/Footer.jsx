@@ -13,7 +13,11 @@ const Footer = ({footer}) => {
                 logoDescription={footer?.description}
                 socialLinks={footer?.socialLinks}
             />
-            <FooterContactsContainer email={footer?.contacts?.email} phoneNumber={footer?.contacts?.tel}/>
+            <FooterContactsContainer
+                email={footer?.contacts?.email}
+                phoneNumber={footer?.contacts?.tel}
+                address={footer?.contacts?.adress}
+            />
             <BottomInfo/>
         </>
     )
