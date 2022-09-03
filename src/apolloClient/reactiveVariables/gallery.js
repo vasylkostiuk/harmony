@@ -5,30 +5,51 @@ export const galleryCount = makeVar(0);
 export const galleryCategory = makeVar('All products');
 
 export function getGalleryCategories(gallery) {
-    if (!gallery.length || !gallery[0].category) return;
+    if (!gallery?.length || !gallery[0]?.category) return;
 
     const categories = ["All products"];
 
-    return [...categories, ...gallery.map(item => item.category)];
+    return [...categories, ...gallery.map(item => item?.category)];
 }
 
 export function getPaginatedImages(gallery, count) {
-    if (!gallery.length) return;
+    if (!gallery?.length) return;
 
-    return gallery?.slice(0, 10  + (10 * count));
+    const result = gallery?.slice(0, 20  + (20 * count));
+
+    if (result) {
+        return result;
+    }
+
+    return [];
 }
 
-export function getImagesToShow(gallery, category) {
-    if (!gallery.length || !gallery[0].category) return;
+export function getImagesToShow(gallery = [], category, count) {
+    if (!gallery?.length || !gallery[0]?.category || !gallery[0]?.images) return;
 
-    switch (category) {
-        case 'Flower':
-            return getPaginatedImages(galleryVar().find(item => item?.category === 'Flower')?.images, galleryCount());
-        case 'Geodome':
-            return getPaginatedImages(galleryVar().find(item => item?.category === 'Geodome')?.images, galleryCount());
-        default:
-            return galleryVar().reduce(function(previousValue, currentValue) {
+    if (category !== "All products") {
+        return getPaginatedImages(gallery.find(item => item?.category === category)?.images, count);
+    } else if (gallery?.length > 1) {
+
+        return gallery.reduce(function(previousValue, currentValue) {
+            if (previousValue?.images) {
                 return [...previousValue?.images, ...currentValue?.images];
-            }).slice(0, 10  + (10 * galleryCount()));
+            }
+        })?.slice(0, 20  + (20 * count));
+    } else {
+        return gallery[0]?.images.slice(0, 20  + (20 * count));
+    }
+}
+
+export function isMoreImagesToShow(gallery = [], category, images) {
+    if (category !== "All products") {
+        return gallery.find(item => item?.category === category)?.images?.length > images?.length;
+    } else if (gallery && gallery?.length > 1) {
+        // console.log(gallery.reduce((res, images) => res.push(images), [] ))
+        return gallery.reduce(function(previousValue, currentValue) {
+            if (previousValue?.images) {
+                return [...previousValue?.images, ...currentValue?.images];
+            }
+        })?.length > images?.length;
     }
 }

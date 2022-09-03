@@ -1,6 +1,6 @@
 import Gallery from "../../src/components/Gallery/Gallery";
 import {getGallery} from "../../src/preRender/ISR";
-import {galleryVar} from "../../src/apolloClient/reactiveVariables/gallery";
+import {galleryCategory, galleryCount, galleryVar} from "../../src/apolloClient/reactiveVariables/gallery";
 import {useEffect, useState} from "react";
 import GalleryFilters from "../../src/components/Gallery/atoms/GalleryFilters/GalleryFilters";
 import Footer from "../../src/components/Footer/Footer";
@@ -10,6 +10,9 @@ const GalleryPage = ({gallery, footer, header}) => {
     const [showGallery, setShowGallery] = useState(false);
 
     useEffect(() => {
+        galleryVar([]);
+        galleryCategory("All products");
+        galleryCount(0);
         if (gallery) {
             for (let i = 0; i < gallery?.galleryContainersConnection?.edges[0]?.node?.gallery.length; i++) {
                 galleryVar().push({
