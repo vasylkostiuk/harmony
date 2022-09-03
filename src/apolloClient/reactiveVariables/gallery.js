@@ -15,7 +15,7 @@ export function getGalleryCategories(gallery) {
 export function getPaginatedImages(gallery, count) {
     if (!gallery?.length) return;
 
-    const result = gallery?.slice(0, 20  + (20 * count));
+    const result = gallery?.slice(0, 30  + (30 * count));
 
     if (result) {
         return result;
@@ -35,9 +35,9 @@ export function getImagesToShow(gallery = [], category, count) {
             if (previousValue?.images) {
                 return [...previousValue?.images, ...currentValue?.images];
             }
-        })?.slice(0, 20  + (20 * count));
+        })?.slice(0, 30  + (30 * count));
     } else {
-        return gallery[0]?.images.slice(0, 20  + (20 * count));
+        return gallery[0]?.images.slice(0, 30  + (30 * count));
     }
 }
 
@@ -45,7 +45,6 @@ export function isMoreImagesToShow(gallery = [], category, images) {
     if (category !== "All products") {
         return gallery.find(item => item?.category === category)?.images?.length > images?.length;
     } else if (gallery && gallery?.length > 1) {
-        // console.log(gallery.reduce((res, images) => res.push(images), [] ))
         return gallery.reduce(function(previousValue, currentValue) {
             if (previousValue?.images) {
                 return [...previousValue?.images, ...currentValue?.images];
