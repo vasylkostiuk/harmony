@@ -39,10 +39,12 @@ const LayoutProductContainer = () => {
                 }
             </ProductsGrid>
             {
-                !paginationCalculate(products?.length, paginationStep) &&
-                <LoadMoreBtn paginationStep={paginationStep}/>
+                !paginationCalculate(products?.length, paginationStep)
+                ?
+                    <LoadMoreBtn paginationStep={paginationStep}/>
+                :
+                    <div className={styles.footer__margin}></div>
             }
-
         </>
     );
 }

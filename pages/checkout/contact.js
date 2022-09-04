@@ -1,7 +1,3 @@
-import ContactPersonal from "../../src/components/Checkout/molecules/ContactPersonal/ContactPersonal";
-import ContactAddress from "../../src/components/Checkout/molecules/ContactAdress/ContactAdress";
-import CheckoutLayout from "../../src/components/global/LoadCircle/layouts/CheckoutLayout/CheckoutLayout";
-import Summary from "../../src/components/Checkout/atoms/Summary/Summary";
 import CheckoutRoadmap from "../../src/components/Checkout/atoms/CheckoutRoadmap/CheckoutRoadmap";
 import {useQuery, useReactiveVar} from "@apollo/client";
 import {checkoutProducts} from "../../src/apolloClient/reactiveVariables/checkout";
@@ -10,6 +6,8 @@ import {GET_FOOTER} from "../../src/apolloClient/queries";
 import Footer from "../../src/components/Footer/Footer";
 import {getHeader} from "../../src/preRender/ISR";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
+import CheckoutContactsLayout
+    from "../../src/components/Checkout/organisms/CheckoutContactsLayout/CheckoutContactsLayout";
 
 const Contact = ({header}) => {
     const checkout = useReactiveVar(checkoutProducts);
@@ -30,13 +28,7 @@ const Contact = ({header}) => {
                         :
                         <>
                             <CheckoutRoadmap isFinal={true}/>
-                            <CheckoutLayout>
-                                <div>
-                                    <ContactPersonal/>
-                                    <ContactAddress/>
-                                </div>
-                                <Summary isFinal={true}/>
-                            </CheckoutLayout>
+                            <CheckoutContactsLayout/>
                         </>
                 }
             </div>

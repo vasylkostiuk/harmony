@@ -5,7 +5,6 @@ import {GET_PRODUCT} from "../../../../apolloClient/queries";
 import {useRouter} from "next/router";
 import {checkoutProducts} from "../../../../apolloClient/reactiveVariables/checkout";
 import {featuresIntersection} from "../../../../services/intersection";
-import Link from "next/link";
 
 const ProductCta = ({previousPrice}) => {
     const {
@@ -58,16 +57,14 @@ const ProductCta = ({previousPrice}) => {
                 }
             </div>
             <div className={styles.cta__container}>
-                <Link href={`/checkout/checkdetails`} passHref>
-                    <button className={styles.cta__button} onClick={() => addToCart(data?.product)}>
-                        <p className={styles.cta__button_text}>Add to cart</p>
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.5 2L3.5 6V20C3.5 20.5304 3.71071 21.0391 4.08579 21.4142C4.46086 21.7893 4.96957 22 5.5 22H19.5C20.0304 22 20.5391 21.7893 20.9142 21.4142C21.2893 21.0391 21.5 20.5304 21.5 20V6L18.5 2H6.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M3.5 6H21.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M16.5 10C16.5 11.0609 16.0786 12.0783 15.3284 12.8284C14.5783 13.5786 13.5609 14 12.5 14C11.4391 14 10.4217 13.5786 9.67157 12.8284C8.92143 12.0783 8.5 11.0609 8.5 10" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
-                </Link>
+                <button className={styles.cta__button} onClick={() => addToCart(data?.product)}>
+                    <p className={styles.cta__button_text}>Add to cart</p>
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 2L3.5 6V20C3.5 20.5304 3.71071 21.0391 4.08579 21.4142C4.46086 21.7893 4.96957 22 5.5 22H19.5C20.0304 22 20.5391 21.7893 20.9142 21.4142C21.2893 21.0391 21.5 20.5304 21.5 20V6L18.5 2H6.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M3.5 6H21.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M16.5 10C16.5 11.0609 16.0786 12.0783 15.3284 12.8284C14.5783 13.5786 13.5609 14 12.5 14C11.4391 14 10.4217 13.5786 9.67157 12.8284C8.92143 12.0783 8.5 11.0609 8.5 10" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
                 <div className={styles.cta__financing}>
                     <svg className={styles.cta__financing_icon} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.055 3.7334H1.53805C0.983984 3.7334 0.533203 4.18418 0.533203 4.73824V11.5179C0.533203 12.0719 0.983984 12.5227 1.53805 12.5227H14.055C14.6091 12.5227 15.0598 12.0719 15.0598 11.5179V4.73824C15.0598 4.18418 14.6091 3.7334 14.055 3.7334ZM14.4348 11.5179C14.4348 11.7273 14.2644 11.8977 14.055 11.8977H1.53805C1.32861 11.8977 1.1582 11.7273 1.1582 11.5179V4.73824C1.1582 4.5288 1.32861 4.3584 1.53805 4.3584H14.055C14.2644 4.3584 14.4348 4.5288 14.4348 4.73824V11.5179Z" fill="#71717A"/>

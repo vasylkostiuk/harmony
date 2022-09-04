@@ -113,6 +113,7 @@ const CheckDetails = () => {
                     </CheckoutLayout>
                 </>
             }
+            <div className={styles.footer__margin}></div>
         </>
     );
 }

@@ -1,13 +1,4 @@
 @media screen and (min-width: 1px) {
-    .title {
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 140%;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
     .footer__margin {
         display: block;
         margin-bottom: 75px;
@@ -15,12 +6,6 @@
 }
 
 @media screen and (min-width: 767px) {
-    .title {
-        font-size: 50px;
-        line-height: 140%;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
     .footer__margin {
         margin-bottom: 95px;
     }

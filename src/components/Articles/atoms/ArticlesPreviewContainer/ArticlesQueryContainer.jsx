@@ -6,6 +6,7 @@ import {currentArticles} from "../../../../apolloClient/reactiveVariables/articl
 import {client} from "../../../../apolloClient/client";
 import ArticleSkeleton from "../../molecules/ArticleSkeleton/ArticleSkeleton";
 import {getUniqueById} from "../../../../services/getUniqueById";
+import styles from "./ArticlesQueryContainer.module.css";
 
 const ArticlesQueryContainer = ({cursor, filter}) => {
     const [hasNextPage, setHasNextPage] = useState(false);
@@ -44,8 +45,11 @@ const ArticlesQueryContainer = ({cursor, filter}) => {
                 <></>
             }
             {
-                hasNextPage &&
-                <ArticleLoadMore cursor={endCursor} loading={loading}/>
+                hasNextPage
+                ?
+                    <ArticleLoadMore cursor={endCursor} loading={loading}/>
+                :
+                    <div className={styles.footer__margin}></div>
             }
         </>
     );

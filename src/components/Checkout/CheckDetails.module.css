@@ -12,6 +12,10 @@
         border-bottom: #E4E4E7 1px solid;
         margin-bottom: 30px;
     }
+    .footer__margin {
+        display: block;
+        margin-bottom: 60px;
+    }
     .image {
         grid-area: image;
     }
@@ -89,6 +93,9 @@
         font-size: 48px;
         margin-bottom: 50px;
     }
+    .footer__margin {
+        margin-bottom: 85px;
+    }
 }
 
 @media screen and (min-width: 1023px) {
@@ -101,5 +108,14 @@
     }
     .order__title {
         margin-bottom: 65px;
+    }
+    .footer__margin {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .footer__margin {
+        margin-bottom: 130px;
     }
 }

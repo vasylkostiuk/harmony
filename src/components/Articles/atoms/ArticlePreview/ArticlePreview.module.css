@@ -5,6 +5,7 @@
         margin-top: 30px;
         padding-bottom: 30px;
         border-bottom: 1px solid #C3CBCD;
+        cursor: pointer;
     }
     .title {
         font-weight: 600;

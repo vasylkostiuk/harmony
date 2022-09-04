@@ -1,0 +1,18 @@
+@media screen and (min-width: 1px) {
+    .footer__margin {
+        display: block;
+        margin-bottom: 70px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .footer__margin {
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .footer__margin {
+        margin-bottom: 130px;
+    }
+}

@@ -45,7 +45,6 @@ const ContactAddress = () => {
                     contactField={"zipCode"}
                 />
             </ContactFormLayout>
-            <div style={{height: '200px'}}></div>
         </>
     );
 }

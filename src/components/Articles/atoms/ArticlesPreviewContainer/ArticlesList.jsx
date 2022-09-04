@@ -8,15 +8,17 @@ const ArticlesList = ({articles}) => {
                 articles && articles?.length
                 ?
                 articles.map(article => {
-                    return <ArticlePreview
-                        key={article?.id}
-                        articleId={article?.id}
-                        imageSrc={article?.presentationImage?.url}
-                        width={article?.presentationImage?.width}
-                        height={article?.presentationImage?.height}
-                        description={article?.description}
-                        title={article?.title}
-                    />
+                    if (article?.type !== "Text") {
+                        return <ArticlePreview
+                            key={article?.id}
+                            articleId={article?.id}
+                            imageSrc={article?.presentationImage?.url}
+                            width={article?.presentationImage?.width}
+                            height={article?.presentationImage?.height}
+                            description={article?.description}
+                            title={article?.title}
+                        />
+                    }
                 })
                 :
                 <></>
