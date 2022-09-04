@@ -53,7 +53,7 @@
 
 @media screen and (min-width: 1281px) {
     .container {
-        margin: 120px 0 130px 0;
+        margin: 120px 0 70px 0;
     }
     .text__container {
         grid-column-gap: 110px;

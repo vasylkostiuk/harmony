@@ -6,7 +6,7 @@ import customLoader from "../../../../preRender/customLoader";
 import {useState} from "react";
 import LoadCircle from "../../../LoadCircle";
 
-const ProductImage = () => {
+const ProductImage = ({imageDescription}) => {
     const {url, width, height} = useReactiveVar(currentProductsVar);
     const [showImage, setShowImage] = useState(false)
 
@@ -27,7 +27,7 @@ const ProductImage = () => {
                 alt={'Harmony Domes'}
                 loader={customLoader}
             />
-            <p className={styles.text}>*Harmony Domes will create the ideal space for you to live in harmony</p>
+            <p className={styles.text} dangerouslySetInnerHTML={{__html: imageDescription}}></p>
         </div>
     );
 }

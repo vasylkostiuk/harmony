@@ -63,6 +63,10 @@
     .cta__financing_underlined {
         text-decoration: underline;
     }
+    .cta__financing_icon {
+        width: 16px;
+        object-fit: contain;
+    }
 }
 
 @media screen and (min-width:767px) {
@@ -74,6 +78,15 @@
     }
     .price__current, .price__previous {
         text-align: center;
+    }
+    .cta__financing_link {
+        font-size: 16px;
+    }
+    .cta__financing_icon {
+        width: 30px;
+    }
+    .cta__button {
+        min-width: 232px;
     }
 }
 

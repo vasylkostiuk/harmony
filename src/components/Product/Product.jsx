@@ -10,7 +10,7 @@ import InProductTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle"
 import {useEffect, useState} from "react";
 
 const Product = (product) => {
-  const currentProduct = product.product.product;
+  const currentProduct = product?.product?.product;
   const {
       badge,
       image,
@@ -21,7 +21,8 @@ const Product = (product) => {
       imageGallery,
       category,
       internalColor,
-      placeholder
+      placeholder,
+      imageDescription
   } = currentProduct;
 
   const [deligated, setDeligated] = useState(false);
@@ -89,7 +90,7 @@ const Product = (product) => {
                     />
                 </div>
                 <div>
-                    <ProductImage/>
+                    <ProductImage imageDescription={imageDescription}/>
                     <ProductCta previousPrice={price?.previousPrice}/>
                 </div>
             </Sticky>

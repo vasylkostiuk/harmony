@@ -21,6 +21,7 @@
         left: auto;
         right: 0;
         width: 580px;
+        box-shadow: -17px -19px 84px rgba(0, 0, 0, 0.06);
     }
 }
 

@@ -115,7 +115,6 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
                         </>
                     :
                         <div className={styles.checkout}>
-                            <h1 className={checkoutStyles.order__title}>Order</h1>
                             {
                                 checkout?.length
                                     ?

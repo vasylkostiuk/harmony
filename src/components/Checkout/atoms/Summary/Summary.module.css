@@ -167,6 +167,6 @@
     .container {
         height: max-content;
         position: sticky;
-        top: 0;
+        top: 50px;
     }
 }

@@ -558,6 +558,7 @@ export const GET_PRODUCT = gql(`
         badge
         category
         id
+        imageDescription
         visionCount
         image {
           id

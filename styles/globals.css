@@ -252,28 +252,28 @@ h1,h2,h3,h4,h5,h6,p {
 
   .extended .swiper-button-next {
     right: 507px !important;
-    top: 370px;
+    top: 390px;
     bottom: 130px;
     z-index: 99;
   }
 
   .products .swiper-button-next {
     right: 507px !important;
-    top: 307px;
+    top: 327px;
     bottom: 130px;
     z-index: 99;
   }
 
   .extended .swiper-button-prev {
     left: 507px !important;
-    top: 370px;
+    top: 390px;
     bottom: 130px;
     z-index: 99;
   }
 
   .products .swiper-button-prev {
     left: 507px !important;
-    top: 307px;
+    top: 327px;
     bottom: 130px;
     z-index: 99;
   }
@@ -288,7 +288,7 @@ h1,h2,h3,h4,h5,h6,p {
 
   .extended .swiper-pagination,
   .products .swiper-pagination {
-    bottom: 130px !important;
+    bottom: 110px !important;
   }
 }
 

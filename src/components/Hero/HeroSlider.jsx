@@ -10,8 +10,8 @@ const HeroSlider = ({heroBlocks, video}) => {
                 showStatus={false}
                 autoPlay={true}
                 infiniteLoop={true}
-                interval={3000}
-                transitionTime={750}
+                interval={7000}
+                transitionTime={1000}
                 showArrows={false}
             >
                 {heroBlocks.map(el => {
