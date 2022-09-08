@@ -12,6 +12,10 @@
         margin-right: 15px;
         white-space: nowrap;
     }
+    .current.header {
+        margin-right: 0;
+        order: 1;
+    }
     .previous {
         font-weight: 300;
         font-size: 14px;
@@ -20,14 +24,25 @@
         color: #A1A1AA;
         white-space: nowrap;
     }
+    .previous.header {
+        margin-right: 10px;
+    }
 }
 
 @media screen and (min-width: 767px) {
+    .container.header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .current {
         font-size: 22px;
         margin-right: 0;
         margin-left: 10px;
         order: 1;
+    }
+    .current.header {
+        margin-left: 0;
+        order: 0;
     }
     .previous {
         font-size: 16px;

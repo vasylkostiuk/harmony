@@ -1,12 +1,12 @@
 import styles from './ChekoutProductPrice.module.css';
 
-const CheckoutProductPrice = ({currentPrice, previousPrice}) => {
+const CheckoutProductPrice = ({currentPrice, previousPrice, isHeaderVersion = false}) => {
     return (
-        <div className={styles.container}>
-            <p className={styles.current}>$ {currentPrice}</p>
+        <div className={`${styles.container} ${isHeaderVersion ? styles.header : ''}`}>
+            <p className={`${styles.current} ${isHeaderVersion ? styles.header : ''}`}>$ {currentPrice}</p>
             {
                 previousPrice &&
-                <p className={styles.previous}>$ {previousPrice}</p>
+                <p className={`${styles.previous} ${isHeaderVersion ? styles.header : ''}`}>$ {previousPrice}</p>
             }
         </div>
     );

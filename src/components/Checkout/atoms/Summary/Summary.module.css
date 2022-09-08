@@ -2,6 +2,22 @@
     .cta__button {
         display: none;
         white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #18181B;
+        padding: 10px 32px;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+    }
+    .cta__button_text {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #fff;
+        margin-right: 12px;
     }
     .cta__financing {
         display: none;
@@ -128,22 +144,6 @@
     }
     .cta__button {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #18181B;
-        padding: 10px 32px;
-        width: 100%;
-        border: none;
-        cursor: pointer;
-    }
-    .cta__button_text {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 140%;
-        text-align: center;
-        letter-spacing: 0.02em;
-        color: #fff;
-        margin-right: 12px;
     }
     .cta__financing {
         display: flex;
