@@ -22,7 +22,6 @@
         text-transform: uppercase;
         text-align: left;
         margin: 7px 0;
-        white-space: nowrap;
     }
     .description {
         font-weight: 400;
@@ -89,7 +88,9 @@
         position: relative;
         display: block;
     }
-
+    .title {
+        white-space: nowrap;
+    }
     .imageContainer {
         position: absolute;
         width: 100%;
