@@ -79,9 +79,6 @@
         margin-bottom: 0;
         max-width: 652px;
     }
-    .linkContainer {
-        justify-content: flex-end;
-    }
     .hero {
         width: 100vw;
         height: 100vh;
