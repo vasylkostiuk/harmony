@@ -1,10 +1,8 @@
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Navigation} from "swiper";
-import Image from "next/image";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import customLoader from "../../../../../preRender/customLoader";
 
 const ExtendedSlider = ({images}) => {
     return (
@@ -35,14 +33,10 @@ const ExtendedSlider = ({images}) => {
             >
                 {images.map((image, idx) => {
                     return <SwiperSlide key={idx}>
-                        <Image
+                        <img
                             src={image}
-                            width={301}
-                            height={200}
-                            placeholder='blur'
-                            blurDataURL={image}
+                            style={{width: '100%', height: '200px', objectFit: 'cover'}}
                             alt='Harmony Domes'
-                            loader={customLoader}
                         />
                     </SwiperSlide>
                 })}
