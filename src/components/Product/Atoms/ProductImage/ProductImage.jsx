@@ -27,7 +27,13 @@ const ProductImage = ({imageDescription}) => {
                 alt={'Harmony Domes'}
                 loader={customLoader}
             />
-            <p className={styles.text} dangerouslySetInnerHTML={{__html: imageDescription}}></p>
+            {
+                imageDescription
+                ?
+                    <p className={styles.text} dangerouslySetInnerHTML={{__html: imageDescription}}></p>
+                :
+                    <></>
+            }
         </div>
     );
 }

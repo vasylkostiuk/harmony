@@ -19,7 +19,8 @@ const ProductLayout = ({
                            height,
                            previousPrice,
                            category,
-                           internalColors
+                           internalColors,
+                           imageDescription
 }) => {
     const colorsArr = colors?.map((color) => {
         return <ColorItemContainer
@@ -63,6 +64,7 @@ const ProductLayout = ({
                 imgSrc={imgSrc}
                 imgWidth={width}
                 imgHeight={height}
+                imageDescription={imageDescription}
             />
             {
                 colors?.length

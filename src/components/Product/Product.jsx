@@ -62,6 +62,7 @@ const Product = (product) => {
                 previousPrice={price?.previousPrice}
                 category={category}
                 internalColors={internalColor}
+                imageDescription={imageDescription}
             />
             <OtherProducts>
                 <InProductTitle
