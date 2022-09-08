@@ -29,7 +29,7 @@ const ProductId = (product) => {
                 />
                 <Product product={product}/>
             </div>
-            <Footer footer={product?.footer}/>
+            <Footer footer={product?.footer} withMobileWidget={true}/>
         </>
     );
 }

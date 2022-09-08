@@ -21,7 +21,7 @@ const CheckDetailsPage = ({header}) => {
             {
                 !loading
                     ?
-                    <Footer footer={data?.footers[0]}/>
+                    <Footer footer={data?.footers[0]} withMobileWidget={true}/>
                     :
                     <></>
             }

@@ -1,0 +1,11 @@
+@media screen and (min-width: 1px) {
+    .footer__widget_margin {
+        margin-bottom: 110px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .footer__widget_margin {
+        display: none;
+    }
+}

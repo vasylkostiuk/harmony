@@ -1,9 +1,10 @@
+import styles from './Footer.module.css';
 import AdvantagesContainer from "./molecules/AdvantagesContainer/AdvantagesContainer";
 import FooterMainContainer from "./organisms/FooterMainContainer/FooterMainContainer";
 import FooterContactsContainer from "./organisms/FooterContactsContainer/FooterContactsContainer";
 import BottomInfo from "./atoms/BottomInfo/BottomInfo";
 
-const Footer = ({footer}) => {
+const Footer = ({footer, withMobileWidget = false}) => {
     return (
         <>
             <AdvantagesContainer advantages={footer?.advantages}/>
@@ -19,6 +20,13 @@ const Footer = ({footer}) => {
                 address={footer?.contacts?.adress}
             />
             <BottomInfo/>
+            {
+                withMobileWidget
+                ?
+                    <div className={styles.footer__widget_margin}></div>
+                :
+                    <></>
+            }
         </>
     )
 }
