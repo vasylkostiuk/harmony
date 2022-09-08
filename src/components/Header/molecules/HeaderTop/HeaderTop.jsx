@@ -36,6 +36,10 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
         }, [ref]);
     }
 
+    useEffect(() => {
+        showHeaderDropdown(false);
+    }, [])
+
     useOutsideAlerter(wrapperRef);
 
     return (
