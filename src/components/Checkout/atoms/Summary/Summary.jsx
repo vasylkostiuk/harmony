@@ -10,11 +10,13 @@ import {createProductMail} from "../../../../services/createProductMail";
 import {contactInfo, isInputsFullFilled} from "../../../../apolloClient/reactiveVariables/contactInfo";
 import {isContactFullFilled} from "../../../../services/contactValidation";
 import SuccessPopup from "../../../global/SuccessPopup/SuccessPopup";
+import ErrorBanner from "../../../global/ErrorBanner/ErrorBanner";
 
 const Summary = ({isFinal = false}) => {
     const checkout = useReactiveVar(checkoutProducts);
     const contacts = useReactiveVar(contactInfo);
     const [showPopup, setShowPopup] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     init("F8o0joNoID8s9-JWd");
     const serviceID = 'service_isfvdvd';
@@ -31,6 +33,9 @@ const Summary = ({isFinal = false}) => {
             send(serviceID, templateID, sendData)
                 .then(() => {
                     setShowPopup(true)
+                })
+                .catch(() => {
+                    setShowError(!showError);
                 });
         } else {
             isInputsFullFilled(true);
@@ -124,6 +129,7 @@ const Summary = ({isFinal = false}) => {
                     :
                     <></>
             }
+            <ErrorBanner isDisplayed={showError}/>
         </div>
     );
 }

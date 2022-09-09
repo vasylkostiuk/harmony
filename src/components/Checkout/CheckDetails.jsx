@@ -113,7 +113,9 @@ const CheckDetails = () => {
                     </CheckoutLayout>
                 </>
             }
-            <div className={styles.footer__margin}></div>
+            {
+                checkout?.length ? <div className={styles.footer__margin}></div> : <></>
+            }
         </>
     );
 }
