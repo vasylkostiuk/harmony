@@ -20,7 +20,8 @@ const ProductLayout = ({
                            previousPrice,
                            category,
                            internalColors,
-                           imageDescription
+                           imageDescription,
+                           creditInfo
 }) => {
     const colorsArr = colors?.map((color) => {
         return <ColorItemContainer
@@ -103,7 +104,7 @@ const ProductLayout = ({
                 <></>
             }
             <BottomWidget>
-                <ProductCta previousPrice={previousPrice}/>
+                <ProductCta previousPrice={previousPrice} creditInfo={creditInfo}/>
             </BottomWidget>
         </>
     );

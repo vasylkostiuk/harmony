@@ -22,7 +22,8 @@ const Product = (product) => {
       category,
       internalColor,
       placeholder,
-      imageDescription
+      imageDescription,
+      creditInfo
   } = currentProduct;
 
   const [deligated, setDeligated] = useState(false);
@@ -63,6 +64,7 @@ const Product = (product) => {
                 category={category}
                 internalColors={internalColor}
                 imageDescription={imageDescription}
+                creditInfo={creditInfo}
             />
             <OtherProducts>
                 <InProductTitle
@@ -88,11 +90,12 @@ const Product = (product) => {
                         previousPrice={price?.previousPrice}
                         category={category}
                         internalColors={internalColor}
+                        creditInfo={creditInfo}
                     />
                 </div>
                 <div>
                     <ProductImage imageDescription={imageDescription}/>
-                    <ProductCta previousPrice={price?.previousPrice}/>
+                    <ProductCta previousPrice={price?.previousPrice} creditInfo={creditInfo}/>
                 </div>
             </Sticky>
             <ExtendedSlider images={imageGallery.galleryImage.map(image => image.url)}/>

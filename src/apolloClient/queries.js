@@ -560,6 +560,16 @@ export const GET_PRODUCT = gql(`
         id
         imageDescription
         visionCount
+        creditInfo {
+          id
+          icon {
+            id
+            url
+          }
+          text
+          linkText
+          lInk
+        }
         image {
           id
           width
