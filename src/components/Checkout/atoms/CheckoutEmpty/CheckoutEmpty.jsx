@@ -16,6 +16,7 @@ const CheckoutEmpty = () => {
                     </svg>
                 </div>
             </Link>
+            <div className={styles.footer__margin}></div>
         </>
     );
 }
