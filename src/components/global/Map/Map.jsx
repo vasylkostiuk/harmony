@@ -11,7 +11,12 @@ const Map = () => {
 
     return (
         <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyDGb6QUKYZm1KiZhDXnbVBKOfWLCvULwg0" }}
+            bootstrapURLKeys={
+                {
+                    key: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
+                    language: 'en',
+                }
+            }
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
         />
