@@ -4,7 +4,7 @@ import HubHours from "../../atoms/HubHours/HubHours";
 import {createTimeIntervals} from "../../../../services/hubHours";
 import Map from "../../../global/Map/Map";
 
-const ContactContainer = ({contactInfo, visitHours}) => {
+const ContactContainer = ({contactInfo, visitHours, map}) => {
     return (
       <div className={styles.container}>
           <div className={styles.contacts}>
@@ -18,7 +18,7 @@ const ContactContainer = ({contactInfo, visitHours}) => {
           <div className={styles.hours}>
               <HubHours visitHours={visitHours}/>
           </div>
-          <Map/>
+          <Map mapInfo={map}/>
       </div>
     );
 }

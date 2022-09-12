@@ -1,12 +1,12 @@
 import GoogleMapReact from 'google-map-react';
 
-const Map = () => {
+const Map = ({mapInfo}) => {
     const defaultProps = {
         center: {
-            lat: 10.99835602,
-            lng: 77.01502627
+            lat: mapInfo?.latitude,
+            lng: mapInfo?.longitude
         },
-        zoom: 11
+        zoom: 13
     };
 
     return (
@@ -19,7 +19,8 @@ const Map = () => {
             }
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
-        />
+        >
+        </GoogleMapReact>
     )
 }
 

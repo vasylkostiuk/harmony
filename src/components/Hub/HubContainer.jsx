@@ -14,13 +14,14 @@ const HubContainer = ({hub}) => {
         aboutUsRightColumn,
         contactInfo,
         sliderImages,
-        visitHours
+        visitHours,
+        mao
     } = hub;
 
     return (
         <div className="container">
             <HubHero title={title} imageSrc={mainImage?.url} width={mainImage?.width} height={mainImage?.height}/>
-            <ContactContainer contactInfo={contactInfo} visitHours={visitHours}/>
+            <ContactContainer contactInfo={contactInfo} visitHours={visitHours} map={mao}/>
             <HubAboutUs title={aboutUsTitle} leftColumnText={aboutUsLeftColumn} rightColumnText={aboutUsRightColumn}/>
             <HubSlider images={sliderImages}/>
             <OtherArticles>
