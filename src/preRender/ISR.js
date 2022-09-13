@@ -8,11 +8,27 @@ import {
 } from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
+function errorRedirect() {
+    return {
+        redirect: {
+            permanent: false,
+            destination: '/error'
+        }
+    }
+}
+
 export const GetStaticMainPage = async function () {
     const {data} = await client.query({
-        query: GET_MAIN_PAGE
+        query: GET_MAIN_PAGE,
+    }).catch(() => {
+        return errorRedirect();
     });
-    const {hero, herovideo, preTitle, sliderDescription, sliderTitle} = data.mainPage;
+
+    if (!data) {
+        return errorRedirect();
+    }
+
+    const {hero, herovideo, preTitle, sliderDescription, sliderTitle} = data?.mainPage;
 
     return {
         props: {
@@ -32,7 +48,13 @@ export const GetStaticProducts = async function () {
         variables: {
             quantity: 500
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -52,7 +74,13 @@ export const GetStaticProduct = async function (context) {
         variables: {
             id: params.productId
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -70,7 +98,13 @@ export const GetStaticProductsPath = async function () {
         variables: {
             quantity: 500
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     const paths = data?.products.map((p) => ({
         params: { productId: p.id },
@@ -85,7 +119,13 @@ export const GetStaticFaqsPath = async function () {
         variables: {
             quantity: 500
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     const paths = data?.faqs.map((f) => ({
         params: { faqid: f.id },
@@ -102,7 +142,13 @@ export const GetFaq = async function (context) {
         variables: {
             id: params.faqid
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -117,7 +163,13 @@ export const GetFaq = async function (context) {
 export const GetStaticArticles = async function() {
     const {data} = await client.query({
         query: GET_ARTICLES
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -130,7 +182,13 @@ export const GetStaticArticles = async function() {
 export const GetStaticArticlesPath = async function() {
     const {data} = await client.query({
         query: GET_ARTICLES
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     const paths = data?.articles.map(a => ({
         params: {
@@ -149,7 +207,13 @@ export const GetStaticArticle = async function(context) {
         variables: {
             id: params.articleId
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -167,7 +231,13 @@ export const GetStaticSequencePage = async function() {
         variables: {
             id: "cl5v0twvnkas20ciny2i61g7u"
         }
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -181,7 +251,13 @@ export const GetStaticSequencePage = async function() {
 export const getHub = async function() {
     const {data} = await client.query({
         query: GET_HUB
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
     const hub = data?.hubs[0];
 
     return {
@@ -197,7 +273,13 @@ export const getHub = async function() {
 export const getGallery = async function() {
     const {data} = await client.query({
         query: GET_GALLERY
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
@@ -212,7 +294,13 @@ export const getGallery = async function() {
 export const getHeader = async function() {
     const {data} = await client.query({
         query: GET_HEADER
+    }).catch(() => {
+        return errorRedirect();
     });
+
+    if (!data) {
+        return errorRedirect();
+    }
 
     return {
         props: {
