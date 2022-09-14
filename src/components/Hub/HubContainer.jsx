@@ -31,7 +31,6 @@ const HubContainer = ({hub}) => {
                     link={'articles'}
                 />
             </OtherArticles>
-            <HubSlider/>
         </div>
     )
 }
