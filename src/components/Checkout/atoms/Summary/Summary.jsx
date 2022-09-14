@@ -18,9 +18,9 @@ const Summary = ({isFinal = false}) => {
     const [showPopup, setShowPopup] = useState(false);
     const [showError, setShowError] = useState(false);
 
-    init("F8o0joNoID8s9-JWd");
-    const serviceID = 'service_isfvdvd';
-    const templateID = 'template_e0ehvvu';
+    init(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
+    const serviceID = process.env.NEXT_PUBLIC_EMAIL_PRODUCT_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAIL_PRODUCT_TEMPLATE_ID;
 
 
     const sendData = {
@@ -33,6 +33,7 @@ const Summary = ({isFinal = false}) => {
             send(serviceID, templateID, sendData)
                 .then(() => {
                     setShowPopup(true)
+                    checkoutProducts([])
                 })
                 .catch(() => {
                     setShowError(!showError);

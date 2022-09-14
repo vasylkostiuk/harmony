@@ -13,9 +13,9 @@ const SelectDate = ({weekObj}) => {
     const contacts = useReactiveVar(hubContacts);
     const [showPopup, setShowPopup] = useState(false);
 
-    init("F8o0joNoID8s9-JWd");
-    const serviceID = 'service_isfvdvd';
-    const templateID = 'template_s5c2tnc';
+    init(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
+    const serviceID = process.env.NEXT_PUBLIC_EMAIL_BOOK_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAIL_BOOK_TEMPLATE_ID;
 
     const sendData = {
         appointment: createHubLetter(contacts)
