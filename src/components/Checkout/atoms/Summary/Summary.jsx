@@ -33,7 +33,6 @@ const Summary = ({isFinal = false}) => {
             send(serviceID, templateID, sendData)
                 .then(() => {
                     setShowPopup(true)
-                    checkoutProducts([])
                 })
                 .catch(() => {
                     setShowError(!showError);

@@ -23,6 +23,13 @@
         line-height: 130%;
         color: #A1A1AA;
     }
+    .input.error {
+        border-color: #DB2424;
+        color: #DB2424;
+    }
+    .input.error::placeholder {
+        color: #DB2424;
+    }
     .button {
         height: 42px;
         display: flex;
@@ -32,6 +39,7 @@
         background-color: #18181B;
         border-color: #18181B;
         outline: none;
+        cursor: pointer;
     }
     .button__text {
         font-weight: 600;
@@ -41,5 +49,11 @@
         letter-spacing: 0.02em;
         color: #fff;
         margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .input {
+        min-width: 220px;
     }
 }

@@ -1,5 +1,6 @@
 import styles from './SuccessPopup.module.css';
 import Link from "next/link";
+import {checkoutProducts} from "../../../apolloClient/reactiveVariables/checkout";
 
 const defaults = {
     title: "Youre request have been successful sent",
@@ -17,7 +18,7 @@ const SuccessPopup = ({title = defaults.title, subtitle = defaults.subtitle, but
             <p className={styles.title}>{title}</p>
             <p className={styles.subtitle}>{subtitle}</p>
             <Link href={'/'} passHref>
-                <button className={styles.button}>{button}</button>
+                <button className={styles.button} onClick={() => checkoutProducts([])}>{button}</button>
             </Link>
         </div>
     );
