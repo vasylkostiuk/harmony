@@ -8,16 +8,19 @@ import {createHubLetter} from "../../../../services/createProductMail";
 import {isContactFullFilled} from "../../../../services/contactValidation";
 import SuccessPopup from "../../../global/SuccessPopup/SuccessPopup";
 import {useState} from "react";
+import ErrorBanner from "../../../global/ErrorBanner/ErrorBanner";
 
 const SelectDate = ({weekObj}) => {
     const contacts = useReactiveVar(hubContacts);
     const [showPopup, setShowPopup] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     init(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
-    const serviceID = process.env.NEXT_PUBLIC_EMAIL_BOOK_SERVICE_ID;
+    const serviceID = process.env.NEXT_PUBLIC_EMAIL_PRODUCT_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAIL_BOOK_TEMPLATE_ID;
 
     const sendData = {
+        subject: 'New hub appoitment',
         appointment: createHubLetter(contacts)
     }
 
@@ -27,6 +30,9 @@ const SelectDate = ({weekObj}) => {
             send(serviceID, templateID, sendData)
                 .then(() => {
                     setShowPopup(true)
+                })
+                .catch(() => {
+                    setShowError(!showError);
                 });
         } else {
             isHubInputsFullFilled(true);
@@ -54,6 +60,7 @@ const SelectDate = ({weekObj}) => {
                 :
                     <></>
             }
+            <ErrorBanner isDisplayed={showError}/>
         </div>
     );
 }
