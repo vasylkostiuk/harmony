@@ -163,7 +163,7 @@ h1,h2,h3,h4,h5,h6,p {
   }
 
   .centered {
-    height: 60vh;
+    height: 70vh;
   }
 
   .centered .swiper {
@@ -172,7 +172,8 @@ h1,h2,h3,h4,h5,h6,p {
   }
 
   .centered div:first-child {
-    height: 50vh;
+    height: 70vh;
+    padding-bottom: 40px;
   }
 
   .extended .swiper-slide {
