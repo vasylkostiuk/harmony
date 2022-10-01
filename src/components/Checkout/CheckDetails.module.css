@@ -12,6 +12,9 @@
         border-bottom: #E4E4E7 1px solid;
         margin-bottom: 30px;
     }
+    .container:last-of-type {
+        margin-bottom: 0;
+    }
     .footer__margin {
         display: block;
         margin-bottom: 60px;
