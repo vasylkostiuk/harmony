@@ -169,4 +169,8 @@
         position: sticky;
         top: 50px;
     }
+    .cta__financing_icon {
+        width: 16px;
+        object-fit: contain;
+    }
 }

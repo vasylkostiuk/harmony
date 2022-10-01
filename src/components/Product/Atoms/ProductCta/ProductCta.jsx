@@ -45,7 +45,8 @@ const ProductCta = ({previousPrice, creditInfo}) => {
                 calculatePrice,
                 internalColorPrice,
                 price,
-                initialPrice
+                initialPrice,
+                creditInfo
             }
         ]);
     }
