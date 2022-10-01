@@ -109,7 +109,7 @@ const Summary = ({isFinal = false}) => {
                 <BottomWidget>
                     {btnState(isFinal)}
                     <div className={styles.cta__financing}>
-                        <img src={checkout[0]?.creditInfo?.icon?.url} alt="Harmony Domes" className={styles.cta__financing_icon}/>
+                        <img src={checkout[0]?.creditInfo?.icon?.url} alt="Harmony Domes" className={`${styles.cta__financing_icon} ${styles.desktop}`}/>
                         <a href={checkout[0]?.creditInfo?.lInk} className={styles.cta__financing_link}>{checkout[0]?.creditInfo?.text} <span className={styles.cta__financing_underlined}>{checkout[0]?.creditInfo?.linkText}</span></a>
                     </div>
                 </BottomWidget>

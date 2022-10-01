@@ -46,7 +46,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 8px;
+        margin-top: 13px;
     }
     .widget .cta__financing_link {
         font-weight: 300;
@@ -153,7 +153,7 @@
     }
     .cta__financing_link {
         font-weight: 300;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 130%;
         color: #71717A;
         margin-left: 9px;
@@ -169,8 +169,8 @@
         position: sticky;
         top: 50px;
     }
-    .cta__financing_icon {
-        width: 16px;
+    .cta__financing_icon.desktop {
+        width: 29px;
         object-fit: contain;
     }
 }
