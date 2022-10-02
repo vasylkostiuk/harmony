@@ -1,9 +1,9 @@
 import styles from "./InSliderTitle.module.css";
 import Link from "next/link";
 
-const InSliderTitle = ({title, link, linkTitle}) => {
+const InSliderTitle = ({title, link, linkTitle, marginTop = null}) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{marginTop: marginTop ? marginTop + 'px' : ''}}>
             <h3 className={styles.title}>{title}</h3>
             <Link href={`/${link}`} passHref>
                 <div className={styles.link__container}>

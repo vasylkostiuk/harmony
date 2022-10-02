@@ -29,6 +29,7 @@ const HubContainer = ({hub}) => {
                     title={'Our News'}
                     linkTitle={'All news'}
                     link={'articles'}
+                    marginTop={1}
                 />
             </OtherArticles>
         </div>
