@@ -129,6 +129,10 @@
     .grid__product_text {
         font-size: 16px;
     }
+    .grid__product_container {
+        width: 35%;
+        justify-self: end;
+    }
     .grid__container_container {
         padding-bottom: 30px;
     }
