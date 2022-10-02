@@ -149,7 +149,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 8px;
+        margin-top: 30px;
     }
     .cta__financing_link {
         font-weight: 300;
@@ -168,6 +168,9 @@
         height: max-content;
         position: sticky;
         top: 50px;
+    }
+    .cta__financing {
+        margin-top: 20px;
     }
     .cta__financing_icon.desktop {
         width: 29px;
