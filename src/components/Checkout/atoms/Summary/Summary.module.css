@@ -180,4 +180,8 @@
         width: 29px;
         object-fit: contain;
     }
+    .grid__product_container {
+        width: auto;
+        justify-self: auto;
+    }
 }
