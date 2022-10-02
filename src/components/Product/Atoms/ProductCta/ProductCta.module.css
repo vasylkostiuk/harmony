@@ -7,6 +7,7 @@
     .price__container {
         display: flex;
         flex-direction: column;
+        transform: translateY(-10px);
     }
     .price__current {
         font-weight: 700;
@@ -75,6 +76,7 @@
     }
     .price__container {
         margin: 22px 0;
+        transform: none;
     }
     .price__current, .price__previous {
         text-align: center;
