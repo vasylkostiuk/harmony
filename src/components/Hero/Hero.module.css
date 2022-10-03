@@ -76,6 +76,7 @@
     .ctaContainer {
         width: max-content;
         padding-top: 15%;
+        margin-top: 0;
     }
     .description {
         margin-bottom: 0;
