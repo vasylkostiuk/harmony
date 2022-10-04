@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from './SequenceColorChanger.module.css';
 import {useReactiveVar} from "@apollo/client";
-import {sequenceColors} from "../../../apolloClient/reactiveVariables/sequenceColors";
+import {sequenceColors} from "../../../../apolloClient/reactiveVariables/sequenceColors";
 import {Tween} from "react-gsap";
 
 const SequenceColorChanger = ({isDisplayed}) => {

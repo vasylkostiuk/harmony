@@ -2,8 +2,9 @@ import {GetStaticSequencePage} from "../../src/preRender/ISR";
 import SequenceContainer from "../../src/components/Sequence/SequenceContainer";
 import {useEffect, useState} from "react";
 import {sequenceColors} from "../../src/apolloClient/reactiveVariables/sequenceColors";
-import PreSequenceHero from "../../src/components/Sequence/PreSequenceHero/PreSequenceHero";
+import PreSequenceHero from "../../src/components/Sequence/atoms/PreSequenceHero/PreSequenceHero";
 import Footer from "../../src/components/Footer/Footer";
+import SequenceInfo from "../../src/components/Sequence/atoms/SequenceInfo/SequenceInfo";
 
 const SequencePage = ({sequenceData, footer}) => {
     const [actualSequence, setActualSequence] = useState(null);
@@ -35,6 +36,7 @@ const SequencePage = ({sequenceData, footer}) => {
                 :
                 <></>
             }
+            <SequenceInfo sequenceInfo={sequenceData?.info}/>
             <Footer footer={footer}/>
         </>
     );

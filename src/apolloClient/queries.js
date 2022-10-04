@@ -703,6 +703,31 @@ export const GET_SEQUENCE_PAGE = gql(`
         }
         sequencePage(where: {id: $id}) {
             id
+            info {
+              id
+              title
+              firstText
+              firstImage {
+                id
+                width
+                height
+                url
+              }
+              secondText
+              secondImage {
+                id
+                width
+                height
+                url
+              }
+              thirdText
+              thirdImage {
+                id
+                width
+                height
+                url
+              }
+            }
             presentationHero {
               id
               title
