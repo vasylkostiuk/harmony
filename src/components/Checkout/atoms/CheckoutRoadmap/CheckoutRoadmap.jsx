@@ -33,4 +33,4 @@ const CheckoutRoadmap = ({isFinal}) => {
     )
 }
 
-export default CheckoutRoadmap
+export default CheckoutRoadmap;

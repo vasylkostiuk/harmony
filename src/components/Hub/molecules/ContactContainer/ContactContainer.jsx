@@ -18,7 +18,9 @@ const ContactContainer = ({contactInfo, visitHours, map}) => {
           <div className={styles.hours}>
               <HubHours visitHours={visitHours}/>
           </div>
-          <Map mapInfo={map}/>
+          <div className={styles.map}>
+              <Map mapInfo={map}/>
+          </div>
       </div>
     );
 }

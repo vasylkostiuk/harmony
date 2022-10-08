@@ -703,6 +703,18 @@ export const GET_SEQUENCE_PAGE = gql(`
         }
         sequencePage(where: {id: $id}) {
             id
+            hubBlock {
+              id
+              preTitle
+              title
+              description
+              buttonText
+              buttonLink
+              sliderImages(first: 500) {
+                id
+                url
+              }
+            }
             info {
               id
               title
@@ -749,30 +761,7 @@ export const GET_SEQUENCE_PAGE = gql(`
                 url
               }
             }
-            tabletSequence {
-              id
-              sequence(first: 500) {
-                id
-                width
-                height
-                url
-              }
-            }
             sequenceColors {
-              id
-              title
-              description
-              image {
-                id
-                width
-                height
-                url
-              }
-              color {
-                hex
-              }
-            }
-            tabletSequenceColors {
               id
               title
               description

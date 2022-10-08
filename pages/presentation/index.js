@@ -1,44 +1,20 @@
 import {GetStaticSequencePage} from "../../src/preRender/ISR";
-import SequenceContainer from "../../src/components/Sequence/SequenceContainer";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {sequenceColors} from "../../src/apolloClient/reactiveVariables/sequenceColors";
-import PreSequenceHero from "../../src/components/Sequence/atoms/PreSequenceHero/PreSequenceHero";
 import Footer from "../../src/components/Footer/Footer";
-import SequenceInfo from "../../src/components/Sequence/atoms/SequenceInfo/SequenceInfo";
+import SequenceShort from "../../src/components/Sequence/SequenceShort";
 
 const SequencePage = ({sequenceData, footer}) => {
-    const [actualSequence, setActualSequence] = useState(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined" && window.matchMedia("(min-width: 1281px)").matches) {
-            setActualSequence(sequenceData.sequence.sequence);
-            sequenceColors([...sequenceData?.sequenceColors]);
-        } else {
-            setActualSequence(sequenceData.tabletSequence.sequence);
-            sequenceColors([...sequenceData?.tabletSequenceColors]);
-        }
+        sequenceColors([...sequenceData?.sequenceColors]);
     }, [sequenceData?.id]);
 
     return (
-        <>
-            <PreSequenceHero
-                imageSrc={sequenceData?.presentationHero?.image?.url}
-                width={sequenceData?.presentationHero?.image?.width}
-                height={sequenceData?.presentationHero?.image?.height}
-                title={sequenceData?.presentationHero?.title}
-                description={sequenceData?.presentationHero?.linkText}
-                randomHeader={sequenceData?.presentationHero?.bottomHeader}
-            />
-            {
-                actualSequence && actualSequence?.length
-                ?
-                <SequenceContainer images={actualSequence}/>
-                :
-                <></>
-            }
-            <SequenceInfo sequenceInfo={sequenceData?.info}/>
+        <div>
+            <SequenceShort sequenceData={sequenceData}/>
             <Footer footer={footer}/>
-        </>
+        </div>
     );
 }
 

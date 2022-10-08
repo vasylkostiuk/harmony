@@ -1,0 +1,11 @@
+@media screen and (min-width: 1px) {
+    .margin__fixer {
+        margin-top: -70px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .margin__fixer {
+        display: none;
+    }
+}

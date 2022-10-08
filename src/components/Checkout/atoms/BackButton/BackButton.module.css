@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 115%;
+    color: #A1A1AA;
+    margin-left: 16px;
+}

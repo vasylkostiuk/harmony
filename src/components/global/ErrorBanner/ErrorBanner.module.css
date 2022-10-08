@@ -4,7 +4,8 @@
         background-color: #fff;
         box-shadow: 0 3px 59px rgba(0, 0, 0, 0.1);
         position: fixed;
-        z-index: 10;
+        display: block;
+        z-index: 10000000;
         height: 78px;
         bottom: 130px;
         right: 20px;

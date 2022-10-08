@@ -8,6 +8,7 @@ import {getHeader} from "../../src/preRender/ISR";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 import CheckoutContactsLayout
     from "../../src/components/Checkout/organisms/CheckoutContactsLayout/CheckoutContactsLayout";
+import BackButton from "../../src/components/Checkout/atoms/BackButton/BackButton";
 
 const Contact = ({header}) => {
     const checkout = useReactiveVar(checkoutProducts);
@@ -28,6 +29,7 @@ const Contact = ({header}) => {
                         :
                         <>
                             <CheckoutRoadmap isFinal={true}/>
+                            <BackButton/>
                             <CheckoutContactsLayout/>
                         </>
                 }

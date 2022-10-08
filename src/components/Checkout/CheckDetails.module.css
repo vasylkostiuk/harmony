@@ -24,7 +24,8 @@
     }
     .title {
         grid-area: title;
-        justify-self: center;
+        justify-self: start;
+        margin-left: 15px;
     }
     .colors {
         grid-area: color;
@@ -42,8 +43,9 @@
     }
     .price {
         grid-area: price;
-        justify-self: center;
+        justify-self: start;
         align-self: end;
+        margin-left: 15px;
     }
     .counter {
         grid-area: counter;
@@ -57,7 +59,7 @@
         grid-area: pen;
         justify-self: end;
         align-self: end;
-        transform: translateX(4px);
+        transform: translateX(4px) translateY(5px);
     }
     .order__title {
         font-weight: 700;
@@ -79,10 +81,12 @@
     }
     .title {
         justify-self: normal;
+        margin-left: 0;
     }
     .price {
         justify-self: end;
         align-self: start;
+        margin-left: 0;
     }
     .pen {
         justify-self: end;
