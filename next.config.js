@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["media.graphassets.com"]
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL,
   }
 }
 
