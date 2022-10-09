@@ -386,7 +386,9 @@ h1,h2,h3,h4,h5,h6,p {
   padding: 35px;
 }
 
-.react-calendar__tile {
+.react-calendar__tile,
+.react-calendar__navigation__label__labelText,
+.react-calendar__navigation__arrow {
   color: #000;
 }
 
