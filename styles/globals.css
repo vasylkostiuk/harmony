@@ -57,6 +57,12 @@ h1,h2,h3,h4,h5,h6,p {
   .mobile {
     display: block;
   }
+  .react-player {
+    height: 290px !important;
+  }
+  .react-player video {
+    object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 321px) {
@@ -79,6 +85,9 @@ h1,h2,h3,h4,h5,h6,p {
     height: 14px !important;
     margin-right: 32px !important;
   }
+  .react-player {
+    height: 360px !important;
+  }
 }
 
 @media screen and (min-width: 1023px) {
@@ -89,6 +98,9 @@ h1,h2,h3,h4,h5,h6,p {
   .hero .dot {
     width: 16px !important;
     height: 16px !important;
+  }
+  .react-player {
+    height: 475px !important;
   }
 }
 
@@ -110,6 +122,9 @@ h1,h2,h3,h4,h5,h6,p {
   }
   .desktop {
     display: block;
+  }
+  .react-player {
+    height: 625px !important;
   }
 }
 

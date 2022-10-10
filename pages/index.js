@@ -4,8 +4,10 @@ import OtherProducts from "../src/components/OtherProducts/OtherProducts";
 import InHeroTitle from "../src/components/OtherProducts/atoms/InHeroTitle/InHeroTitle";
 import Footer from "../src/components/Footer/Footer";
 import HeaderTop from "../src/components/Header/molecules/HeaderTop/HeaderTop";
+import {Controller, Scene} from "react-scrollmagic";
+import VideoPlayer from "../src/components/Hero/atoms/VideoPlayer/VideoPlayer";
 
-export default function Home({heroBlocks, video, sliderInfo, footer, header}) {
+export default function Home({heroBlocks, videoInfo, sliderInfo, footer, header}) {
   return (
       <>
         <div className="container">
@@ -16,7 +18,7 @@ export default function Home({heroBlocks, video, sliderInfo, footer, header}) {
               isAbsolute={true}
           />
         </div>
-        <HeroSlider heroBlocks={heroBlocks} video={video}/>
+        <HeroSlider heroBlocks={heroBlocks}/>
         <div className="container">
           <OtherProducts>
             <InHeroTitle
@@ -25,6 +27,18 @@ export default function Home({heroBlocks, video, sliderInfo, footer, header}) {
                 preTitle={sliderInfo?.preTitle}
             />
           </OtherProducts>
+          <Controller>
+              <Scene duration="500%" triggerHook="onLeave" pin>
+                  {progress => (
+                      <VideoPlayer
+                          url={videoInfo?.video?.url}
+                          link={videoInfo?.link}
+                          linkText={videoInfo?.linkText}
+                          progress={progress}
+                      />
+                  )}
+              </Scene>
+          </Controller>
         </div>
         <Footer footer={footer}/>
       </>

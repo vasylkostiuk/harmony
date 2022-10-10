@@ -2,7 +2,7 @@ import Hero from "./Hero";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel";
 
-const HeroSlider = ({heroBlocks, video}) => {
+const HeroSlider = ({heroBlocks}) => {
     return (
         <div className="hero">
             <Carousel

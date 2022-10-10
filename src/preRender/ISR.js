@@ -28,12 +28,12 @@ export const GetStaticMainPage = async function () {
         return errorRedirect();
     }
 
-    const {hero, herovideo, preTitle, sliderDescription, sliderTitle} = data?.mainPage;
+    const {hero, mainPageVideo, preTitle, sliderDescription, sliderTitle} = data?.mainPage;
 
     return {
         props: {
             heroBlocks: hero,
-            video: herovideo,
+            videoInfo: mainPageVideo,
             sliderInfo: {preTitle, sliderDescription, sliderTitle},
             footer: data?.footers[0],
             header: data?.headers[0]

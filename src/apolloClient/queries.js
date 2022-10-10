@@ -388,9 +388,14 @@ export const GET_MAIN_PAGE = gql(`
           linkText
           name
         }
-        herovideo {
+        mainPageVideo {
           id
-          url
+          video {
+            id
+            url
+          }
+          linkText
+          link
         }
         preTitle
         sliderDescription
