@@ -35,7 +35,7 @@ const SequenceColorChanger = ({isDisplayed}) => {
                                              alt="Harmony Domes"
                                         />
                                         <div className={styles.changer__container}>
-                                            <Tween from={{opacity: 0}} to={{opacity: 1}} stagger={.3}>
+                                            <Tween from={{opacity: 0}} to={{opacity: 1}} stagger={.05}>
                                                 <p className={styles.color__choose}>Choose your colour.</p>
                                                 <div className={styles.line}></div>
                                                 <p className={styles.title}>{c?.title}</p>
