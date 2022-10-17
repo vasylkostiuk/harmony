@@ -11,7 +11,7 @@ const VideoPlayer = ({url, progress, link, linkText}) => {
 
     useEffect(() => {
        setPlay(false);
-       if (controller?.current && isLoaded && progress > .2 && !isEnded) {
+       if (controller?.current && isLoaded && progress > .1 && !isEnded) {
            setPlay(true);
        }
     }, [controller, isLoaded, progress]);
