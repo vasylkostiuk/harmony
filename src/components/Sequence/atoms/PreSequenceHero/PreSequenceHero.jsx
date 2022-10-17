@@ -26,6 +26,7 @@ const PreSequenceHero = ({imageSrc, width, height, title, description, randomHea
                         width={width}
                         height={height}
                         alt="Harmony Domes"
+                        priority
                     />
                 </div>
                 <p className={styles.harmony}>Harmony.</p>
