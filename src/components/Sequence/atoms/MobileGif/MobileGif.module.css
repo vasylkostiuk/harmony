@@ -1,0 +1,19 @@
+@media screen and (min-width: 1px) {
+    .image {
+        width: 100vw;
+        height: 180px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .image {
+        height: 430px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .image {
+        height: 570px;
+    }
+}

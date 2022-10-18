@@ -708,6 +708,10 @@ export const GET_SEQUENCE_PAGE = gql(`
         }
         sequencePage(where: {id: $id}) {
             id
+            mobileGif {
+              id
+              url
+            }
             parametersSection {
               id
               title
