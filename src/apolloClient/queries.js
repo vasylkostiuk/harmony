@@ -792,7 +792,21 @@ export const GET_SEQUENCE_PAGE = gql(`
                 url
               }
             }
-            sequenceColors {
+            sequenceColors(first: 50) {
+              id
+              title
+              description
+              image {
+                id
+                width
+                height
+                url
+              }
+              color {
+                hex
+              }
+            }
+            sequenceColorsMobile(first: 50) {
               id
               title
               description

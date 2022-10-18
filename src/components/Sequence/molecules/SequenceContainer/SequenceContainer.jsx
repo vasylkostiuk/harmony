@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller, Scene } from "react-scrollmagic";
 import Sequence from "../Sequence/Sequence";
-import SequenceColorChanger from "../../atoms/SequenceColorChanger/SequenceColorChanger";
+import SequenceColorChangerContainer from "../../atoms/SequenceColorChanger/SequenceColorChangerContainer";
 
 
 const SequenceContainer = ({images}) => {
@@ -11,7 +11,7 @@ const SequenceContainer = ({images}) => {
                 {(progress) => (
                     <div style={{ height: "100vh", position: "relative" }}>
                         <Sequence progress={progress} images={images} />
-                        <SequenceColorChanger isDisplayed={progress > .99}/>
+                        <SequenceColorChangerContainer isDisplayed={progress > .99} isDesktop={true}/>
                     </div>
                 )}
             </Scene>

@@ -6,6 +6,7 @@ import HubBlock from "../../atoms/HubBlock/HubBlock";
 import OtherProducts from "../../../OtherProducts/OtherProducts";
 import InProductTitle from "../../../OtherProducts/atoms/InProductTitle/InSliderTitle";
 import MobileGif from "../../atoms/MobileGif/MobileGif";
+import SequenceColorChangerContainer from "../../atoms/SequenceColorChanger/SequenceColorChangerContainer";
 
 const SequenceShortMobile = ({sequenceData}) => {
     return (
@@ -20,6 +21,7 @@ const SequenceShortMobile = ({sequenceData}) => {
             />
             <MobileGif url={sequenceData?.mobileGif?.url}/>
             <SequenceParametersOrganism parametersSection={sequenceData?.parametersSection}/>
+            <SequenceColorChangerContainer isDesktop={false} isDisplayed={true}/>
             <SequenceInfo sequenceInfo={sequenceData?.info}/>
             <HubBlock hubBlock={sequenceData?.hubBlock}/>
             <div className={styles.margin__fixer}></div>

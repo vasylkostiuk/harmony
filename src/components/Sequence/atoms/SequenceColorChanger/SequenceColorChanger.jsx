@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from "react";
 import styles from './SequenceColorChanger.module.css';
-import {useReactiveVar} from "@apollo/client";
-import {sequenceColors} from "../../../../apolloClient/reactiveVariables/sequenceColors";
 import {Tween} from "react-gsap";
 
-const SequenceColorChanger = ({isDisplayed}) => {
-    const colors = useReactiveVar(sequenceColors);
+const SequenceColorChanger = ({isDisplayed, colors}) => {
     const [currentColor, setCurrentColor] = useState(0);
 
     useEffect(() => {
@@ -27,11 +24,7 @@ const SequenceColorChanger = ({isDisplayed}) => {
                                     <div style={{display: idx === currentColor ? 'block' : 'none'}}>
                                         <img src={c?.image?.url}
                                              loading="eager"
-                                             style={{
-                                                 objectFit: 'cover',
-                                                 width: '100vw',
-                                                 height: '100vh'
-                                             }}
+                                             className={styles.image}
                                              alt="Harmony Domes"
                                         />
                                         <div className={styles.changer__container}>
