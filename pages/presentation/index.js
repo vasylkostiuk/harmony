@@ -2,7 +2,7 @@ import {GetStaticSequencePage} from "../../src/preRender/ISR";
 import {useEffect} from "react";
 import {sequenceColors} from "../../src/apolloClient/reactiveVariables/sequenceColors";
 import Footer from "../../src/components/Footer/Footer";
-import SequenceShort from "../../src/components/Sequence/SequenceShort";
+import SequenceShort from "../../src/components/Sequence/layouts/SequenceShort/SequenceShort";
 
 const SequencePage = ({sequenceData, footer}) => {
 
