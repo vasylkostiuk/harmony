@@ -5,6 +5,7 @@ import SequenceInfo from "./atoms/SequenceInfo/SequenceInfo";
 import HubBlock from "./atoms/HubBlock/HubBlock";
 import OtherProducts from "../OtherProducts/OtherProducts";
 import InProductTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle";
+import SequenceParametersOrganism from "./organisms/SequenceParametersOrganism/SequenceParametersOrganism";
 
 const SequenceShort = ({sequenceData}) => {
     return (
@@ -20,6 +21,7 @@ const SequenceShort = ({sequenceData}) => {
                 />
                 <SequenceContainer images={sequenceData?.sequence?.sequence}/>
             </div>
+            <SequenceParametersOrganism parametersSection={sequenceData?.parametersSection}/>
             <SequenceInfo sequenceInfo={sequenceData?.info}/>
             <HubBlock hubBlock={sequenceData?.hubBlock}/>
             <div className={styles.margin__fixer}></div>

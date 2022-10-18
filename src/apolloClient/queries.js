@@ -708,6 +708,28 @@ export const GET_SEQUENCE_PAGE = gql(`
         }
         sequencePage(where: {id: $id}) {
             id
+            parametersSection {
+              id
+              title
+              firstImage {
+                id
+                url
+                width
+                height
+              }
+              secondImage {
+                id
+                url
+                width
+                height
+              }
+              parameter(first: 50) {
+                id
+                title
+                value
+                unitOfMeasurement
+              }
+            }
             hubBlock {
               id
               preTitle

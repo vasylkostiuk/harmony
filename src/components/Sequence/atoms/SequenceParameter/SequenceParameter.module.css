@@ -1,0 +1,43 @@
+@media screen and (min-width: 1px) {
+    .title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin-bottom: 8px;
+    }
+    .value__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .value, .measure {
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #000000;
+    }
+    .value {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .value, .measure {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .value, .measure {
+        font-size: 58px;
+    }
+}
