@@ -659,8 +659,34 @@ export const GET_PRODUCT = gql(`
   }
 `);
 
+export const GET_SEQUENCE_PAGES_IDS = gql(`
+    query getSequencePagesIds {
+      sequencePages(first: 50) {
+        id
+      }
+    }
+`)
+
+
 export const GET_SEQUENCE_PAGE = gql(`
   query GetSequencePage($id: ID!) {
+      headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
       footers {
             id
             description

@@ -4,7 +4,7 @@ import {
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
-    GET_SEQUENCE_PAGE
+    GET_SEQUENCE_PAGE, GET_SEQUENCE_PAGES_IDS
 } from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
@@ -225,11 +225,33 @@ export const GetStaticArticle = async function(context) {
     }
 }
 
-export const GetStaticSequencePage = async function() {
+export const GetStaticSequencePagesPath = async function() {
+    const {data} = await client.query({
+        query: GET_SEQUENCE_PAGES_IDS
+    }).catch(() => {
+        return errorRedirect();
+    });
+
+    if (!data) {
+        return errorRedirect();
+    }
+
+    const paths = data?.sequencePages.map(e => ({
+        params: {
+            presentationId: e?.id
+        }
+    }))
+
+    return { paths, fallback: "blocking" }
+}
+
+export const GetStaticSequencePage = async function(context) {
+    const {params} = context;
+
     const {data} = await client.query({
         query: GET_SEQUENCE_PAGE,
         variables: {
-            id: "cl5v0twvnkas20ciny2i61g7u"
+            id: params?.presentationId
         }
     }).catch(() => {
         return errorRedirect();
@@ -242,7 +264,8 @@ export const GetStaticSequencePage = async function() {
     return {
         props: {
             sequenceData: data?.sequencePage,
-            footer: data?.footers[0]
+            footer: data?.footers[0],
+            header: data?.headers[0]
         },
         revalidate: 60
     }
