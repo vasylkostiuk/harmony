@@ -8,9 +8,12 @@ import ExtendedSlider from "../global/LoadCircle/layouts/ExtendedSlider/Extended
 import OtherProducts from "../OtherProducts/OtherProducts";
 import InProductTitle from "../OtherProducts/atoms/InProductTitle/InSliderTitle";
 import {useEffect, useState} from "react";
+import {useReactiveVar} from "@apollo/client";
+import {swiperZIndex} from "../../apolloClient/reactiveVariables/products";
 
 const Product = (product) => {
   const currentProduct = product?.product?.product;
+  const isZIndexFixed = useReactiveVar(swiperZIndex);
   const {
       badge,
       image,
@@ -74,7 +77,7 @@ const Product = (product) => {
                 />
             </OtherProducts>
         </div>
-        <div className={styles.desktop}>
+        <div className={`${styles.desktop} ${isZIndexFixed ? 'swiper__fixed' : ''}`}>
             <Sticky>
                 <div>
                     <ProductLayout

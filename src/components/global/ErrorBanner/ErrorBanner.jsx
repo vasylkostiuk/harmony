@@ -1,5 +1,6 @@
 import styles from './ErrorBanner.module.css';
 import {useEffect, useRef, useState} from "react";
+import {swiperZIndex} from "../../../apolloClient/reactiveVariables/products";
 
 const ErrorBanner = ({
                          title = "Error",
@@ -15,6 +16,7 @@ const ErrorBanner = ({
         startTimer() {
             this.timeoutId = setTimeout(() => {
                 setShowBanner(false)
+                swiperZIndex(false);
             }, 4000)
             return this.timeoutId;
         },
@@ -36,6 +38,7 @@ const ErrorBanner = ({
 
         setShowBanner(true);
         notificationController.startTimer();
+        swiperZIndex(true);
     }, [isDisplayed]);
 
     return showBanner ? (
