@@ -16,3 +16,5 @@ export const currentFilterVar = makeVar(
 );
 
 export const paginationStepVar = makeVar(1);
+
+export const swiperZIndex = makeVar(false);
