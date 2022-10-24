@@ -1,0 +1,107 @@
+@media screen and (min-width: 1px) {
+    .container {
+        margin-top: 40px;
+    }
+    .title {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #000;
+    }
+    .description {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin-bottom: 20px;
+    }
+    .button__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .button__svg{
+        stroke: #000;
+    }
+    .button__text {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        position: relative;
+        height: 770px;
+    }
+    .title, .description, .button__container {
+        position: absolute;
+    }
+    .title {
+        top: 265px;
+        font-weight: 900;
+        font-size: 66px;
+        line-height: 140%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    .description {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 130%;
+        color: #fff;
+        bottom: 350px;
+    }
+    .button__container {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 60px;
+    }
+    .button__text {
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 130%;
+        text-align: center;
+        color: #fff;
+    }
+    .button__svg{
+        stroke: #fff;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container {
+        height: 895px;
+    }
+    .title {
+        top: 325px;
+    }
+    .description {
+        bottom: 415px;
+    }
+    .button__container {
+        bottom: 70px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .container {
+        height: 1105px;
+    }
+    .title {
+        top: 345px;
+        font-size: 86px;
+    }
+    .description {
+        bottom: 580px;
+        font-size: 38px;
+    }
+    .button__container {
+        bottom: 80px;
+    }
+}

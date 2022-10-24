@@ -4,7 +4,7 @@ import {
     GET_MAIN_PAGE,
     GET_PRODUCT,
     GET_PRODUCTS,
-    GET_SEQUENCE_PAGE, GET_SEQUENCE_PAGES_IDS
+    GET_SEQUENCE_PAGE, GET_SEQUENCE_PAGE_LONG, GET_SEQUENCE_PAGES_IDS, GET_SEQUENCE_PAGES_LONG_IDS
 } from "../apolloClient/queries";
 import {client} from "../apolloClient/client";
 
@@ -264,6 +264,52 @@ export const GetStaticSequencePage = async function(context) {
     return {
         props: {
             sequenceData: data?.sequencePage,
+            footer: data?.footers[0],
+            header: data?.headers[0]
+        },
+        revalidate: 60
+    }
+}
+
+export const GetStaticSequencePagesLongPath = async function() {
+    const {data} = await client.query({
+        query: GET_SEQUENCE_PAGES_LONG_IDS
+    }).catch(() => {
+        return errorRedirect();
+    });
+
+    if (!data) {
+        return errorRedirect();
+    }
+
+    const paths = data?.sequencePageLongs.map(e => ({
+        params: {
+            presentationId: e?.id
+        }
+    }))
+
+    return { paths, fallback: "blocking" }
+}
+
+export const GetStaticSequencePageLong = async function(context) {
+    const {params} = context;
+
+    const {data} = await client.query({
+        query: GET_SEQUENCE_PAGE_LONG,
+        variables: {
+            id: params?.presentationId
+        }
+    }).catch(() => {
+        return errorRedirect();
+    });
+
+    if (!data) {
+        return errorRedirect();
+    }
+
+    return {
+        props: {
+            sequenceData: data?.sequencePageLong,
             footer: data?.footers[0],
             header: data?.headers[0]
         },

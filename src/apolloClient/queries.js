@@ -665,8 +665,7 @@ export const GET_SEQUENCE_PAGES_IDS = gql(`
         id
       }
     }
-`)
-
+`);
 
 export const GET_SEQUENCE_PAGE = gql(`
   query GetSequencePage($id: ID!) {
@@ -849,6 +848,94 @@ export const GET_SEQUENCE_PAGE = gql(`
       }
   } 
 `);
+
+export const GET_SEQUENCE_PAGES_LONG_IDS = gql(`
+    query getSequencePagesIds {
+      sequencePageLongs(first: 50) {
+        id
+      }
+    }
+`)
+
+export const GET_SEQUENCE_PAGE_LONG = gql(`
+    query GetSequencePageLong($id: ID!) {
+        sequencePageLong(where: {id: $id}) {
+            id
+            heroVideo {
+              id
+              title
+              description
+              buttonText
+              video {
+                id
+                url
+              }
+            }
+        }
+        headers {
+            id
+            logo {
+              id
+              url
+            }
+            productLinks {
+              id
+              text
+              link
+            }
+            otherLinks {
+              id
+              text
+              link
+            }
+      }
+      footers {
+            id
+            description
+            contacts {
+              id
+              tel
+              email
+              adress
+            }
+            logo {
+              id
+              url
+            }
+            links {
+              id
+              title
+              links {
+                id
+                text
+                link
+              }
+            }
+            socialLinks {
+              id
+              icon {
+                id
+                width
+                height
+                url
+              }
+              link
+            }
+            advantages {
+              id
+              title
+              description
+              link
+              image {
+                id
+                width
+                height
+                url
+              }
+            }
+        }
+    }
+`)
 
 export const GET_GALLERY = gql(`
     query GET_GALLERY {

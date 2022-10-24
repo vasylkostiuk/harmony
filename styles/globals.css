@@ -64,7 +64,12 @@ h1,h2,h3,h4,h5,h6,p {
   .react-player {
     height: 290px !important;
   }
-  .react-player video {
+  .react__player__long {
+    height: 250px !important;
+    object-fit: cover;
+  }
+  .react-player video,
+  .react__player__long video{
     object-fit: cover;
   }
 }
@@ -92,6 +97,9 @@ h1,h2,h3,h4,h5,h6,p {
   .react-player {
     height: 360px !important;
   }
+  .react__player__long {
+    height: 770px !important;
+  }
 }
 
 @media screen and (min-width: 1023px) {
@@ -105,6 +113,9 @@ h1,h2,h3,h4,h5,h6,p {
   }
   .react-player {
     height: 475px !important;
+  }
+  .react__player__long {
+    height: 895px !important;
   }
 }
 
@@ -129,6 +140,9 @@ h1,h2,h3,h4,h5,h6,p {
   }
   .react-player {
     height: 625px !important;
+  }
+  .react__player__long {
+    height: 1105px !important;
   }
 }
 
