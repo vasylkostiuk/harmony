@@ -19,8 +19,6 @@ const ExtendedSlider = ({images}) => {
         [showPopup],
     );
 
-    console.log(setSlide(images, 2))
-
     return (
         <>
             <div className='extended'>

@@ -1,16 +1,9 @@
 import styles from './HeroVideoContainer.module.css';
 import HeroVideo from "../../atoms/HeroVideo/HeroVideo";
-import {useRef} from "react";
 
-const HeroVideoContainer = ({heroVideo}) => {
-    const block = useRef(null);
-
-    function executeScroll() {
-        return block.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
+const HeroVideoContainer = ({heroVideo, executeScroll}) => {
     return (
-        <div ref={block} className={styles.container}>
+        <div className={styles.container}>
             <div className="container">
                 <p className={styles.title}>{heroVideo?.title}</p>
                 <p className={styles.description}>{heroVideo?.description}</p>

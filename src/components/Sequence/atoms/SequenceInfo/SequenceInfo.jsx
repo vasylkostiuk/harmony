@@ -9,7 +9,7 @@ const SequenceInfo = ({sequenceInfo}) => {
         secondImage,
         thirdText,
         thirdImage
-    } = sequenceInfo
+    } = sequenceInfo;
 
     return (
         <div className="container">

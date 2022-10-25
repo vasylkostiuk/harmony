@@ -1,7 +1,7 @@
 import {GetStaticSequencePageLong, GetStaticSequencePagesLongPath} from "../../../src/preRender/ISR";
 import HeaderTop from "../../../src/components/Header/molecules/HeaderTop/HeaderTop";
 import Footer from "../../../src/components/Footer/Footer";
-import HeroVideoContainer from "../../../src/components/Sequence/molecules/HeroVideoContainer/HeroVideoContainer";
+import VideoInfoContainer from "../../../src/components/Sequence/organisms/VideoInfoContainer/VideoInfoContainer";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
     return (
@@ -13,7 +13,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                     logoUrl={header?.logo?.url}
                 />
             </div>
-            <HeroVideoContainer heroVideo={sequenceData?.heroVideo}/>
+            <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
             <Footer footer={footer}/>
         </>
     )
