@@ -2,6 +2,8 @@ import {GetStaticSequencePageLong, GetStaticSequencePagesLongPath} from "../../.
 import HeaderTop from "../../../src/components/Header/molecules/HeaderTop/HeaderTop";
 import Footer from "../../../src/components/Footer/Footer";
 import VideoInfoContainer from "../../../src/components/Sequence/organisms/VideoInfoContainer/VideoInfoContainer";
+import PreSequenceHeader from "../../../src/components/Sequence/atoms/PreSequenceHeader/PreSequenceHeader";
+import SequenceContainer from "../../../src/components/Sequence/molecules/SequenceContainer/SequenceContainer";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
     return (
@@ -14,6 +16,10 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 />
             </div>
             <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
+            <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
+            {/*<div className="desktop">*/}
+            {/*    <SequenceContainer images={sequenceData?.sequence?.sequence}/>*/}
+            {/*</div>*/}
             <Footer footer={footer}/>
         </>
     )

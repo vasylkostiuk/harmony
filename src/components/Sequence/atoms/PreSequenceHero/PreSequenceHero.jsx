@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./PreSequenceHero.module.css";
 import {useRef} from "react";
 import {Tween} from "react-gsap";
+import PreSequenceHeader from "../PreSequenceHeader/PreSequenceHeader";
 
 const PreSequenceHero = ({imageSrc, width, height, title, description, randomHeader}) => {
     const bottomHeader = useRef(null);
@@ -29,8 +30,9 @@ const PreSequenceHero = ({imageSrc, width, height, title, description, randomHea
                         priority
                     />
                 </div>
-                <p className={styles.harmony}>Harmony.</p>
-                <p ref={bottomHeader} className={styles.random__header}>{randomHeader}</p>
+                <div ref={bottomHeader} style={{width: '100vw'}}>
+                    <PreSequenceHeader randomHeader={randomHeader}/>
+                </div>
             </Tween>
         </div>
     );
