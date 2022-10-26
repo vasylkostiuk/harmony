@@ -4,8 +4,15 @@ import Footer from "../../../src/components/Footer/Footer";
 import VideoInfoContainer from "../../../src/components/Sequence/organisms/VideoInfoContainer/VideoInfoContainer";
 import PreSequenceHeader from "../../../src/components/Sequence/atoms/PreSequenceHeader/PreSequenceHeader";
 import SequenceContainer from "../../../src/components/Sequence/molecules/SequenceContainer/SequenceContainer";
+import {useEffect} from "react";
+import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequenceColors";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
+
+    useEffect(() => {
+        sequenceColors([...sequenceData?.sequenceColors]);
+    }, [sequenceData?.id]);
+
     return (
         <>
             <div className="container">
@@ -17,9 +24,9 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
             </div>
             <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
             <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
-            {/*<div className="desktop">*/}
-            {/*    <SequenceContainer images={sequenceData?.sequence?.sequence}/>*/}
-            {/*</div>*/}
+            <div className="desktop">
+                <SequenceContainer images={sequenceData?.sequence?.sequence}/>
+            </div>
             <Footer footer={footer}/>
         </>
     )
