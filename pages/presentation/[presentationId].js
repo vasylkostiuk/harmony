@@ -8,8 +8,12 @@ import {useEffect} from "react";
 const SequencePage = ({sequenceData, footer, header}) => {
 
     useEffect(() => {
-        sequenceColors([...sequenceData?.sequenceColors]);
-        sequenceColorsMobile([...sequenceData?.sequenceColorsMobile]);
+        if (sequenceData?.sequenceColors.length) {
+            sequenceColors([...sequenceData?.sequenceColors]);
+        }
+        if (sequenceData?.sequenceColorsMobile.length) {
+            sequenceColorsMobile([...sequenceData?.sequenceColorsMobile]);
+        }
     }, [sequenceData?.id]);
 
     return (

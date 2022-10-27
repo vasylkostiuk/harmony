@@ -10,7 +10,9 @@ import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequen
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
     useEffect(() => {
-        sequenceColors([...sequenceData?.sequenceColors]);
+        if (sequenceData?.sequenceColors?.length) {
+            sequenceColors([...sequenceData?.sequenceColors]);
+        }
     }, [sequenceData?.id]);
 
     return (
