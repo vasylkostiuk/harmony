@@ -6,6 +6,7 @@ import PreSequenceHeader from "../../../src/components/Sequence/atoms/PreSequenc
 import SequenceContainer from "../../../src/components/Sequence/molecules/SequenceContainer/SequenceContainer";
 import {useEffect} from "react";
 import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequenceColors";
+import LaptopGifBlock from "../../../src/components/Sequence/atoms/LaptopGIfBlock/LaptopGifBlock";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
@@ -25,10 +26,11 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 />
             </div>
             <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
-            <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
             <div className="desktop">
+                <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
                 <SequenceContainer images={sequenceData?.sequence?.sequence}/>
             </div>
+            <LaptopGifBlock laptopGifBlock={sequenceData?.laptopGifBlock}/>
             <Footer footer={footer}/>
         </>
     )
