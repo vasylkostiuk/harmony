@@ -861,6 +861,22 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
     query GetSequencePageLong($id: ID!) {
         sequencePageLong(where: {id: $id}) {
             id
+            laptopGifBlock {
+              id
+              title
+              subTitle
+              laptopBackground {
+                id
+                url
+              }
+              laptopGif {
+                id
+                url
+              }
+              advantages
+              buttonText
+              buttonLink
+            }
             sequenceColors(first: 50) {
               id
               title
