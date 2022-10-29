@@ -22,10 +22,7 @@ const ProductInfo = ({title, badgeText, description, parameters, imageDescriptio
             </div>
             <p className={styles.description} dangerouslySetInnerHTML={{__html: description}}></p>
             <ProductParameters
-                area={parameters?.area}
-                diameter={parameters?.diameter}
-                maxHeight={parameters?.maximumHeight}
-                weight={parameters?.weight}
+                parameters={parameters}
             />
         </>
     );

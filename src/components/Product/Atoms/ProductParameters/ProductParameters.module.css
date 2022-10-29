@@ -13,6 +13,11 @@
     .text {
         margin-left: 26px;
     }
+    .icon {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+    }
 }
 
 @media (min-width: 767px) {

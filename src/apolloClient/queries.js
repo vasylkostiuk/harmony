@@ -603,12 +603,14 @@ export const GET_PRODUCT = gql(`
           currentPrice
           previousPrice
         }
-        parameters {
+        parameters(first: 50) {
           id
-          area
-          diameter
-          maximumHeight
-          weight
+          icon {
+            id
+            url
+          }
+          title
+          value
         }
         colors {
           id
