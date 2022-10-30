@@ -11,7 +11,6 @@ const AdvantagesContainer = ({advantages}) => {
                             return <FooterAdvantage
                                 key={advantage?.id}
                                 icon={advantage?.image?.url}
-                                link={advantage?.link}
                                 title={advantage?.title}
                                 description={advantage?.description}
                             />

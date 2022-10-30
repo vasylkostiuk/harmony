@@ -156,7 +156,6 @@ export const GET_HUB = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -482,7 +481,6 @@ export const GET_PRODUCTS = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -580,7 +578,6 @@ export const GET_PRODUCT = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -755,7 +752,6 @@ export const GET_SEQUENCE_PAGE = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -1024,7 +1020,6 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -1115,7 +1110,6 @@ export const GET_GALLERY = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -1165,7 +1159,6 @@ export const GET_FOOTER = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
@@ -1271,7 +1264,6 @@ export const GET_FAQ = gql(`
               id
               title
               description
-              link
               image {
                 id
                 width
