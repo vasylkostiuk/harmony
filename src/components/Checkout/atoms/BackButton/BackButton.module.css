@@ -11,3 +11,21 @@
     color: #A1A1AA;
     margin-left: 16px;
 }
+
+@media screen and (min-width: 1px) {
+    .container {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .container {
+        margin-bottom: 20px;
+    }
+}

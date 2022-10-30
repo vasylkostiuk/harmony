@@ -2,6 +2,9 @@
     .container {
         margin: 45px 0 50px 0;
     }
+    .container.final {
+        margin-bottom: 40px;
+    }
     .item__container {
         display: flex;
         align-items: center;
@@ -62,9 +65,18 @@
         align-items: center;
         justify-content: space-between;
     }
+    .container.final {
+        margin-bottom: 50px;
+    }
     .line {
         width: 215px;
         height: 1px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container.final {
+        margin-bottom: 60px;
     }
 }
 
@@ -73,5 +85,7 @@
         margin: 100px 0 80px 0;
         width: 1040px;
     }
-
+    .container.final {
+        margin-bottom: 50px;
+    }
 }

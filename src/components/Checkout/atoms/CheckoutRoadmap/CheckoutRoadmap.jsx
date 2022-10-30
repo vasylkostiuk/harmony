@@ -1,8 +1,9 @@
 import styles from './CheckoutRoadmap.module.css';
 
 const CheckoutRoadmap = ({isFinal}) => {
+    const finalStyle = isFinal ? styles.final : '';
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${finalStyle}`}>
            <div className={styles.item__container}>
                <svg className={styles.square} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <rect width="31" height="31" fill="black"/>
