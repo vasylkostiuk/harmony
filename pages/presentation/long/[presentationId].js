@@ -7,6 +7,7 @@ import SequenceContainer from "../../../src/components/Sequence/molecules/Sequen
 import {useEffect} from "react";
 import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequenceColors";
 import LaptopGifBlock from "../../../src/components/Sequence/atoms/LaptopGIfBlock/LaptopGifBlock";
+import ComparingSlider from "../../../src/components/Sequence/molecules/ComparingSlider/ComparingSlider";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
@@ -31,6 +32,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 <SequenceContainer images={sequenceData?.sequence?.sequence}/>
             </div>
             <LaptopGifBlock laptopGifBlock={sequenceData?.laptopGifBlock}/>
+            <ComparingSlider category={sequenceData?.category}/>
             <Footer footer={footer}/>
         </>
     )

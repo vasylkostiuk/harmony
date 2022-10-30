@@ -494,6 +494,37 @@ export const GET_PRODUCTS = gql(`
     }
 `);
 
+export const GET_PRODUCT_COMPARING = gql(
+    `query MyQuery ($category: ProductCategories) {
+        products(where: {category: $category}, first: 10) {
+            id
+            image {
+                url
+                id
+                height
+                width
+            }
+            parameters(first: 50) {
+                id
+                icon {
+                    id
+                    url
+                }
+                title
+                value
+            }
+            info {
+                id
+                title
+            }
+            price {
+                id
+                currentPrice
+            }
+        }
+    }`
+)
+
 export const GET_PRODUCT = gql(`
     query Product ($id: ID!) {
       headers {
@@ -863,6 +894,7 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
     query GetSequencePageLong($id: ID!) {
         sequencePageLong(where: {id: $id}) {
             id
+            category
             laptopGifBlock {
               id
               title

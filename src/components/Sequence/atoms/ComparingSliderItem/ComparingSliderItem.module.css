@@ -1,0 +1,75 @@
+@media screen and (min-width: 1px) {
+    .container {
+        padding: 0 10px 50px 10px;
+        background-color: #F4F4F5;
+    }
+    .title {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin-top: 5px;
+    }
+    .parameters__container {
+        padding: 0 15px;
+    }
+    .price__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .price__prefix {
+        color: #71717A;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 130%;
+        margin-right: 10px;
+    }
+    .price {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #18181B;
+    }
+    .button {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #fff;
+        background-color: #18181B;
+        padding: 14px 0;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        padding: 0 15px 50px 15px;
+    }
+    .title {
+        font-weight: 700;
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .title {
+        font-size: 30px;
+    }
+    .price__prefix {
+        font-size: 16px;
+    }
+    .price {
+        font-size: 26px;
+    }
+    .button {
+        margin-top: 30px;
+    }
+}

@@ -312,6 +312,11 @@ h1,h2,h3,h4,h5,h6,p {
     z-index: 99;
   }
 
+  .products.comparing .swiper-button-next,
+  .products.comparing .swiper-button-prev{
+    top: 942px;
+  }
+
   .extended .swiper-button-prev {
     left: 507px !important;
     top: 390px;
