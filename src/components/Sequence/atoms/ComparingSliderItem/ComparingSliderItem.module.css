@@ -2,6 +2,17 @@
     .container {
         padding: 0 10px 50px 10px;
         background-color: #F4F4F5;
+        width: 100%;
+    }
+    .image__container {
+        display: grid;
+        place-items: center;
+    }
+    .image {
+        height: 190px;
+        width: 100%;
+        object-fit: contain;
+        margin-top: 25px;
     }
     .title {
         font-weight: 800;
@@ -57,6 +68,7 @@
         font-weight: 700;
         font-size: 22px;
     }
+
 }
 
 @media screen and (min-width: 1281px) {
@@ -71,5 +83,8 @@
     }
     .button {
         margin-top: 30px;
+    }
+    .image {
+        height: 210px;
     }
 }

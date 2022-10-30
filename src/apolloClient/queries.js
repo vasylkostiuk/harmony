@@ -498,7 +498,7 @@ export const GET_PRODUCT_COMPARING = gql(
     `query MyQuery ($category: ProductCategories) {
         products(where: {category: $category}, first: 10) {
             id
-            image {
+            comparingImage {
                 url
                 id
                 height
