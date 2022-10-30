@@ -5,7 +5,7 @@ import {useRef} from "react";
 const VideoInfoContainer = ({heroVideo, info}) => {
     const block = useRef(null);
     function executeScroll() {
-        return block.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        return block.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     return (
