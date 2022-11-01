@@ -284,6 +284,10 @@ h1,h2,h3,h4,h5,h6,p {
     padding: 130px 0 180px 0;
   }
 
+  .margin__minus {
+    margin-top: -75px;
+  }
+
   .products .swiper {
     padding: 0 0 180px 0;
   }

@@ -9,6 +9,9 @@ import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequen
 import LaptopGifBlock from "../../../src/components/Sequence/atoms/LaptopGIfBlock/LaptopGifBlock";
 import ComparingSlider from "../../../src/components/Sequence/molecules/ComparingSlider/ComparingSlider";
 import SequenceAdvantages from "../../../src/components/Sequence/molecules/SequenceAdvantages/SequenceAdvantages";
+import HubBlock from "../../../src/components/Sequence/atoms/HubBlock/HubBlock";
+import OtherProducts from "../../../src/components/OtherProducts/OtherProducts";
+import InProductTitle from "../../../src/components/OtherProducts/atoms/InProductTitle/InSliderTitle";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
@@ -40,6 +43,17 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 advantages={sequenceData?.advantages}
             />
             <ComparingSlider category={sequenceData?.category}/>
+            <div className="margin__minus"></div>
+            <HubBlock hubBlock={sequenceData?.hubBlock}/>
+            <div className="container">
+                <OtherProducts>
+                    <InProductTitle
+                        title={'Other Products'}
+                        linkTitle={'All products'}
+                        link={'product'}
+                    />
+                </OtherProducts>
+            </div>
             <Footer footer={footer}/>
         </>
     )
