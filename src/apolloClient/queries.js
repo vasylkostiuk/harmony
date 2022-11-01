@@ -267,7 +267,6 @@ query GET_ARTICLE ($id: ID!) {
           id
           title
           description
-          link
           image {
             id
             width
@@ -364,7 +363,6 @@ export const GET_MAIN_PAGE = gql(`
           id
           title
           description
-          link
           image {
             id
             width
