@@ -891,6 +891,28 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
         sequencePageLong(where: {id: $id}) {
             id
             category
+            advantages(first: 50) {
+              id
+              title
+              description
+              image {
+                id
+                url
+              }
+            }
+            advantageTitle
+            advantageImageFirst {
+              id
+              width
+              height
+              url
+            }
+            advantageImageSecond {
+              id
+              width
+              height
+              url
+            }
             laptopGifBlock {
               id
               title
