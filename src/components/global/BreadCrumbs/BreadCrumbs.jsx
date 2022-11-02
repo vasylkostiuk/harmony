@@ -15,7 +15,7 @@ const BreadCrumbs = ({master, masterLink = '', detail = ''}) => {
                         <path d="M1 1L5 5.16L1 9.66667" stroke="black" strokeWidth="1.5"/>
                     </svg>
                     <Link href={masterLink} passHref>
-                        <p className={styles.item}>{master}</p>
+                        <p className={styles.item} style={{cursor: 'pointer'}}>{master}</p>
                     </Link>
                 </div>
                 :
