@@ -12,6 +12,7 @@ import SequenceAdvantages from "../../../src/components/Sequence/molecules/Seque
 import HubBlock from "../../../src/components/Sequence/atoms/HubBlock/HubBlock";
 import OtherProducts from "../../../src/components/OtherProducts/OtherProducts";
 import InProductTitle from "../../../src/components/OtherProducts/atoms/InProductTitle/InSliderTitle";
+import BreadCrumbs from "../../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
@@ -29,6 +30,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />
+                <BreadCrumbs master={'Presentation'} detail={sequenceData?.category}/>
             </div>
             <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
             <div className="desktop">

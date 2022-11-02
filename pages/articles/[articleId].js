@@ -10,6 +10,7 @@ import {useMutation} from "@apollo/client";
 import {INCREASE_ARTICLE_COUNT} from "../../src/apolloClient/mutations";
 import Footer from "../../src/components/Footer/Footer";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
+import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const ArticleId = ({article, footer, header}) => {
     const [increaseCount] = useMutation(INCREASE_ARTICLE_COUNT,
@@ -33,6 +34,7 @@ const ArticleId = ({article, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     productLinks={header?.productLinks}
                 />
+                <BreadCrumbs master={'News'} masterLink={'/articles'} detail={article?.title}/>
                 <Article article={article}/>
                 <OtherArticles>
                     <InSliderTitle

@@ -1,0 +1,41 @@
+@media screen and (min-width: 1px) {
+    .container {
+        margin: 35px 0 40px 0;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #C3CBCD;
+    }
+    .item__container {
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        width: 7px;
+        height: 11px;
+        margin: 0 9px;
+    }
+    .item {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000;
+    }
+    .item__final {
+        color: #A1A1AA;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        margin: 50px 0 40px 0;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .container {
+        margin: 75px 0 40px 0;
+    }
+}

@@ -8,6 +8,7 @@ import {
 } from "../../src/apolloClient/reactiveVariables/products";
 import Footer from "../../src/components/Footer/Footer";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
+import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const Products = ({products, footer, header}) => {
     productsVar([...products]);
@@ -28,6 +29,7 @@ const Products = ({products, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />
+                <BreadCrumbs master={'Store'}/>
                 <LayoutProductContainer/>
             </div>
             <Footer footer={footer}/>

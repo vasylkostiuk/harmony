@@ -8,6 +8,7 @@ import {GET_FOOTER} from "../../src/apolloClient/queries";
 import Footer from "../../src/components/Footer/Footer";
 import {getHeader} from "../../src/preRender/ISR";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
+import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const Articles = ({header}) => {
     const cursor = useReactiveVar(currentEndCursor);
@@ -22,6 +23,7 @@ const Articles = ({header}) => {
                     otherLinks={header?.otherLinks}
                     productLinks={header?.productLinks}
                 />
+                <BreadCrumbs master={'News'}/>
                 <ArticlesFilterContainer/>
                 <ArticlesQueryContainer
                     cursor={cursor}

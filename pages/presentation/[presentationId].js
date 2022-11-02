@@ -4,6 +4,7 @@ import SequenceShort from "../../src/components/Sequence/layouts/SequenceShort/S
 import Footer from "../../src/components/Footer/Footer";
 import {GetStaticSequencePage, GetStaticSequencePagesPath} from "../../src/preRender/ISR";
 import {useEffect} from "react";
+import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const SequencePage = ({sequenceData, footer, header}) => {
 
@@ -24,6 +25,7 @@ const SequencePage = ({sequenceData, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />
+                <BreadCrumbs master={'Presentation'} detail={sequenceData?.presentationHero?.title}/>
             </div>
             <SequenceShort sequenceData={sequenceData}/>
             <Footer footer={footer}/>

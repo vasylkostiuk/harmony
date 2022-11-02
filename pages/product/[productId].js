@@ -5,6 +5,7 @@ import {INCREASE_PRODUCT_COUNT} from "../../src/apolloClient/mutations";
 import {useEffect} from "react";
 import Footer from "../../src/components/Footer/Footer";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
+import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 
 const ProductId = (product) => {
     const [increaseCount] = useMutation(INCREASE_PRODUCT_COUNT, {
@@ -27,6 +28,7 @@ const ProductId = (product) => {
                     otherLinks={product?.header?.otherLinks}
                     logoUrl={product?.header?.logo?.url}
                 />
+                <BreadCrumbs master={'Store'} masterLink={'/product'} detail={product?.product?.info?.title}/>
                 <Product product={product}/>
             </div>
             <Footer footer={product?.footer} withMobileWidget={true}/>
