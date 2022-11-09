@@ -3,7 +3,7 @@ import Link from "next/link";
 import {checkoutProducts} from "../../../apolloClient/reactiveVariables/checkout";
 
 const defaults = {
-    title: "Youre request have been successful sent",
+    title: "Your request has been sent successfully",
     subtitle: "We will contact you soon, thanks!",
     button: "Got it"
 }
