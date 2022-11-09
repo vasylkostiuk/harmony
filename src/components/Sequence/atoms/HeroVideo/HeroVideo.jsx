@@ -12,6 +12,7 @@ const HeroVideo = ({url}) => {
                 <ReactPlayer
                     url={url}
                     className='react__player__long'
+                    playsinline
                     playing={play}
                     muted
                     loop

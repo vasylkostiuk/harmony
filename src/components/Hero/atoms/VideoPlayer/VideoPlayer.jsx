@@ -16,6 +16,7 @@ const VideoPlayer = ({url, link, linkText}) => {
                 <ReactPlayer
                     url={url}
                     className='react-player'
+                    playsinline
                     playing={play}
                     muted
                     width="100%"
