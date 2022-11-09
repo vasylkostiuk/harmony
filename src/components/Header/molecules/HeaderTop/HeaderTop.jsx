@@ -79,9 +79,7 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
                                     {
                                         productLinks.map(link => {
                                             return (
-                                                <div className={styles.desktop__link} key={link?.id}>
-                                                    <MainLink link={link?.link} text={link?.text}/>
-                                                </div>
+                                                <MainLink key={link?.id} link={link?.link} text={link?.text}/>
                                             )
                                         })
                                     }

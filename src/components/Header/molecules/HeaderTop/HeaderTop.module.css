@@ -65,9 +65,6 @@
     .desktop {
         display: block;
     }
-    .desktop__link {
-        padding-bottom: 65px;
-    }
     .desktop__links {
         padding-top: 130px;
         padding-right: 35px;

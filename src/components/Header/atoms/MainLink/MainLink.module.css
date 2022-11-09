@@ -25,12 +25,14 @@
     .link__container {
         position: relative;
         cursor: pointer;
+        height: 120px;
     }
     .link {
         font-size: 90px;
         transition: transform .75s ease;
+        transform: translateY(10px);
     }
-    .link__container:hover .link {
+    .link__container.hover .link {
         transform: translateX(-200px);
     }
     .line {
@@ -39,11 +41,14 @@
         background-color: #000;
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 27px;
         transition: width .65s ease;
     }
-    .link__container:hover .line {
+    .link__container.hover .line {
         width: 180px;
+    }
+    .link__space {
+        height: 65px;
     }
 }
 
