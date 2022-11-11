@@ -34,7 +34,7 @@
     .changer__color_container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
     .changer__color {
         width: 15px;
