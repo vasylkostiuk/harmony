@@ -29,7 +29,7 @@
     }
     .link {
         font-size: 90px;
-        transition: transform .75s ease;
+        transition: transform .65s ease;
         transform: translateY(10px);
     }
     .link__container.hover .link {
