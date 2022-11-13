@@ -38,7 +38,7 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
 
     useEffect(() => {
         showHeaderDropdown(false);
-    }, [])
+    })
 
     useOutsideAlerter(wrapperRef);
 
