@@ -25,7 +25,7 @@ const SequencePage = ({sequenceData, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />
-                <BreadCrumbs master={'Presentation'} detail={sequenceData?.presentationHero?.title}/>
+                <BreadCrumbs master={sequenceData?.presentationHero?.title}/>
             </div>
             <SequenceShort sequenceData={sequenceData}/>
             <Footer footer={footer}/>

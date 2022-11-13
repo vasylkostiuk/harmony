@@ -30,7 +30,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />
-                <BreadCrumbs master={'Presentation'} detail={sequenceData?.category}/>
+                <BreadCrumbs master={sequenceData?.category}/>
             </div>
             <VideoInfoContainer heroVideo={sequenceData?.heroVideo} info={sequenceData?.info}/>
             <div className="desktop">
