@@ -7,7 +7,7 @@ import SequenceColorChangerContainer from "../../atoms/SequenceColorChanger/Sequ
 const SequenceContainer = ({images}) => {
     return (
         <Controller>
-            <Scene duration="500%" triggerHook="onLeave" pin>
+            <Scene duration="2000%" triggerHook="onLeave" pin>
                 {(progress) => (
                     <div style={{ height: "100vh", position: "relative" }}>
                         <Sequence progress={progress} images={images} />
