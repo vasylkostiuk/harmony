@@ -29,5 +29,6 @@
         grid-template-columns: 990px 265px;
         grid-column-gap: 65px;
         margin: 195px 0 0 0;
+        justify-content: center;
     }
 }
