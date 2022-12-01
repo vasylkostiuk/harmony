@@ -107,4 +107,7 @@
         width: 408px;
         align-self: end;
     }
+    .text__third {
+        width: 95%;
+    }
 }
