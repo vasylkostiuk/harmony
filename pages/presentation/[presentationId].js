@@ -5,10 +5,12 @@ import Footer from "../../src/components/Footer/Footer";
 import {GetStaticSequencePage, GetStaticSequencePagesPath} from "../../src/preRender/ISR";
 import {useEffect} from "react";
 import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
+import {showHeaderDropdown} from "../../src/apolloClient/reactiveVariables/header";
 
 const SequencePage = ({sequenceData, footer, header}) => {
 
     useEffect(() => {
+        showHeaderDropdown(false);
         if (sequenceData?.sequenceColors.length) {
             sequenceColors([...sequenceData?.sequenceColors]);
         }

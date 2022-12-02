@@ -38,7 +38,7 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
 
     useEffect(() => {
         showHeaderDropdown(false);
-    })
+    }, [])
 
     useOutsideAlerter(wrapperRef);
 
@@ -79,7 +79,10 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
                                     {
                                         productLinks.map(link => {
                                             return (
-                                                <MainLink key={link?.id} link={link?.link} text={link?.text}/>
+                                                <>
+                                                    <MainLink key={link?.id} link={link?.link} text={link?.text}/>
+                                                    <div style={{height: '40px', margin: '10px 0'}}></div>
+                                                </>
                                             )
                                         })
                                     }
