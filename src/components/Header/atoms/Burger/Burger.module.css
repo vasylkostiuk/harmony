@@ -27,8 +27,14 @@
     transform-origin: 0 0;
 }
 
+.item:nth-child(2) {
+    transition: opacity 0.3s ease, width .3s ease;
+}
+
 .item:nth-child(2).opened {
     opacity: 0;
+    width: 0;
+    transform: none;
 }
 
 .item:nth-child(3).opened {
