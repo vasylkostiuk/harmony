@@ -1,10 +1,13 @@
 import styles from './LogoContainer.module.css';
+import Link from "next/link";
 
 const LogoContainer = ({logo, description, socialLinks}) => {
     return (
       <div className={styles.container}>
           <div>
-              <img src={logo} alt="Harmony domes" className={styles.logo}/>
+              <Link href={'/'} passHref>
+                  <img src={logo} alt="Harmony domes" className={styles.logo}/>
+              </Link>
               <p dangerouslySetInnerHTML={{__html: description}} className={styles.description}></p>
           </div>
           {

@@ -5,6 +5,7 @@
     .logo {
         height: 25px;
         object-fit: contain;
+        cursor: pointer;
     }
     .description {
         font-weight: 300;
