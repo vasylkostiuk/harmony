@@ -18,7 +18,7 @@ const SequenceShortDesktop = ({sequenceData}) => {
                 description={sequenceData?.presentationHero?.linkText}
                 randomHeader={sequenceData?.presentationHero?.bottomHeader}
             />
-            <SequenceContainer images={sequenceData?.sequence?.sequence}/>
+            <SequenceContainer images={sequenceData?.sequence?.sequence} duration={1000}/>
             <SequenceParametersOrganism parametersSection={sequenceData?.parametersSection}/>
             <SequenceInfo sequenceInfo={sequenceData?.info}/>
             <HubBlock hubBlock={sequenceData?.hubBlock}/>
