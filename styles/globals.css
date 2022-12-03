@@ -199,6 +199,9 @@ h1,h2,h3,h4,h5,h6,p {
   .products .swiper-pagination-bullet.swiper-pagination-bullet-active{
     background-color: #000 !important;
   }
+  .margin__minus {
+    margin-top: -75px;
+  }
 }
 
 @media screen and (min-width: 767px) {
@@ -282,10 +285,6 @@ h1,h2,h3,h4,h5,h6,p {
 @media screen and (min-width: 1181px) {
   .extended .swiper {
     padding: 130px 0 180px 0;
-  }
-
-  .margin__minus {
-    margin-top: -75px;
   }
 
   .products .swiper {

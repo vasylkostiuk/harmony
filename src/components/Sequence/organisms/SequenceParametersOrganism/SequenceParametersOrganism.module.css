@@ -1,7 +1,7 @@
 @media screen and (min-width: 1px) {
     .container {
         display: grid;
-        margin: 100px 0 150px 0;
+        margin: 100px 0 70px 0;
     }
     .image__container {
         display: flex;
