@@ -3,7 +3,6 @@ import { Controller, Scene } from "react-scrollmagic";
 import Sequence from "../Sequence/Sequence";
 import SequenceColorChangerContainer from "../../atoms/SequenceColorChanger/SequenceColorChangerContainer";
 
-
 const SequenceContainer = ({images, duration = 2000}) => {
     return (
         <Controller>
