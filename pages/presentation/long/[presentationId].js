@@ -23,7 +23,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
     }, [sequenceData?.id]);
 
     return (
-        <>
+        <div className="container__sequence">
             <div className="container">
                 <HeaderTop
                     productLinks={header?.productLinks}
@@ -57,7 +57,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 </OtherProducts>
             </div>
             <Footer footer={footer}/>
-        </>
+        </div>
     )
 }
 

@@ -20,7 +20,7 @@ const SequencePage = ({sequenceData, footer, header}) => {
     }, [sequenceData?.id]);
 
     return (
-        <div>
+        <div className="container__sequence">
             <div className="container">
                 <HeaderTop
                     productLinks={header?.productLinks}
