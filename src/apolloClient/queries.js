@@ -889,6 +889,10 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
         sequencePageLong(where: {id: $id}) {
             id
             category
+            mobileGif {
+              id
+              url
+            }
             hubBlock {
               id
               preTitle
@@ -938,6 +942,20 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
               advantages
               buttonText
               buttonLink
+            }
+            sequenceColorsMobile(first: 50) {
+              id
+              title
+              description
+              image {
+                id
+                width
+                height
+                url
+              }
+              color {
+                hex
+              }
             }
             sequenceColors(first: 50) {
               id

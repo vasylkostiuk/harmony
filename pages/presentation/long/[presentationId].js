@@ -5,7 +5,7 @@ import VideoInfoContainer from "../../../src/components/Sequence/organisms/Video
 import PreSequenceHeader from "../../../src/components/Sequence/atoms/PreSequenceHeader/PreSequenceHeader";
 import SequenceContainer from "../../../src/components/Sequence/molecules/SequenceContainer/SequenceContainer";
 import {useEffect} from "react";
-import {sequenceColors} from "../../../src/apolloClient/reactiveVariables/sequenceColors";
+import {sequenceColors, sequenceColorsMobile} from "../../../src/apolloClient/reactiveVariables/sequenceColors";
 import LaptopGifBlock from "../../../src/components/Sequence/atoms/LaptopGIfBlock/LaptopGifBlock";
 import ComparingSlider from "../../../src/components/Sequence/molecules/ComparingSlider/ComparingSlider";
 import SequenceAdvantages from "../../../src/components/Sequence/molecules/SequenceAdvantages/SequenceAdvantages";
@@ -13,12 +13,18 @@ import HubBlock from "../../../src/components/Sequence/atoms/HubBlock/HubBlock";
 import OtherProducts from "../../../src/components/OtherProducts/OtherProducts";
 import InProductTitle from "../../../src/components/OtherProducts/atoms/InProductTitle/InSliderTitle";
 import BreadCrumbs from "../../../src/components/global/BreadCrumbs/BreadCrumbs";
+import SequenceColorChangerContainer
+    from "../../../src/components/Sequence/atoms/SequenceColorChanger/SequenceColorChangerContainer";
+import MobileGif from "../../../src/components/Sequence/atoms/MobileGif/MobileGif";
 
 const SequencePageLong = ({sequenceData, footer, header}) => {
 
     useEffect(() => {
-        if (sequenceData?.sequenceColors?.length) {
+        if (sequenceData?.sequenceColors.length) {
             sequenceColors([...sequenceData?.sequenceColors]);
+        }
+        if (sequenceData?.sequenceColorsMobile.length) {
+            sequenceColorsMobile([...sequenceData?.sequenceColorsMobile]);
         }
     }, [sequenceData?.id]);
 
@@ -36,6 +42,13 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
             <div className="desktop">
                 <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
                 <SequenceContainer images={sequenceData?.sequence?.sequence}/>
+            </div>
+            <div className="mobile">
+                <div style={{marginTop: '90px'}}></div>
+                <PreSequenceHeader randomHeader={sequenceData?.presequenceHeader}/>
+                <MobileGif url={sequenceData?.mobileGif?.url}/>
+                <div style={{marginTop: '90px'}}></div>
+                <SequenceColorChangerContainer isDesktop={false} isDisplayed={true}/>
             </div>
             <LaptopGifBlock laptopGifBlock={sequenceData?.laptopGifBlock}/>
             <SequenceAdvantages

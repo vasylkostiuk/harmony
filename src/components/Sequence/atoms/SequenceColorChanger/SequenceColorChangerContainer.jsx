@@ -5,7 +5,7 @@ import {sequenceColors, sequenceColorsMobile} from "../../../../apolloClient/rea
 const SequenceColorChangerContainer = ({isDisplayed = false, isDesktop = true}) => {
     const colors = useReactiveVar(isDesktop ? sequenceColors : sequenceColorsMobile);
 
-    return colors && colors.length ? (
+    return colors && colors?.length ? (
         <SequenceColorChanger isDisplayed={isDisplayed} colors={colors}/>
     ) : null;
 }
