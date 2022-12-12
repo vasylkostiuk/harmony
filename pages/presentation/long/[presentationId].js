@@ -66,6 +66,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                         title={'Other Products'}
                         linkTitle={'All products'}
                         link={'product'}
+                        marginTop={0}
                     />
                 </OtherProducts>
             </div>
