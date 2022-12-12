@@ -97,14 +97,13 @@
     .title {
         font-size: 76px;
         margin-top: 0;
-        text-align: right;
+        text-align: left;
     }
     .text {
         width: 100%;
     }
     .text__first {
         text-align: left;
-        width: 408px;
         align-self: end;
     }
     .text__third {
