@@ -78,6 +78,7 @@
         padding: 0;
     }
     .title {
+        font-weight: 800;
         font-size: 30px;
     }
     .price__prefix {
@@ -91,5 +92,8 @@
     }
     .image {
         height: 210px;
+    }
+    .price {
+        font-weight: 700;
     }
 }
