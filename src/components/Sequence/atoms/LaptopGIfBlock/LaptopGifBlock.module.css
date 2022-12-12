@@ -33,6 +33,7 @@
     }
     .gif__image {
         width: 100%;
+        height: 160px;
     }
     .gif__inside {
         position: absolute;
@@ -40,7 +41,7 @@
         right: 50%;
         transform: translateX(50%);
         width: 77.5%;
-        height: 85%;
+        height: 135px;
     }
     .items__container {
         grid-area: items;
@@ -89,12 +90,20 @@
     .title {
         font-size: 48px;
     }
+    .gif__image {
+        height: 365px;
+        padding: 0 40px;
+    }
+    .gif__inside {
+        height: 300px;
+        padding: 0;
+    }
     .subtitle {
         margin-top: 30px;
         padding: 0 15%;
     }
     .gif__inside {
-        width: 78%;
+        width: 70%;
     }
     .items__container{
         display: grid;
@@ -146,8 +155,12 @@
     .gif__container {
         margin-top: 0;
     }
+    .gif__image {
+        height: 420px;
+        padding: 0;
+    }
     .gif__inside {
-        height: 75%;
+        height: 350px;
     }
     .items__container {
         display: block;
