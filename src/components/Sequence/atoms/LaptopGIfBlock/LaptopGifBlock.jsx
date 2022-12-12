@@ -17,7 +17,13 @@ const LaptopGifBlock = ({laptopGifBlock}) => {
             <div className={styles.container}>
                 <div className={styles.title__container}>
                     <h3 className={styles.title}>{title}</h3>
-                    <p className={styles.subtitle}>{subTitle}</p>
+                    {
+                        subTitle
+                        ?
+                        <p className={styles.subtitle}>{subTitle}</p>
+                        :
+                        <></>
+                    }
                 </div>
                 <div className={styles.gif__container}>
                     <img
