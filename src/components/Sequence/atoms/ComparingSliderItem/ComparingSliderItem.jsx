@@ -13,7 +13,7 @@ const ComparingSliderItem = ({product}) => {
             </div>
             <h4 className={styles.title}>{product?.info?.title}</h4>
             <div className={styles.parameters__container}>
-                <ProductParameters parameters={product?.parameters}/>
+                <ProductParameters parameters={product?.parameters} isInSlider={true}/>
             </div>
             <div className={styles.price__container}>
                 <p className={styles.price__prefix}>from</p>

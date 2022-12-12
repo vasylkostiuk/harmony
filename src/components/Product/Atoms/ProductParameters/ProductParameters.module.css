@@ -36,4 +36,8 @@
     .container {
         margin-bottom: 35px;
     }
+    .icon.comparing {
+        width: 26px;
+        height: 26px;
+    }
 }

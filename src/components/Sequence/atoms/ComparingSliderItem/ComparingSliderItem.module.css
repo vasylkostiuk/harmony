@@ -71,6 +71,12 @@
 }
 
 @media screen and (min-width: 1281px) {
+    .container {
+        padding: 0 50px 50px 50px;
+    }
+    .parameters__container {
+        padding: 0;
+    }
     .title {
         font-size: 30px;
     }
