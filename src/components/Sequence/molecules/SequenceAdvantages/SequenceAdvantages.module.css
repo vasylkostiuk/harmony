@@ -66,6 +66,7 @@
     .image__first,
     .image__second {
         height: 230px;
+        margin-top: 40px;
     }
 }
 
@@ -81,7 +82,7 @@
     }
     .image__first {
         grid-row: 1;
-        height: 290px;
+        height: 370px;
     }
     .image__second {
         grid-row: 2;
@@ -118,7 +119,7 @@
         margin-top: 80px;
     }
     .image__first {
-        height: 370px;
+        height: 450px;
     }
     .image__second {
         height: 450px;
