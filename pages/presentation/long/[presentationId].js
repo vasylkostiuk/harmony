@@ -58,7 +58,7 @@ const SequencePageLong = ({sequenceData, footer, header}) => {
                 secondImage={sequenceData?.advantageImageSecond}
                 advantages={sequenceData?.advantages}
             />
-            <ComparingSlider category={sequenceData?.category}/>
+            <ComparingSlider category={sequenceData?.category} title={sequenceData?.comparingSliderTitle}/>
             <div className="margin__minus"></div>
             <HubBlock hubBlock={sequenceData?.hubBlock}/>
             <div className="container">

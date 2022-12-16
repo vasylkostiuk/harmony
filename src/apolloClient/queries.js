@@ -904,6 +904,7 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
         sequencePageLong(where: {id: $id}) {
             id
             category
+            comparingSliderTitle
             mobileGif {
               id
               url

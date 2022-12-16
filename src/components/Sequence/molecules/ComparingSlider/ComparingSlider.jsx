@@ -8,7 +8,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const ComparingSlider = ({category}) => {
+const comparingTitle = 'Compare Our Products'
+
+const ComparingSlider = ({category, title = comparingTitle}) => {
     const {data} = useQuery(GET_PRODUCT_COMPARING, {
         variables: {
             category
@@ -19,7 +21,7 @@ const ComparingSlider = ({category}) => {
     return (
         <div className="container products comparing">
             <div className={styles.container}>
-                <h3 className={styles.title}>Compare our products</h3>
+                <h3 className={styles.title}>{title}</h3>
                 <Swiper
                     slidesPerView={3}
                     direction={"horizontal"}
