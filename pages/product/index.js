@@ -26,6 +26,7 @@ const Products = ({products, footer, header}) => {
             <div className="container">
                 <HeaderTop
                     productLinks={header?.productLinks}
+                    favicon={header?.favicon?.url}
                     otherLinks={header?.otherLinks}
                     logoUrl={header?.logo?.url}
                 />

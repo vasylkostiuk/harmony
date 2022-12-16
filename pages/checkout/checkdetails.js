@@ -13,6 +13,7 @@ const CheckDetailsPage = ({header}) => {
             <div className="container">
                 <HeaderTop
                     logoUrl={header?.logo?.url}
+                    favicon={header?.favicon?.url}
                     otherLinks={header?.otherLinks}
                     productLinks={header?.productLinks}
                 />

@@ -19,8 +19,11 @@ query GET_ARTICLES {
 
 export const GET_HUB = gql(`
     query GET_HUB {
-        headers {
+       headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -310,8 +313,11 @@ query GET_TEST_SEQUENCE {
 
 export const GET_MAIN_PAGE = gql(`
     query MainPage {
-      headers {
+     headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -426,8 +432,11 @@ export const GET_PRODUCTS = gql(`
           previousPrice
         }
       }
-      headers {
+     headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -523,8 +532,11 @@ export const GET_PRODUCT_COMPARING = gql(
 
 export const GET_PRODUCT = gql(`
     query Product ($id: ID!) {
-      headers {
+     headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -697,8 +709,11 @@ export const GET_SEQUENCE_PAGES_IDS = gql(`
 
 export const GET_SEQUENCE_PAGE = gql(`
   query GetSequencePage($id: ID!) {
-      headers {
+     headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -1017,8 +1032,11 @@ export const GET_SEQUENCE_PAGE_LONG = gql(`
               }
             }
         }
-        headers {
+       headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -1222,8 +1240,11 @@ export const GET_FOOTER = gql(`
 
 export const GET_HEADER = gql(`
     query GET_HEADER {
-        headers {
+       headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url
@@ -1261,8 +1282,11 @@ export const GET_FAQ = gql(`
           answer
         }
       }
-      headers {
+     headers {
             id
+            favicon {
+               url
+            }
             logo {
               id
               url

@@ -15,8 +15,9 @@ import {reduceTotalAmount} from "../../../../services/changeCheckoutObj";
 import Link from "next/link";
 import {useEffect, useRef} from "react";
 import HeaderCheckout from "../../atoms/HeaderCheckout/HeaderCheckout";
+import Head from "next/head";
 
-const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => {
+const HeaderTop = ({logoUrl, favicon, otherLinks, productLinks,  isAbsolute = false}) => {
     const showCheckoutDropdown = useReactiveVar(showCheckout);
     const checkout = useReactiveVar(checkoutProducts);
 
@@ -44,6 +45,9 @@ const HeaderTop = ({logoUrl, otherLinks, productLinks,  isAbsolute = false}) => 
 
     return (
         <div ref={wrapperRef}>
+            <Head>
+                <link rel="shortcut icon" href={favicon} />
+            </Head>
             <div className={`${styles.global__container} ${isAbsolute ? styles.global__container_hero : ''}`}>
                 <div className={styles.container}>
                     <HeaderLogo src={logoUrl}/>

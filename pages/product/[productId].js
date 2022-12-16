@@ -25,6 +25,7 @@ const ProductId = (product) => {
             <div className='container'>
                 <HeaderTop
                     productLinks={product?.header?.productLinks}
+                    favicon={product?.header?.favicon?.url}
                     otherLinks={product?.header?.otherLinks}
                     logoUrl={product?.header?.logo?.url}
                 />
