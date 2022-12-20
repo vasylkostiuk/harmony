@@ -1,7 +1,7 @@
 @media screen and (min-width: 1px) {
     .container {
         display: grid;
-        grid-template-rows: 30px 275px 370px 320px 370px;
+        grid-template-rows: 30px 275px 600px 320px 600px;
         grid-template-areas: 'title'
                              'firstImage'
                              'firstAdvantages'
@@ -116,7 +116,7 @@
     }
     .advantages__first {
         transform: none;
-        margin-top: 80px;
+        margin-top: 100px;
     }
     .image__first {
         height: 450px;
