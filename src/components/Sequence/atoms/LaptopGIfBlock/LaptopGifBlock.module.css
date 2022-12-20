@@ -157,10 +157,12 @@
     }
     .gif__image {
         height: 420px;
+        width: 720px;
         padding: 0;
     }
     .gif__inside {
         height: 350px;
+        width: 75%;
     }
     .items__container {
         display: block;
