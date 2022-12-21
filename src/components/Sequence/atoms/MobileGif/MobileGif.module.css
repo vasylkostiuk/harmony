@@ -6,7 +6,7 @@
     }
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 475px) {
     .image {
         height: 380px;
     }
