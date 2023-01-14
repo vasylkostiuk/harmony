@@ -6,9 +6,9 @@ import {GetStaticSequencePage, GetStaticSequencePagesPath} from "../../src/preRe
 import {useEffect} from "react";
 import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
 import {showHeaderDropdown} from "../../src/apolloClient/reactiveVariables/header";
+import HeadGenerator from "../../src/components/global/HeadGenerator/HeadGenerator";
 
 const SequencePage = ({sequenceData, footer, header}) => {
-
     useEffect(() => {
         showHeaderDropdown(false);
         if (sequenceData?.sequenceColors.length) {
@@ -20,19 +20,26 @@ const SequencePage = ({sequenceData, footer, header}) => {
     }, [sequenceData?.id]);
 
     return (
-        <div className="container__sequence">
-            <div className="container">
-                <HeaderTop
-                    productLinks={header?.productLinks}
-                    favicon={header?.favicon?.url}
-                    otherLinks={header?.otherLinks}
-                    logoUrl={header?.logo?.url}
-                />
-                <BreadCrumbs master={sequenceData?.presentationHero?.title}/>
+        <>
+            <HeadGenerator
+                title={sequenceData?.seoTitle}
+                description={sequenceData?.seoDescription}
+                keywords={sequenceData?.seoKeywords}
+            />
+            <div className="container__sequence">
+                <div className="container">
+                    <HeaderTop
+                        productLinks={header?.productLinks}
+                        favicon={header?.favicon?.url}
+                        otherLinks={header?.otherLinks}
+                        logoUrl={header?.logo?.url}
+                    />
+                    <BreadCrumbs master={sequenceData?.presentationHero?.title}/>
+                </div>
+                <SequenceShort sequenceData={sequenceData}/>
+                <Footer footer={footer}/>
             </div>
-            <SequenceShort sequenceData={sequenceData}/>
-            <Footer footer={footer}/>
-        </div>
+        </>
     );
 }
 

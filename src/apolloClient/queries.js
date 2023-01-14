@@ -787,6 +787,9 @@ export const GET_SEQUENCE_PAGE = gql(`
         }
         sequencePage(where: {id: $id}) {
             id
+            seoDescription
+            seoKeywords
+            seoTitle
             mobileGif {
               id
               url
