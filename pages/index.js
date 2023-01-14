@@ -5,10 +5,16 @@ import InHeroTitle from "../src/components/OtherProducts/atoms/InHeroTitle/InHer
 import Footer from "../src/components/Footer/Footer";
 import HeaderTop from "../src/components/Header/molecules/HeaderTop/HeaderTop";
 import VideoPlayer from "../src/components/Hero/atoms/VideoPlayer/VideoPlayer";
+import HeadGenerator from "../src/components/global/HeadGenerator/HeadGenerator";
 
-export default function Home({heroBlocks, videoInfo, sliderInfo, footer, header}) {
+export default function Home({heroBlocks, videoInfo, sliderInfo, footer, header, SEOdata}) {
   return (
       <>
+        <HeadGenerator
+            title={SEOdata?.seoTitle}
+            description={SEOdata?.seoDescription}
+            keywords={SEOdata?.seoKeywords}
+        />
         <div className="container">
           <HeaderTop
               productLinks={header?.productLinks}

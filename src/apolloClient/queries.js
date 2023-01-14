@@ -378,6 +378,9 @@ export const GET_MAIN_PAGE = gql(`
         }
       }
       mainPage(where: {id: "cl39uuqjwt8940ck3mfoqe5am"}) {
+        seoDescription
+        seoKeywords
+        seoTitle
         hero {
           id
           description
