@@ -6,9 +6,16 @@ import GalleryFilters from "../../src/components/Gallery/atoms/GalleryFilters/Ga
 import Footer from "../../src/components/Footer/Footer";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
+import HeadGenerator from "../../src/components/global/HeadGenerator/HeadGenerator";
 
 const GalleryPage = ({gallery, footer, header}) => {
     const [showGallery, setShowGallery] = useState(false);
+
+    const {
+        seoTitle,
+        seoDescription,
+        seoKeywords
+    } = gallery?.galleryContainersConnection?.edges[0]?.node;
 
     useEffect(() => {
         galleryVar([]);
@@ -27,6 +34,11 @@ const GalleryPage = ({gallery, footer, header}) => {
 
     return (
         <>
+            <HeadGenerator
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+            />
             <div className="container">
                 <HeaderTop
                     logoUrl={header?.logo?.url}

@@ -1127,6 +1127,9 @@ export const GET_GALLERY = gql(`
               }
               category
             }
+            seoDescription
+            seoKeywords
+            seoTitle
             description
             title
           }
