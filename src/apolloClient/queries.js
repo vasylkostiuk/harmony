@@ -1283,6 +1283,9 @@ export const GET_FAQ = gql(`
       faq (where: {id: $id}) {
         id
         title
+        seoDescription
+        seoKeywords
+        seoTitle
         qAs {
           id
           question
