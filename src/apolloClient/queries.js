@@ -41,6 +41,9 @@ export const GET_HUB = gql(`
         }
         hubs {
             id
+            seoDescription
+            seoKeywords
+            seoTitle
             aboutUsLeftColumn
             aboutUsRightColumn
             aboutUsTitle
