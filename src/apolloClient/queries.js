@@ -607,6 +607,9 @@ export const GET_PRODUCT = gql(`
         }
       product(where: {id: $id}) {
         id
+        seoDescription
+        seoKeywords
+        seoTitle
         badge
         category
         id

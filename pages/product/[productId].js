@@ -6,6 +6,7 @@ import {useEffect} from "react";
 import Footer from "../../src/components/Footer/Footer";
 import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop";
 import BreadCrumbs from "../../src/components/global/BreadCrumbs/BreadCrumbs";
+import HeadGenerator from "../../src/components/global/HeadGenerator/HeadGenerator";
 
 const ProductId = (product) => {
     const [increaseCount] = useMutation(INCREASE_PRODUCT_COUNT, {
@@ -22,6 +23,11 @@ const ProductId = (product) => {
 
     return (
         <>
+            <HeadGenerator
+                title={product?.product?.seoTitle}
+                description={product?.product?.seoDescription}
+                keywords={product?.product?.seoKeywords}
+            />
             <div className='container'>
                 <HeaderTop
                     productLinks={product?.header?.productLinks}
