@@ -1,11 +1,13 @@
 import ArticleHeading from "./atoms/ArticleHeading/ArticleHeading";
 import ArticleBlock from "./atoms/ArticleBlock/ArticleBlock";
+import HeadGenerator from "../global/HeadGenerator/HeadGenerator";
 
 const Article = ({article}) => {
-    const {title, description, type, blocks} = article;
+    const {title, description, type, blocks, seoDescription, seoKeywords, seoTitle} = article;
 
     return (
         <>
+            <HeadGenerator title={seoTitle} description={seoDescription} keywords={seoKeywords}/>
             <ArticleHeading
                 title={title}
                 description={description}

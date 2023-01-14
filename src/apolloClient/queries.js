@@ -280,6 +280,9 @@ query GET_ARTICLE ($id: ID!) {
     }
   article (where: {id: $id}) {
     id
+    seoDescription
+    seoKeywords
+    seoTitle
     title
     description
     type
