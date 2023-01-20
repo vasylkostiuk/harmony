@@ -7,6 +7,29 @@
         color: #000;
         margin: 25px 0 20px 0;
     }
+    .policy {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+    }
+    .checkbox {
+        display: none;
+    }
+    .pseudo__checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #18181B;
+        margin-right: 13px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+    }
+    .pseudo__checkbox.checked {
+        background-color: #18181B;
+    }
+    .pseudo__checkbox.error {
+        border-color: #DB2424;
+    }
 }
 
 @media screen and (min-width: 767px) {

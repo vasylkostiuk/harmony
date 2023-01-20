@@ -13,6 +13,8 @@ const contactInfoDefaults = {
     zipCode: '',
 }
 
+export const policyChecked = makeVar(false);
+
 export const isInputsFullFilled = makeVar(false);
 
 export const contactInfo = makeVar(contactInfoDefaults);

@@ -7,13 +7,14 @@ import BottomWidget from "../../../global/LoadCircle/layouts/BottomWidget/Bottom
 import Link from "next/link";
 import {init, send} from "@emailjs/browser";
 import {createProductMail} from "../../../../services/createProductMail";
-import {contactInfo, isInputsFullFilled} from "../../../../apolloClient/reactiveVariables/contactInfo";
+import {contactInfo, isInputsFullFilled, policyChecked} from "../../../../apolloClient/reactiveVariables/contactInfo";
 import {isContactFullFilled} from "../../../../services/contactValidation";
 import SuccessPopup from "../../../global/SuccessPopup/SuccessPopup";
 import ErrorBanner from "../../../global/ErrorBanner/ErrorBanner";
 
 const Summary = ({isFinal = false}) => {
     const checkout = useReactiveVar(checkoutProducts);
+    const isPolicyChecked = useReactiveVar(policyChecked);
     const contacts = useReactiveVar(contactInfo);
     const [showPopup, setShowPopup] = useState(false);
     const [showError, setShowError] = useState(false);
@@ -28,7 +29,7 @@ const Summary = ({isFinal = false}) => {
     }
 
     const sendEmail = () => {
-        if (isContactFullFilled(contacts)) {
+        if (isContactFullFilled(contacts) && isPolicyChecked) {
             isInputsFullFilled(false);
             send(serviceID, templateID, sendData)
                 .then(() => {

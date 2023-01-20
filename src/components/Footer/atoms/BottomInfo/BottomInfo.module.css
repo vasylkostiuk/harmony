@@ -16,6 +16,7 @@
     line-height: 130%;
     color: #A1A1AA;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .line {

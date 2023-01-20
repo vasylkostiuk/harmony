@@ -9,6 +9,7 @@ import HeaderTop from "../../src/components/Header/molecules/HeaderTop/HeaderTop
 import CheckoutContactsLayout
     from "../../src/components/Checkout/organisms/CheckoutContactsLayout/CheckoutContactsLayout";
 import BackButton from "../../src/components/Checkout/atoms/BackButton/BackButton";
+import Link from "next/link";
 
 const Contact = ({header}) => {
     const checkout = useReactiveVar(checkoutProducts);
