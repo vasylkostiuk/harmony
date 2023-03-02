@@ -45,6 +45,7 @@
 @media screen and (min-width: 767px) {
     .icon {
         margin-top: 30px;
+        cursor: pointer;
     }
     .title {
         margin: 120px 0 35px 0;
