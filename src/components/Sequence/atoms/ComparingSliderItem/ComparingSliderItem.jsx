@@ -6,7 +6,7 @@ const ComparingSliderItem = ({product}) => {
     return (
         <div className={styles.container}>
             <div className={styles.image__container}>
-                <img src={product?.comparingImage?.url}
+                <img src={`${product?.comparingImage?.url}?fit:crop/quality=value:75/output=format:webp/compress`}
                      className={styles.image}
                      alt="Harmony Domes"
                 />

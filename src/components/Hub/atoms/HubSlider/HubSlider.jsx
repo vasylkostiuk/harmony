@@ -26,7 +26,7 @@ const HubSlider = ({images}) => {
                     images?.map(img => {
                         return (
                             <SwiperSlide key={img?.id}>
-                                <img src={img?.url} className={styles.image} alt="Harmony Domes"/>
+                                <img src={`${img?.url}?fit:crop/quality=value:75/output=format:webp/compress`} className={styles.image} alt="Harmony Domes"/>
                             </SwiperSlide>
                         )
                     })
