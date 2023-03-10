@@ -3,6 +3,7 @@ import styles from "./PreSequenceHero.module.css";
 import {useRef} from "react";
 import {Tween} from "react-gsap";
 import PreSequenceHeader from "../PreSequenceHeader/PreSequenceHeader";
+import customLoader from "../../../../preRender/customLoader";
 
 const PreSequenceHero = ({imageSrc, width, height, title, description, randomHeader}) => {
     const bottomHeader = useRef(null);
@@ -26,6 +27,7 @@ const PreSequenceHero = ({imageSrc, width, height, title, description, randomHea
                         src={imageSrc}
                         width={width}
                         height={height}
+                        loader={customLoader}
                         alt="Harmony Domes"
                         priority
                     />
