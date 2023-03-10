@@ -1,4 +1,5 @@
 import React from "react";
+import customLoader from "../../../../preRender/customLoader";
 
 const ImageSequence = ({images, progress}) => {
 
@@ -7,7 +8,7 @@ const ImageSequence = ({images, progress}) => {
     let result;
 
     result = images.map((item, i) => (
-        <img src={item?.url}
+        <img src={`${item?.url}?fit:crop/quality=value:75/output=format:webp/compress`}
                key={item.id}
                style={{
                    display: i !== index ? "none" : "block",
