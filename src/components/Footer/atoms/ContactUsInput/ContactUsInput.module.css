@@ -56,4 +56,15 @@
     .input {
         min-width: 220px;
     }
+    .firstName, .lastName {
+        max-width: 158px;
+        min-width: 158px;
+        border-right: 1px solid #D4D4D8;
+    }
+    .firstName {
+        margin: 0 8px 8px 0;
+    }
+    .lastName {
+        margin: 0 0 8px 0;
+    }
 }

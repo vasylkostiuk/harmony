@@ -1,6 +1,6 @@
 import styles from './ContactUsInput.module.css';
 import {useReactiveVar} from "@apollo/client";
-import {contactUsEmail, isContactUsEmailFullFilled} from "../../../../apolloClient/reactiveVariables/contactUs";
+import {contactUsEmail, isContactUsEmailFullFilled, contactUsFirstName, contactUsLastName} from "../../../../apolloClient/reactiveVariables/contactUs";
 import {validateEmail} from "../../../../services/contactValidation";
 import {init, send} from "@emailjs/browser";
 import ErrorBanner from "../../../global/ErrorBanner/ErrorBanner";
@@ -8,6 +8,8 @@ import {useState} from "react";
 
 const ContactUsInput = () => {
     const contactEmail = useReactiveVar(contactUsEmail);
+    const contactFirstName = useReactiveVar(contactUsFirstName);
+    const contactLastName = useReactiveVar(contactUsLastName);
     const isFormFullFilled = useReactiveVar(isContactUsEmailFullFilled);
     const [showBanner, setShowBanner] = useState(false);
     const [isEmailPositive, setIsEmailPositive] = useState(true);
@@ -32,6 +34,8 @@ const ContactUsInput = () => {
         setIsEmailPositive(isPositive);
         setShowBanner(!showBanner);
         contactUsEmail('');
+        contactUsFirstName('');
+        contactUsLastName('');
     }
 
     init(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
@@ -40,11 +44,23 @@ const ContactUsInput = () => {
 
     const sendData = {
         subject: 'New contact request (From footer)',
-        appointment: contactEmail
+        appointment: createContactMail(contactEmail, contactFirstName, contactLastName)
+    }
+
+    function createContactMail(contactEmail, contactFirstName, contactLastName) {
+        return `
+        <br/>
+        <br/>
+        <b>Contact</b>
+        <br/>
+        <p>First name: ${contactFirstName}</p>
+        <p>Last name: ${contactLastName}</p>
+        <p>Email: ${contactEmail}</p>
+    `
     }
 
     const sendEmail = () => {
-        if (contactEmail) {
+        if (contactEmail && contactFirstName && contactLastName) {
             isContactUsEmailFullFilled(false);
             send(serviceID, templateID, sendData)
                 .then(() => {
@@ -60,6 +76,18 @@ const ContactUsInput = () => {
 
     return (
         <>
+            <div className={styles.container}>
+                <input
+                    type="text"
+                    className={`${styles.input} ${styles.firstName} ${isFormFullFilled && !contactFirstName ? styles.error : ''}`}
+                    placeholder={"First Name"}
+                />
+                <input
+                    type="text"
+                    className={`${styles.input} ${styles.lastName} ${isFormFullFilled && !contactLastName ? styles.error : ''} `}
+                    placeholder={"Last Name"}
+                />
+            </div>
             <div className={styles.container}>
                 <input
                     type="email"
