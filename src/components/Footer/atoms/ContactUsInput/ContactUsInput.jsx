@@ -81,11 +81,13 @@ const ContactUsInput = () => {
                     type="text"
                     className={`${styles.input} ${styles.firstName} ${isFormFullFilled && !contactFirstName ? styles.error : ''}`}
                     placeholder={"First Name"}
+                    onChange={(e) => contactUsFirstName(e.target.value)}
                 />
                 <input
                     type="text"
                     className={`${styles.input} ${styles.lastName} ${isFormFullFilled && !contactLastName ? styles.error : ''} `}
                     placeholder={"Last Name"}
+                    onChange={(e) => contactUsLastName(e.target.value)}
                 />
             </div>
             <div className={styles.container}>
