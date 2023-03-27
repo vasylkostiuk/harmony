@@ -7,7 +7,8 @@ const hubContactsDefaults = {
     phone: '',
     date: '',
     day: '',
-    time: '10:00 AM'
+    time: '10:00 AM',
+    message: '',
 }
 
 

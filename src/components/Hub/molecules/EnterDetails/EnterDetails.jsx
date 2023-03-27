@@ -35,6 +35,13 @@ const EnterDetails = () => {
                 validation={validatePhoneNumber}
                 errorMessage={"Fill this field or type actual phone number, please"}
             />
+            <HubContactField
+                type={"text"}
+                placeholder={"Comment"}
+                label={"Comment"}
+                contactField={"message"}
+            />
+
         </div>
     );
 }

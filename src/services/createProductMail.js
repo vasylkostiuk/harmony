@@ -145,6 +145,7 @@ function createHubBody(contacts) {
             <p>Second name: ${contacts?.secondName}</p>
             <p>Email: ${contacts?.email}</p>
             <p>Phone: ${contacts?.phone}</p>
+            <p>Comment: ${contacts?.message}</p>
             <br/>
             <b>Date and time</b>
             <br/>
