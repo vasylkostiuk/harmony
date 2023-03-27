@@ -1,6 +1,6 @@
 import styles from './ContactUsInput.module.css';
 import {useReactiveVar} from "@apollo/client";
-import {contactUsEmail, isContactUsEmailFullFilled, contactUsFirstName, contactUsLastName} from "../../../../apolloClient/reactiveVariables/contactUs";
+import {contactUsEmail, isContactUsEmailFullFilled, contactUsFirstName, contactUsLastName, contactUsComment} from "../../../../apolloClient/reactiveVariables/contactUs";
 import {validateEmail} from "../../../../services/contactValidation";
 import {init, send} from "@emailjs/browser";
 import ErrorBanner from "../../../global/ErrorBanner/ErrorBanner";
@@ -10,6 +10,7 @@ const ContactUsInput = () => {
     const contactEmail = useReactiveVar(contactUsEmail);
     const contactFirstName = useReactiveVar(contactUsFirstName);
     const contactLastName = useReactiveVar(contactUsLastName);
+    const contactComment = useReactiveVar(contactUsComment);
     const isFormFullFilled = useReactiveVar(isContactUsEmailFullFilled);
     const [showBanner, setShowBanner] = useState(false);
     const [isEmailPositive, setIsEmailPositive] = useState(true);
@@ -36,6 +37,8 @@ const ContactUsInput = () => {
         contactUsEmail('');
         contactUsFirstName('');
         contactUsLastName('');
+        contactUsComment('');
+        document.getElementById('footerContactFormEmailInput').value = '';
     }
 
     init(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
@@ -44,10 +47,10 @@ const ContactUsInput = () => {
 
     const sendData = {
         subject: 'New contact request (From footer)',
-        appointment: createContactMail(contactEmail, contactFirstName, contactLastName)
+        appointment: createContactMail(contactEmail, contactFirstName, contactLastName, contactComment)
     }
 
-    function createContactMail(contactEmail, contactFirstName, contactLastName) {
+    function createContactMail(contactEmail, contactFirstName, contactLastName, contactComment) {
         return `
         <br/>
         <br/>
@@ -56,12 +59,16 @@ const ContactUsInput = () => {
         <p>First name: ${contactFirstName}</p>
         <p>Last name: ${contactLastName}</p>
         <p>Email: ${contactEmail}</p>
+        <p>Comment</p>
+        <br/>
+        <p>${contactComment}</p>
     `
     }
 
     const sendEmail = () => {
-        if (contactEmail && contactFirstName && contactLastName) {
+        if (contactEmail && contactFirstName && contactLastName && contactComment) {
             isContactUsEmailFullFilled(false);
+            setResponseState(true);
             send(serviceID, templateID, sendData)
                 .then(() => {
                     setResponseState(true);
@@ -81,22 +88,34 @@ const ContactUsInput = () => {
                     type="text"
                     className={`${styles.input} ${styles.firstName} ${isFormFullFilled && !contactFirstName ? styles.error : ''}`}
                     placeholder={"First Name"}
+                    value={contactUsFirstName()}
                     onChange={(e) => contactUsFirstName(e.target.value)}
                 />
                 <input
                     type="text"
                     className={`${styles.input} ${styles.lastName} ${isFormFullFilled && !contactLastName ? styles.error : ''} `}
                     placeholder={"Last Name"}
+                    value={contactUsLastName()}
                     onChange={(e) => contactUsLastName(e.target.value)}
                 />
             </div>
             <div className={styles.container}>
                 <input
+                    id="footerContactFormEmailInput"
                     type="email"
                     className={`${styles.input} ${isFormFullFilled && !contactEmail ? styles.error : ''}`}
                     placeholder={"email@gmail.com"}
                     onChange={(e) => contactUsEmail(validateEmail(e.target.value))}
                 />
+            </div>
+            <div className={styles.container}>
+                <textarea rows={3}
+                className={`${styles.textarea} ${isFormFullFilled && !contactComment ? styles.error : ''}`}
+                placeholder={"Your message"} value={contactUsComment()}
+                onChange={(e) => contactUsComment(e.target.value)}
+                ></textarea>
+            </div>
+            <div className={styles.container}>
                 <div
                     className={styles.button}
                     onClick={() => sendEmail()}

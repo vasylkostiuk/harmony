@@ -10,24 +10,34 @@
         border-top: 1px solid #D4D4D8;
         border-left: 1px solid #D4D4D8;
         border-bottom: 1px solid #D4D4D8;
-        border-right: none;
+        border-right: 1px solid #D4D4D8;
         border-radius: 0;
     }
-    .input:focus {
+    .textarea {
+        padding: 12px 15px;
+        border-top: 1px solid #D4D4D8;
+        border-left: 1px solid #D4D4D8;
+        border-bottom: 1px solid #D4D4D8;
+        border-right: 1px solid #D4D4D8;
+        border-radius: 0;
+        margin: 8px 0;
+    }
+    .input:focus, .textarea:focus {
         border-color: #000;
         outline: none;
     }
-    .input::placeholder {
+    .input::placeholder, .textarea::placeholder {
+        font-family: 'Nunito Sans', sans-serif;
         font-weight: 300;
         font-size: 14px;
         line-height: 130%;
         color: #A1A1AA;
     }
-    .input.error {
+    .input.error, .textarea.error {
         border-color: #DB2424;
         color: #DB2424;
     }
-    .input.error::placeholder {
+    .input.error::placeholder, .textarea.error::placeholder {
         color: #DB2424;
     }
     .button {
@@ -40,6 +50,7 @@
         border-color: #18181B;
         outline: none;
         cursor: pointer;
+        margin-left: 220px;
     }
     .button__text {
         font-weight: 600;
@@ -53,8 +64,8 @@
 }
 
 @media screen and (min-width: 1281px) {
-    .input {
-        min-width: 220px;
+    .input, .textarea {
+        min-width: 324px;
     }
     .firstName, .lastName {
         max-width: 158px;
